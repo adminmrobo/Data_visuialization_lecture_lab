@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4주차 · 산업별 데이터 시각화 — 표지 — Language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/galmuri.css">
+<style>
+:root{--night:#1b1533;--deep:#120e24;--panel:#261e45;--line:#3d3170;--text:#efe9ff;--muted:#b5abd6;--violet:#b07cff;--cyan:#57d0dc;--amber:#ffc65c;--px:"Galmuri11","Galmuri9","IBM Plex Sans KR",sans-serif;--body:"IBM Plex Sans KR",system-ui,sans-serif;color-scheme:dark}
+*,*::before{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(1200px 600px at 50% -10%,#2b2154,var(--night));color:var(--text);font-family:var(--body);padding:48px 20px}
+main{max-width:880px;width:100%;text-align:center}
+h1{font-family:var(--px);font-size:clamp(24px,4.5vw,40px);margin:0 0 10px;letter-spacing:.5px}
+h1 .wk{color:var(--amber)}
+.sub{color:var(--muted);font-size:15px;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.pick{display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;padding:18px 20px;background:var(--panel);border:2px solid var(--line);border-radius:10px;text-decoration:none;transition:transform .12s,border-color .12s}
+.pick:hover{transform:translateY(-2px);border-color:var(--violet)}
+.pick.on{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber)}
+.pname{font-family:var(--px);font-size:19px;color:var(--text)}
+.pick.on .pname{color:var(--amber)}
+.ptitle{font-size:13px;color:var(--muted);line-height:1.5}
+.note{margin-top:30px;color:var(--muted);font-size:12.5px}
+</style></head><body><main>
+<h1>데이터 시각화 <span class="wk">· 4주차</span></h1>
+<p class="sub">4주차 · 산업별 데이터 시각화</p>
+<div class="grid">
+<a class="pick" data-lang="ko" href="week4_index.html"><span class="pname">한국어</span><span class="ptitle">4주차 · 산업별 데이터 시각화 — 표지</span></a>
+<a class="pick" data-lang="en" href="en/week4_index.html"><span class="pname">English</span><span class="ptitle">Week 4 · Industry Data Visualization — Cover</span></a>
+<a class="pick" data-lang="zh" href="zh/week4_index.html"><span class="pname">中文</span><span class="ptitle">第4周 · 产业数据可视化 — 封面</span></a>
+<a class="pick" data-lang="ja" href="ja/week4_index.html"><span class="pname">日本語</span><span class="ptitle">第4週 · 産業別データ可視化 — 表紙</span></a>
+<a class="pick" data-lang="uz" href="uz/week4_index.html"><span class="pname">Oʻzbekcha</span><span class="ptitle">4-hafta · Tarmoqlar bo'yicha vizualizatsiya — muqova</span></a>
+<a class="pick" data-lang="ru" href="ru/week4_index.html"><span class="pname">Русский</span><span class="ptitle">Неделя 4 · Визуализация по отраслям — обложка</span></a>
+</div>
+<p class="note">선택한 언어는 브라우저에 저장되어 다음 방문에도 유지됩니다. (저장 언어는 테두리로 표시)</p>
+<script>try{var l=localStorage.getItem("dv_lang");if(l){var b=document.querySelector('[data-lang="'+l+'"]');if(b)b.classList.add("on")}}catch(e){}</script>
+</main></body></html>
