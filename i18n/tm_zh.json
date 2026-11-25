@@ -4901,5 +4901,6 @@
 "60대": "60多岁",
 "70대": "70多岁",
 "<h3>이 페이지 인용하기</h3><div class=\"tools\"><button class=\"tchip cf\" data-f=\"text\" aria-pressed=\"true\" style=\"background:var(--gfp,#5ee39c);border-color:var(--gfp,#5ee39c)\">일반 문장</button><button class=\"tchip cf\" data-f=\"bib\" aria-pressed=\"false\">BibTeX</button><button class=\"tchip cf\" data-f=\"ris\" aria-pressed=\"false\">RIS</button><button class=\"bt cp\" type=\"button\">복사</button></div><pre class=\"cite pc\" data-i18n-skip></pre>": "<h3>引用本页</h3><div class=\"tools\"><button class=\"tchip cf\" data-f=\"text\" aria-pressed=\"true\" style=\"background:var(--gfp,#5ee39c);border-color:var(--gfp,#5ee39c)\">普通文本</button><button class=\"tchip cf\" data-f=\"bib\" aria-pressed=\"false\">BibTeX</button><button class=\"tchip cf\" data-f=\"ris\" aria-pressed=\"false\">RIS</button><button class=\"bt cp\" type=\"button\">复制</button></div><pre class=\"cite pc\" data-i18n-skip></pre>",
-"<h3>참고문헌 — 확인 배지와 뒷받침하는 개념</h3><div class=\"refs list\" data-i18n-skip></div>": "<h3>参考文献 — 核实标记与所支持的概念</h3><div class=\"refs list\" data-i18n-skip></div>"
+"<h3>참고문헌 — 확인 배지와 뒷받침하는 개념</h3><div class=\"refs list\" data-i18n-skip></div>": "<h3>参考文献 — 核实标记与所支持的概念</h3><div class=\"refs list\" data-i18n-skip></div>",
+"진료 기록실 벽 화면에 오른쪽 꼬리 근처 앰버 점선이 그어진 히스토그램이 뜨고, 식구들이 차트 카드를 한 장씩 들고 선 픽셀 표지": "病历室墙上的屏幕显示一张直方图，右侧尾部附近画着一条琥珀色虚线，成员们各拿一张图表卡片站成一排的像素风封面"
 }
