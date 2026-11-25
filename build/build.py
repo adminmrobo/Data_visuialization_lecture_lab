@@ -359,8 +359,9 @@ def page_html(P, prev, nxt, fname):
     f3 = P['first3']
     abbr = ''.join('<li><b>%s</b> — %s</li>' % a for a in P.get('abbr', []))
     first3 = ('<section class="first3" aria-label="처음 오신 분께"><h3>처음 오신 분께 — 이 페이지를 3줄로</h3><ol><li><b>무엇을</b> %s</li><li><b>왜 중요한가</b> %s</li><li><b>업무에서는</b> %s</li></ol>'
-              '<p class="nocode">코드와 수식을 몰라도 됩니다. 코드는 접힌 상자에만 있고, 수식은 하루가 하나씩 물어봅니다.</p>%s</section>') % (
-        f3[0], f3[1], f3[2], ('<details><summary>이 페이지에 나오는 영어 약어 풀이</summary><ul>%s</ul></details>' % abbr) if abbr else '')
+              '<p class="nocode">코드와 수식을 몰라도 됩니다. 코드는 접힌 상자에만 있고, 수식은 하루가 하나씩 물어봅니다.</p>'
+              '<p class="nocode"><b>처음 읽는 방법</b> — 읽기 약 %d분, 직접 해 보기까지 약 %d분. 처음에는 대화와 「직접 해 보기」만 따라가고, 수학 상자와 코드 상자는 두 번째 읽을 때 열어도 됩니다.</p>%s</section>') % (
+        f3[0], f3[1], f3[2], P.get('_read', 15), P.get('_read', 15) * 2, ('<details><summary>이 페이지에 나오는 영어 약어 풀이</summary><ul>%s</ul></details>' % abbr) if abbr else '')
     body.append('<main id="top"><header class="hero"><div class="wrap"><div class="kicker">%s</div><span class="scene %s"><b>%s</b>%s</span><h1>%s<br><span style="font-size:.55em;color:#5b6874">%s</span></h1><p class="question">%s</p>%s%s'
                 '<section class="kpis" aria-label="이 페이지의 숫자 요약">%s</section><p style="font-size:13px;color:#5b6874">%s</p><div class="talk">%s</div></div></header>' % (
                     P['kicker'], sc[0], sc[1], P['scene_line'], P['title'], P['subtitle'], P['question'], P['intro'], first3, kp, P.get('kpi_note', ''), talk))
@@ -449,6 +450,8 @@ def index_html(pages, slots, IDX):
 
 
 def main():
+    import importlib.util
+    _sp = importlib.util.spec_from_file_location('persona_fixes', os.path.join(HERE, 'persona_fixes.py')); PF = importlib.util.module_from_spec(_sp); _sp.loader.exec_module(PF)
     specs = sorted(glob.glob(os.path.join(HERE, 'pages', 'w*.py')))
     pages = []
     for f in specs:
@@ -456,6 +459,13 @@ def main():
         exec(open(f, encoding='utf-8').read(), g)
         P = g['PAGE']
         P.setdefault('id', 'dv_w' + P['num'])
+        _txt = re.sub(r'<[^>]+>', ' ', json.dumps({k: v for k, v in P.items() if k not in ('js', 'css', 'data', 'refs', 'facts', 'models', 'gloss')}, ensure_ascii=False, default=str))
+        _txt = re.sub(r'[{}\[\]",:]', ' ', _txt)
+        P['_read'] = max(10, int(round(len(_txt.split()) / 180.0 / 5.0)) * 5)
+        for st in P['steps']:
+            c = PF.CALM.get(P['num'], {}).get(st['id'])
+            if c and not st.get('calm'):
+                st['calm'] = c
         pages.append((P, 'w%s_%s.html' % (P['num'], P['slug'])))
     os.makedirs(os.path.join(ROOT, 'weeks'), exist_ok=True)
     registry = {'version': '1.0', 'series': SERIES, 'updated': TODAY, 'domain': 'dataviz', 'ids': {}}

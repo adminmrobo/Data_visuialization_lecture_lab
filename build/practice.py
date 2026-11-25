@@ -43,7 +43,7 @@ def _scene(key, title, situation, green, blue, back):
 
 
 _cafe = _scene('cafe', '① 카페 — 사장님께 올릴 메뉴별 판매 차트',
-    '카페 사장님이 “이번 달 어느 메뉴가 제일 잘 팔렸고, 2위와 얼마나 차이 나?”라고 묻습니다. 회의 시간은 짧습니다. 사장님이 <b>2초 안에 1위를 찾고, 차이를 실제 크기대로</b> 보게 만드세요.',
+    '카페 사장님이 “이번 달 어느 메뉴가 제일 잘 팔렸고, 2위와 얼마나 차이 나?”라고 묻습니다. 회의 시간은 짧습니다. 사장님이 <b>2초 안에 1위를 찾고, 차이를 실제 크기대로</b> 보게 만드세요.<br><small><b>거짓말 지수</b> = 그림 속 1·2위 차이 ÷ 실제 차이. 1이면 정직하고, 2면 실제보다 두 배 과장된 그림입니다.</small>',
     '<label>메뉴 수 <input type="range" id="cf-n" min="3" max="10" value="5"> <span id="cf-nv"></span></label>'
     '<label>1위와 2위의 실제 차이 <input type="range" id="cf-gap" min="2" max="30" value="20"> <span id="cf-gapv"></span></label>',
     '<label>차트 <select id="cf-type"><option value="pie">파이</option><option value="bar">막대</option></select></label>'
@@ -53,7 +53,7 @@ _cafe = _scene('cafe', '① 카페 — 사장님께 올릴 메뉴별 판매 차�
     '<a href="../weeks/w02_chart-theory.html">2층 — 정크와 Y축 0</a> · <a href="../weeks/w08_midterm-assignment.html">8층 — 그래프 A 배율</a>')
 
 _pay = _scene('pay', '② 결제 — 빈 값과 대표값으로 보고 숫자 정하기',
-    '결제 기록 800건 가운데 일부 금액이 비어 있고, 가끔 아주 큰 결제가 섞입니다. 팀장이 묻는 질문에 맞는 <b>대표값 하나</b>를 히스토그램과 함께 보고하세요. 질문이 바뀌면 맞는 처리도 바뀝니다.',
+    '결제 기록 800건 가운데 일부 금액이 비어 있고, 가끔 아주 큰 결제가 섞입니다. 팀장이 묻는 질문에 맞는 <b>대표값 하나</b>를 히스토그램과 함께 보고하세요. 질문이 바뀌면 맞는 처리도 바뀝니다.<br><small><b>참값</b> = 빈 값이 하나도 없는 원자료로 계산한 정답. 연습장이라서 정답을 알고 있습니다. 실제 업무에서는 모르기 때문에 처리 방법을 더 조심해서 고릅니다.</small>',
     '<label>팀장의 질문 <select id="py-q"><option value="typ">보통 손님 한 번 결제액은?</option><option value="avg">한 달 총매출 계산용 1건 평균은?</option></select></label>'
     '<label>빈 값 비율 <input type="range" id="py-miss" min="0" max="20" value="10"> <span id="py-missv"></span></label>'
     '<label>아주 큰 결제 <input type="range" id="py-out" min="0" max="5" value="2"> <span id="py-outv"></span></label>',
