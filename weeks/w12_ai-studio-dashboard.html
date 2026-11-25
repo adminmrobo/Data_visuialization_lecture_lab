@@ -475,7 +475,7 @@ var DAYS=90,HL=[];for(var d=0;d<DAYS;d++){var wd=d%7,step=Math.round(6000+d*25+(
 var DEPT=['내과','외과','소아과','정형외과','피부과'],WDN=['월','화','수','목','금'],SLOT=['9시','10시','11시','13시','14시','15시','16시'],MD={};
 DEPT.forEach(function(dp,di){MD[dp]=WDN.map(function(_,w){return SLOT.map(function(_,s){var base=[38,22,26,18,12][di]*(w===0?1.35:1)*(s<3?1.25:0.9);if(dp==='소아과'&&s>=4)base*=1.2;return Math.round(base*(0.8+0.4*R()));});});});
 var WAIT={};DEPT.forEach(function(dp,di){var a=[];for(var k=0;k<12;k++)a.push(Math.round([24,15,18,14,9][di]+(dp==='소아과'?k*0.9:k*0.2)+(R()-.5)*4));WAIT[dp]=a;});
-var CAT=['카페','쇼핑','교통','식당','편의점'],FT=[];for(var i=0;i<600;i++){var day=Math.floor(R()*28),wk=day%7,cat=CAT[Math.floor(R()*5)],pay=R()<.55?'카드':'간편결제',amt=Math.round(({카페:5500,쇼핑:42000,교통:2400,식당:14000,편의점:6500})[cat]*(0.4+R()*1.3));var odd=false;if(R()<.012){amt=Math.round(amt*(18+R()*20));odd=true;}FT.push({day:day,wk:wk,cat:cat,pay:pay,amt:amt,odd:odd});}
+var CAT=['카페','쇼핑','교통','식당','편의점'],FT=[];for(var i=0;i<600;i++){var day=Math.floor(R()*28),wk=day%7,cat=CAT[Math.floor(R()*5)],pay=R()<.55?'카드':'간편결제',amt=Math.round(({'카페':5500,'쇼핑':42000,'교통':2400,'식당':14000,'편의점':6500})[cat]*(0.4+R()*1.3));var odd=false;if(R()<.012){amt=Math.round(amt*(18+R()*20));odd=true;}FT.push({day:day,wk:wk,cat:cat,pay:pay,amt:amt,odd:odd});}
 FT.push({day:26,wk:5,cat:'카페',pay:'간편결제',amt:680000,odd:true});FT.push({day:26,wk:5,cat:'카페',pay:'카드',amt:640000,odd:true});
 var IND={h:{flt:['이번 주','최근 한 달','최근 3개월'],cur:'최근 한 달'},m:{flt:['전체','내과','외과','소아과'],cur:'전체'},f:{flt:['전체','카드','간편결제'],cur:'전체'}},ind='h';
 function draw(){var I=IND[ind];$$('#w12ind button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.k===ind));});
@@ -1095,7 +1095,7 @@ function mountIndex(root){
     arr.forEach(function(n){var d=el('div','it'+(sel===n.id?' sel':'')); d.setAttribute('role','option'); d.dataset.id=n.id;
       var alt=n.altLabel&&n.altLabel.ko?' · '+[].concat(n.altLabel.ko).join(', '):'';
       var src=(n.source||[]).length?' · 출처 '+n.source.length:'';
-      d.innerHTML='<div class="h"><span class="ty" style="background:'+tc(n.type)+'">'+tl(n.type)+'</span><span class="nm">'+esc(lab(n))+'</span><span class="en">'+esc((n.label&&n.label.en)||'')+esc(alt)+'</span></div>'+
+      d.innerHTML='<div class="h"><span class="ty" style="background:'+tc(n.type)+'">'+tl(n.type)+'</span><span class="nm">'+esc(lab(n))+'</span><span class="en">'+esc((n.label&&n.label.en&&!/[\uac00-\ud7a3]/.test(n.label.en)&&n.label.en!==lab(n))?n.label.en:'')+esc(alt)+'</span></div>'+
         (n.definition?'<p class="df">'+esc(loc(n.definition))+'</p>':'')+
         '<div class="more">'+(n.anchor?'<a href="'+n.anchor+'">설명 보러 가기 →</a>':'')+' <span>'+esc(src)+(n.confidence&&n.confidence!=='high'?' · 확신도 '+n.confidence:'')+'</span><div style="margin-top:6px">'+relHtml(n)+'</div></div>';
       d.onclick=function(ev){var g=ev.target.closest('.rel'); if(g){ if(g.dataset.go)pick(g.dataset.go,true); ev.stopPropagation(); return;}
@@ -1184,8 +1184,8 @@ function mountExport(root){
     '<div class="stats"><div><b>'+KG.nodes.length+'</b><span>노드</span></div><div><b>'+KG.edges.length+'</b><span>관계</span></div><div><b>'+REF.length+'</b><span>문헌</span></div>'+
     '<div><b>'+Math.round(100*vb/Math.max(1,REF.length))+'%</b><span>서지 전부 확인된 문헌</span></div>'+
     '<div><b>'+Math.round(100*claims.filter(function(n){return (n.source||[]).length;}).length/Math.max(1,claims.length))+'%</b><span>출처 있는 주장</span></div></div>'+
-    '<h3>이 페이지 인용하기</h3><div class="tools"><button class="tchip cf" data-f="text" aria-pressed="true" style="background:var(--gfp,#5ee39c);border-color:var(--gfp,#5ee39c)">일반 문장</button><button class="tchip cf" data-f="bib" aria-pressed="false">BibTeX</button><button class="tchip cf" data-f="ris" aria-pressed="false">RIS</button><button class="bt cp" type="button">복사</button></div><pre class="cite pc"></pre>'+
-    '<h3>참고문헌 — 확인 배지와 뒷받침하는 개념</h3><div class="refs list"></div>'+
+    '<h3>이 페이지 인용하기</h3><div class="tools"><button class="tchip cf" data-f="text" aria-pressed="true" style="background:var(--gfp,#5ee39c);border-color:var(--gfp,#5ee39c)">일반 문장</button><button class="tchip cf" data-f="bib" aria-pressed="false">BibTeX</button><button class="tchip cf" data-f="ris" aria-pressed="false">RIS</button><button class="bt cp" type="button">복사</button></div><pre class="cite pc" data-i18n-skip></pre>'+
+    '<h3>참고문헌 — 확인 배지와 뒷받침하는 개념</h3><div class="refs list" data-i18n-skip></div>'+
     '<h3>범위와 형식 고르기</h3><div class="tools sc" role="group" aria-label="범위"></div><div class="tools"><button class="bt primary zip" type="button">꾸러미 ZIP 내려받기</button><span class="note zc"></span></div>'+
     '<div class="files"></div><p class="note">claude.ai 화면에서 개별 파일을 받으면 .bib·.ris·.ttl·.jsonld 이름 끝에 .txt가 붙는다(끝의 .txt만 지우면 원래 형식). ZIP 안의 파일은 원래 이름 그대로다.</p>'+
     (META.seeAlso?'<p class="note">여러 페이지의 꾸러미를 합쳐 영역 지도와 맞대어 보려면 → <a style="color:var(--gfp,#5ee39c)" href="'+esc(META.seeAlso)+'"'+(/^https?:/.test(META.seeAlso)?' target="_blank" rel="noopener"':'')+'>영역 지도 합치기 (KG_00)</a></p>':'')+

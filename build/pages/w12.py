@@ -191,7 +191,7 @@ var DAYS=90,HL=[];for(var d=0;d<DAYS;d++){var wd=d%7,step=Math.round(6000+d*25+(
 var DEPT=['내과','외과','소아과','정형외과','피부과'],WDN=['월','화','수','목','금'],SLOT=['9시','10시','11시','13시','14시','15시','16시'],MD={};
 DEPT.forEach(function(dp,di){MD[dp]=WDN.map(function(_,w){return SLOT.map(function(_,s){var base=[38,22,26,18,12][di]*(w===0?1.35:1)*(s<3?1.25:0.9);if(dp==='소아과'&&s>=4)base*=1.2;return Math.round(base*(0.8+0.4*R()));});});});
 var WAIT={};DEPT.forEach(function(dp,di){var a=[];for(var k=0;k<12;k++)a.push(Math.round([24,15,18,14,9][di]+(dp==='소아과'?k*0.9:k*0.2)+(R()-.5)*4));WAIT[dp]=a;});
-var CAT=['카페','쇼핑','교통','식당','편의점'],FT=[];for(var i=0;i<600;i++){var day=Math.floor(R()*28),wk=day%7,cat=CAT[Math.floor(R()*5)],pay=R()<.55?'카드':'간편결제',amt=Math.round(({카페:5500,쇼핑:42000,교통:2400,식당:14000,편의점:6500})[cat]*(0.4+R()*1.3));var odd=false;if(R()<.012){amt=Math.round(amt*(18+R()*20));odd=true;}FT.push({day:day,wk:wk,cat:cat,pay:pay,amt:amt,odd:odd});}
+var CAT=['카페','쇼핑','교통','식당','편의점'],FT=[];for(var i=0;i<600;i++){var day=Math.floor(R()*28),wk=day%7,cat=CAT[Math.floor(R()*5)],pay=R()<.55?'카드':'간편결제',amt=Math.round(({'카페':5500,'쇼핑':42000,'교통':2400,'식당':14000,'편의점':6500})[cat]*(0.4+R()*1.3));var odd=false;if(R()<.012){amt=Math.round(amt*(18+R()*20));odd=true;}FT.push({day:day,wk:wk,cat:cat,pay:pay,amt:amt,odd:odd});}
 FT.push({day:26,wk:5,cat:'카페',pay:'간편결제',amt:680000,odd:true});FT.push({day:26,wk:5,cat:'카페',pay:'카드',amt:640000,odd:true});
 var IND={h:{flt:['이번 주','최근 한 달','최근 3개월'],cur:'최근 한 달'},m:{flt:['전체','내과','외과','소아과'],cur:'전체'},f:{flt:['전체','카드','간편결제'],cur:'전체'}},ind='h';
 function draw(){var I=IND[ind];$$('#w12ind button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.k===ind));});
