@@ -5,7 +5,7 @@
 
 박사, 조수, 초파리 연구원, 주판봇 네 캐릭터의 대화로 진행되는 인터랙티브 강의 페이지입니다. 이 저장소에는 2주차 전체가 담겨 있습니다 — 그래프 이론과 첫 실습, 이론 A, 이론 B, Colab 환경, 실습 ①②, 실습 ③과 정리.
 
-바로 보기: https://adminmrobo.github.io/dv-week2/
+바로 보기: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_02/
 
 글 · 안상선 ((주)M-Robo 대표)
 
@@ -69,7 +69,7 @@
 
 An interactive lecture site where four characters — Professor, Assistant, Fruit Fly Researcher, AbaBot — teach through dialogue. This repository holds all of Week 2: Chart Theory and First Practice, Theory A, Theory B, Colab Environment, Labs ①②, Lab ③ and Wrap-up.
 
-Read online: https://adminmrobo.github.io/dv-week2/en/week2_index.html
+Read online: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_02/en/week2_index.html
 
 By Sangsun Ahn (CEO, M-Robo Inc.)
 
@@ -133,7 +133,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 由四位角色（博士、助手、果蝇研究员、算盘宝）的对话展开的互动式讲义页面。本仓库收录第2周全部内容：图表理论与首次实践, 理论A, 理论B, Colab 环境, 实操①②, 实操③与总结。
 
-在线阅读: https://adminmrobo.github.io/dv-week2/zh/week2_index.html
+在线阅读: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_02/zh/week2_index.html
 
 作者 · Sangsun Ahn（M-Robo 株式会社 代表）
 
@@ -197,7 +197,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 博士・アシスタント・ショウジョウバエ研究員・アバボットの4人のキャラクターの対話で進むインタラクティブな講義ページです。このリポジトリは第2週全体（グラフ理論と初実習, 理論A, 理論B, Colab環境, 実習①②, 実習③とまとめ）を収めています。
 
-オンラインで読む: https://adminmrobo.github.io/dv-week2/ja/week2_index.html
+オンラインで読む: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_02/ja/week2_index.html
 
 文 · アン・サンソン（Sangsun Ahn、M-Robo株式会社 代表）
 
@@ -261,7 +261,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 Professor, Yordamchi, Drozofila tadqiqotchisi, AbaBot — toʻrt qahramon suhbati orqali olib boriladigan interaktiv maʼruza sahifalari. Bu omborda 2-hafta toʻliq bor: Diagramma nazariyasi va birinchi amaliyot, A nazariya, B nazariya, Colab muhiti, Amaliyot ①②, Amaliyot ③ va xulosa.
 
-Onlayn oʻqish: https://adminmrobo.github.io/dv-week2/uz/week2_index.html
+Onlayn oʻqish: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_02/uz/week2_index.html
 
 Muallif · Sangsun Ahn (M-Robo Inc. rahbari)
 
@@ -325,7 +325,7 @@ Manba koʻrsatish namunasi: Sangsun Ahn, “Generativ AI bilan maʼlumot vizuali
 
 Интерактивные страницы лекций, где материал подают четыре персонажа (Профессор, Ассистент, Исследователь-дрозофила, АбаБот) в форме диалога. В этом репозитории вся неделя 2: Теория графиков и первая практика, Теория A, Теория B, Среда Colab, Практики ①②, Практика ③ и итоги.
 
-Читать онлайн: https://adminmrobo.github.io/dv-week2/ru/week2_index.html
+Читать онлайн: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_02/ru/week2_index.html
 
 Автор · Сансун Ан (Sangsun Ahn), генеральный директор M-Robo Inc.
 

@@ -5,7 +5,7 @@
 
 박사, 조수, 초파리 연구원, 주판봇 네 캐릭터의 대화로 진행되는 인터랙티브 강의 페이지입니다. 이 저장소에는 1주차 전체가 담겨 있습니다 — 과정 안내(OT), 왜 데이터 시각화인가, 도구 스택과 5단계 워크플로, 코드 작성 가이드, 산업 사례·일정·FAQ.
 
-바로 보기: https://adminmrobo.github.io/dv-week1/
+바로 보기: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_01/
 
 글 · 안상선 ((주)M-Robo 대표)
 
@@ -66,7 +66,7 @@
 
 An interactive lecture site where four characters — Professor, Assistant, Fruit Fly Researcher, AbaBot — teach through dialogue. This repository holds all of Week 1: Course Orientation, Why Data Visualization, Tool Stack and 5-Step Workflow, Code Writing Guide, Industry Cases·Schedule·FAQ.
 
-Read online: https://adminmrobo.github.io/dv-week1/en/week1_index.html
+Read online: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_01/en/week1_index.html
 
 By Sangsun Ahn (CEO, M-Robo Inc.)
 
@@ -127,7 +127,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 由四位角色（博士、助手、果蝇研究员、算盘宝）的对话展开的互动式讲义页面。本仓库收录第1周全部内容：课程导览, 为什么是数据可视化, 工具栈与五步工作流, 代码编写指南, 产业案例·日程·FAQ。
 
-在线阅读: https://adminmrobo.github.io/dv-week1/zh/week1_index.html
+在线阅读: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_01/zh/week1_index.html
 
 作者 · Sangsun Ahn（M-Robo 株式会社 代表）
 
@@ -188,7 +188,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 博士・アシスタント・ショウジョウバエ研究員・アバボットの4人のキャラクターの対話で進むインタラクティブな講義ページです。このリポジトリは第1週全体（コース案内(OT), なぜデータ可視化か, ツールスタックと5ステップ, コード作成ガイド, 産業事例·日程·FAQ）を収めています。
 
-オンラインで読む: https://adminmrobo.github.io/dv-week1/ja/week1_index.html
+オンラインで読む: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_01/ja/week1_index.html
 
 文 · アン・サンソン（Sangsun Ahn、M-Robo株式会社 代表）
 
@@ -249,7 +249,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 Professor, Yordamchi, Drozofila tadqiqotchisi, AbaBot — toʻrt qahramon suhbati orqali olib boriladigan interaktiv maʼruza sahifalari. Bu omborda 1-hafta toʻliq bor: Kurs tanishtiruvi, Ma'lumot vizualizatsiyasi nega kerak, Vositalar to'plami va 5 qadam, Kod yozish qo'llanmasi, Tarmoq misollari·jadval·FAQ.
 
-Onlayn oʻqish: https://adminmrobo.github.io/dv-week1/uz/week1_index.html
+Onlayn oʻqish: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_01/uz/week1_index.html
 
 Muallif · Sangsun Ahn (M-Robo Inc. rahbari)
 
@@ -310,7 +310,7 @@ Manba koʻrsatish namunasi: Sangsun Ahn, “Generativ AI bilan maʼlumot vizuali
 
 Интерактивные страницы лекций, где материал подают четыре персонажа (Профессор, Ассистент, Исследователь-дрозофила, АбаБот) в форме диалога. В этом репозитории вся неделя 1: Введение в курс, Зачем нужна визуализация данных, Стек инструментов и 5 шагов, Руководство по написанию кода, Отраслевые кейсы·расписание·FAQ.
 
-Читать онлайн: https://adminmrobo.github.io/dv-week1/ru/week1_index.html
+Читать онлайн: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_01/ru/week1_index.html
 
 Автор · Сансун Ан (Sangsun Ahn), генеральный директор M-Robo Inc.
 

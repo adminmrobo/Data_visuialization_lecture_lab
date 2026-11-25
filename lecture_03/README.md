@@ -5,7 +5,7 @@
 
 박사, 조수, 초파리 연구원, 주판봇 네 캐릭터의 대화로 진행되는 인터랙티브 강의 페이지입니다. 이 저장소에는 3주차 전체가 담겨 있습니다 — 생성형 AI 데이터 전처리, 5종 더러운 데이터, 데이터 씻기 실습, Matplotlib와 Seaborn, 고급 그래프 실습, HTML 대시보드와 마무리.
 
-바로 보기: https://adminmrobo.github.io/dv-week3/
+바로 보기: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_03/
 
 글 · 안상선 ((주)M-Robo 대표)
 
@@ -69,7 +69,7 @@
 
 An interactive lecture site where four characters — Professor, Assistant, Fruit Fly Researcher, AbaBot — teach through dialogue. This repository holds all of Week 3: Generative AI Data Preprocessing, Five Kinds of Dirty Data, Data Cleaning Lab, Matplotlib and Seaborn, Advanced Charts Lab, HTML Dashboard and Wrap-up.
 
-Read online: https://adminmrobo.github.io/dv-week3/en/week3_index.html
+Read online: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_03/en/week3_index.html
 
 By Sangsun Ahn (CEO, M-Robo Inc.)
 
@@ -133,7 +133,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 由四位角色（博士、助手、果蝇研究员、算盘宝）的对话展开的互动式讲义页面。本仓库收录第3周全部内容：生成式AI数据预处理, 五种脏数据, 数据清洗实操, Matplotlib与Seaborn, 进阶图表实操, HTML看板与总结。
 
-在线阅读: https://adminmrobo.github.io/dv-week3/zh/week3_index.html
+在线阅读: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_03/zh/week3_index.html
 
 作者 · Sangsun Ahn（M-Robo 株式会社 代表）
 
@@ -197,7 +197,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 博士・アシスタント・ショウジョウバエ研究員・アバボットの4人のキャラクターの対話で進むインタラクティブな講義ページです。このリポジトリは第3週全体（生成AIデータ前処理, 5種類の汚いデータ, データクリーニング実習, MatplotlibとSeaborn, 発展グラフ実習, HTMLダッシュボードとまとめ）を収めています。
 
-オンラインで読む: https://adminmrobo.github.io/dv-week3/ja/week3_index.html
+オンラインで読む: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_03/ja/week3_index.html
 
 文 · アン・サンソン（Sangsun Ahn、M-Robo株式会社 代表）
 
@@ -261,7 +261,7 @@ Attribution example: Sangsun Ahn, "Data Visualization with Generative AI · Week
 
 Professor, Yordamchi, Drozofila tadqiqotchisi, AbaBot — toʻrt qahramon suhbati orqali olib boriladigan interaktiv maʼruza sahifalari. Bu omborda 3-hafta toʻliq bor: Generativ AI bilan ma'lumotlarni tozalash, Beshta iflos ma'lumot turi, Ma'lumot tozalash amaliyoti, Matplotlib va Seaborn, Murakkab diagrammalar, HTML dashboard va xulosa.
 
-Onlayn oʻqish: https://adminmrobo.github.io/dv-week3/uz/week3_index.html
+Onlayn oʻqish: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_03/uz/week3_index.html
 
 Muallif · Sangsun Ahn (M-Robo Inc. rahbari)
 
@@ -325,7 +325,7 @@ Manba koʻrsatish namunasi: Sangsun Ahn, “Generativ AI bilan maʼlumot vizuali
 
 Интерактивные страницы лекций, где материал подают четыре персонажа (Профессор, Ассистент, Исследователь-дрозофила, АбаБот) в форме диалога. В этом репозитории вся неделя 3: Предобработка данных с генеративным ИИ, Пять видов «грязных» данных, Практика очистки данных, Matplotlib и Seaborn, Практика продвинутых графиков, HTML-дашборд и итоги.
 
-Читать онлайн: https://adminmrobo.github.io/dv-week3/ru/week3_index.html
+Читать онлайн: https://adminmrobo.github.io/Data_visuialization_lecture_lab/lecture_03/ru/week3_index.html
 
 Автор · Сансун Ан (Sangsun Ahn), генеральный директор M-Robo Inc.
 

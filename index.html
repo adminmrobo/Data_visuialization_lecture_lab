@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>데이터시각화 (Data Visualization) — 강의 자료 모음</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1f2933; --muted:#6b7785; --line:#e3e7ec; --accent:#0f766e; --accent-soft:#e6f4f2; --wait:#f4f5f7; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font-family:"IBM Plex Sans KR",system-ui,sans-serif; line-height:1.6; }
+  .wrap { max-width:920px; margin:0 auto; padding:48px 20px 64px; }
+  h1 { font-size:1.9rem; margin:0 0 4px; }
+  .en { color:var(--muted); margin:0 0 20px; }
+  .meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+  .meta span { background:var(--wait); border:1px solid var(--line); border-radius:999px; padding:3px 12px; font-size:.86rem; }
+  .goal { border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 16px; border-radius:6px; margin-bottom:32px; font-size:.95rem; }
+  h2 { font-size:1.15rem; margin:32px 0 12px; }
+  ol.weeks { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+  .wk { display:grid; grid-template-columns:64px 1fr auto; gap:14px; align-items:center; border:1px solid var(--line); border-radius:10px; padding:12px 16px; }
+  .wk .no { font-weight:700; color:var(--accent); }
+  .wk .topic { font-weight:500; }
+  .wk .sub { display:block; color:var(--muted); font-size:.86rem; font-weight:400; }
+  .wk a.go { background:var(--accent); color:#fff; text-decoration:none; padding:6px 14px; border-radius:6px; font-size:.88rem; white-space:nowrap; }
+  .wk a.go:hover { opacity:.9; }
+  .wk .soon { color:var(--muted); font-size:.85rem; white-space:nowrap; }
+  .wk.pending { background:var(--wait); }
+  .wk.pending .no { color:var(--muted); }
+  .eval { width:100%; border-collapse:collapse; font-size:.92rem; }
+  .eval th, .eval td { border:1px solid var(--line); padding:8px; text-align:center; }
+  .eval th { background:var(--wait); font-weight:500; }
+  footer { margin-top:40px; color:var(--muted); font-size:.85rem; }
+  @media (max-width:560px){ .wk { grid-template-columns:48px 1fr; } .wk a.go, .wk .soon { grid-column:2; justify-self:start; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>데이터시각화</h1>
+  <p class="en">Data Visualization · 생성형 AI와 함께 배우는 데이터 시각화</p>
+  <div class="meta">
+    <span>2026학년도 2학기</span><span>데이터사이언스전공 · 전공선택(2학년)</span><span>3학점</span><span>이론·실습 병행</span><span>이중언어과정(중국어)</span><span>담당 안상선</span>
+  </div>
+
+  <div class="goal">
+    빅데이터가 시각적으로 표현되는 과정을 이해하고, 파이썬과 Google AI Studio 등 생성 AI 도구로 산업별 데이터를 분석해 인사이트 있는 시각적 결과물을 만드는 과정을 배웁니다.
+  </div>
+
+  <h2>주차별 강의</h2>
+  <ol class="weeks">
+    <li class="wk"><span class="no">1주</span><span class="topic">오리엔테이션 및 생성 AI와 데이터 시각화의 이해 (Google AI Studio 소개)<span class="sub">과정 안내 · 왜 데이터 시각화인가 · 도구 스택과 5단계 워크플로 · 코드 작성 가이드 · 산업 사례</span></span><a class="go" href="lecture_01/">강의 열기</a></li>
+    <li class="wk"><span class="no">2주</span><span class="topic">파이썬 데이터 분석 환경 구축 및 AI 코딩 활용법<span class="sub">그래프 이론 A·B · Colab 환경 · 실습 ①②③과 정리</span></span><a class="go" href="lecture_02/">강의 열기</a></li>
+    <li class="wk"><span class="no">3주</span><span class="topic">생성 AI를 활용한 데이터 전처리 및 기초 시각화 (Matplotlib/Seaborn)<span class="sub">5종 더러운 데이터 · 데이터 씻기 실습 · Matplotlib·Seaborn · 고급 그래프 실습 · HTML 대시보드</span></span><a class="go" href="lecture_03/">강의 열기</a></li>
+    <li class="wk"><span class="no">4주</span><span class="topic">산업별 데이터 시각화 1 — 금융/핀테크 데이터 인사이트 도출<span class="sub">GICS와 X-Tech · 표현과 시각 부호화 · 은행/증권 vs 핀테크 · Colab 실습 5개 · 윤리와 요약</span></span><a class="go" href="lecture_04/">강의 열기</a></li>
+    <li class="wk pending"><span class="no">5주</span><span class="topic">산업별 데이터 시각화 2 — 마케팅/리테일 데이터 패턴 분석</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">6주</span><span class="topic">고급 시각화 및 인터랙티브 차트 작성 (Plotly 실습)</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">7주</span><span class="topic">Google AI Studio를 활용한 데이터 스토리텔링 및 인사이트 자동화</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">8주</span><span class="topic">중간 프로젝트 — AI 기반 EDA(탐색적 데이터 분석) 리포트 작성</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">9주</span><span class="topic">중간고사 (중간 프로젝트 발표 및 평가)</span><span class="soon">평가</span></li>
+    <li class="wk pending"><span class="no">10주</span><span class="topic">산업별 데이터 시각화 3 — 헬스케어/의료 데이터 시각화</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">11주</span><span class="topic">산업별 데이터 시각화 4 — 스마트시티/물류 데이터 시각화</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">12주</span><span class="topic">대시보드 구축 1 — Streamlit을 활용한 인터랙티브 웹 앱 제작</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">13주</span><span class="topic">대시보드 구축 2 — 생성 AI 기반 맞춤형 분석 에이전트 연동</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">14주</span><span class="topic">종합 실습 — 산업별 데이터 파이프라인 구축 및 대시보드 완성</span><span class="soon">준비 중</span></li>
+    <li class="wk pending"><span class="no">15주</span><span class="topic">기말고사 (최종 프로젝트 쇼케이스 및 평가)</span><span class="soon">평가</span></li>
+  </ol>
+
+  <h2>평가</h2>
+  <table class="eval">
+    <tr><th>중간고사</th><th>기말고사</th><th>출석</th><th>기타(AI 활용 실습)</th></tr>
+    <tr><td>40</td><td>40</td><td>10</td><td>10</td></tr>
+  </table>
+  <p style="font-size:.9rem;color:var(--muted)">중간·기말 프로젝트: 산업별 데이터 시각화 및 인사이트 리포트 · AI 활용 범위: Google AI Studio, Gemini 등으로 코드 생성·전처리·인사이트 도출 전 과정 허용</p>
+
+  <footer>글 · 안상선 ((주)M-Robo 대표) · 각 주차 페이지는 한국어·English·中文·日本語·Oʻzbekcha·Русский로 볼 수 있습니다.</footer>
+</div>
+</body>
+</html>
