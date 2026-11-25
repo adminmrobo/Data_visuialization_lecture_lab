@@ -1,0 +1,218 @@
+{
+ "데이터 시각화 디자인 연구실": {
+  "en": "Data Visualization Design Lab",
+  "zh": "数据可视化设计实验室"
+ },
+ "디자인 연구실": {
+  "en": "Design Lab",
+  "zh": "设计实验室"
+ },
+ "건물 안내도": {
+  "en": "Building Directory",
+  "zh": "大楼导览"
+ },
+ "실전 연습장": {
+  "en": "Practice Arena",
+  "zh": "实战练习场"
+ },
+ "시아": {
+  "en": "Sia",
+  "zh": "Sia"
+ },
+ "모아": {
+  "en": "Moa",
+  "zh": "Moa"
+ },
+ "하루": {
+  "en": "Haru",
+  "zh": "Haru"
+ },
+ "초파리": {
+  "en": "Fruit Fly",
+  "zh": "果蝇"
+ },
+ "초파리 조": {
+  "en": "Fruit Fly team",
+  "zh": "果蝇组"
+ },
+ "주판봇 조": {
+  "en": "AbaBot team",
+  "zh": "算盘宝组"
+ },
+ "조별발표": {
+  "en": "team presentation",
+  "zh": "小组汇报"
+ },
+ "개인발표": {
+  "en": "solo presentation",
+  "zh": "个人汇报"
+ },
+ "상담": {
+  "en": "consultation",
+  "zh": "咨询面谈"
+ },
+ "리뷰 발표회": {
+  "en": "review session",
+  "zh": "复盘汇报会"
+ },
+ "차트": {
+  "en": "chart",
+  "zh": "图表"
+ },
+ "막대 그래프": {
+  "en": "bar chart",
+  "zh": "柱状图"
+ },
+ "선 그래프": {
+  "en": "line chart",
+  "zh": "折线图"
+ },
+ "파이 차트": {
+  "en": "pie chart",
+  "zh": "饼图"
+ },
+ "히트맵": {
+  "en": "heatmap",
+  "zh": "热力图"
+ },
+ "파레토 차트": {
+  "en": "Pareto chart",
+  "zh": "帕累托图"
+ },
+ "히스토그램": {
+  "en": "histogram",
+  "zh": "直方图"
+ },
+ "산점도": {
+  "en": "scatter plot",
+  "zh": "散点图"
+ },
+ "상자그림": {
+  "en": "box plot",
+  "zh": "箱线图"
+ },
+ "대시보드": {
+  "en": "dashboard",
+  "zh": "仪表板"
+ },
+ "필터": {
+  "en": "filter",
+  "zh": "筛选器"
+ },
+ "누적 비율": {
+  "en": "cumulative share",
+  "zh": "累计占比"
+ },
+ "기준선": {
+  "en": "reference line",
+  "zh": "基准线"
+ },
+ "정크": {
+  "en": "chartjunk",
+  "zh": "图表垃圾"
+ },
+ "거짓말 지수": {
+  "en": "lie factor",
+  "zh": "谎言因子"
+ },
+ "참값": {
+  "en": "true value",
+  "zh": "真值"
+ },
+ "빈 값": {
+  "en": "missing value",
+  "zh": "缺失值"
+ },
+ "중앙값": {
+  "en": "median",
+  "zh": "中位数"
+ },
+ "평균": {
+  "en": "mean",
+  "zh": "平均值"
+ },
+ "대표값": {
+  "en": "representative value",
+  "zh": "代表值"
+ },
+ "이상값": {
+  "en": "outlier",
+  "zh": "异常值"
+ },
+ "상관계수": {
+  "en": "correlation coefficient",
+  "zh": "相关系数"
+ },
+ "프롬프트": {
+  "en": "prompt",
+  "zh": "提示词"
+ },
+ "이어 묻기": {
+  "en": "follow-up prompting",
+  "zh": "追问"
+ },
+ "프롬프트 사슬": {
+  "en": "prompt chain",
+  "zh": "提示词链"
+ },
+ "답하는 제목": {
+  "en": "answering title",
+  "zh": "回答式标题"
+ },
+ "주석": {
+  "en": "annotation",
+  "zh": "注释"
+ },
+ "처음 오신 분께": {
+  "en": "For first-time readers",
+  "zh": "写给初次来访的你"
+ },
+ "지식 색인": {
+  "en": "Knowledge index",
+  "zh": "知识索引"
+ },
+ "원자료": {
+  "en": "source material",
+  "zh": "原始资料"
+ },
+ "수업용 가상 데이터": {
+  "en": "synthetic data for class",
+  "zh": "教学用虚拟数据"
+ },
+ "건강검진": {
+  "en": "health check-up",
+  "zh": "体检"
+ },
+ "공복혈당": {
+  "en": "fasting blood glucose",
+  "zh": "空腹血糖"
+ },
+ "비만율": {
+  "en": "obesity rate",
+  "zh": "肥胖率"
+ },
+ "물류센터": {
+  "en": "logistics center",
+  "zh": "物流中心"
+ },
+ "판": {
+  "en": "board",
+  "zh": "看板"
+ },
+ "직접 해 보기": {
+  "en": "Try it yourself",
+  "zh": "动手试一试"
+ },
+ "왜 이 방법을 쓰나": {
+  "en": "Why use this method",
+  "zh": "为什么用这个方法"
+ },
+ "AI 결과 판단 코너": {
+  "en": "AI output check corner",
+  "zh": "AI 结果判断角"
+ },
+ "심판": {
+  "en": "judge",
+  "zh": "裁判"
+ }
+}
