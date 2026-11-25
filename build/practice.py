@@ -1,7 +1,7 @@
 # 옥상 · 마지막 장 — 실전 연습장 (카페 · 결제 · 건강검진 · 물류센터)
 PR['nav'] = '<a href="#cafe">카페</a><a href="#pay">결제</a><a href="#health">건강검진</a><a href="#logi">물류센터</a><a href="../index.html">건물 안내도</a>'
 PR['desc'] = '데이터 시각화 실전 연습장: 카페 메뉴 보고 차트, 결제 데이터 빈 값과 대표값, 건강검진 혈당 분포와 기준선, 물류센터 히트맵·파레토로 인력과 개선 순서 정하기를 직접 조작하고 미션 3개씩 자동 판정받는 시뮬레이터.'
-PR['cover_alt'] = '디자인 연구실 건물 옥상에 이젤 네 개가 놓이고, 막대·분포·히트맵·누적선이 그려진 픽셀 표지'
+PR['cover_alt'] = '옥상에 카페·결제·건강·물류 차트를 건 이젤 네 개가 서 있고, 아홉 식구가 나란히 선 픽셀 표지'
 PR['moods'] = ['doc_judge', 'doc_think', 'doc_verdict', 'asst_report', 'asst_think', 'asst_wow', 'fly_magnify', 'fly_point', 'fly_arms',
                'robo_happy', 'robo_chart', 'robo_sigh', 'robo_wow', 'robo_coin']
 

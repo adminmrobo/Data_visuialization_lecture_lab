@@ -7,50 +7,50 @@
   {
    "id": "cover_00",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_00.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_00"
   },
   {
    "id": "cover_01",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_01.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_01"
   },
   {
    "id": "cover_02",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_02.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_02"
   },
   {
    "id": "cover_03",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_03.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_03"
   },
   {
    "id": "cover_04",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_04.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_04"
   },
   {
    "id": "cover_08",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_08.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_08"
   },
   {
    "id": "cover_09",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_09.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_09"
   },
   {
@@ -63,22 +63,22 @@
   {
    "id": "cover_11",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_11.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_11"
   },
   {
    "id": "cover_12",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_12.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_12"
   },
   {
    "id": "cover_99",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_99.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_99"
   }
  ]
