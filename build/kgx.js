@@ -250,7 +250,7 @@ function mountIndex(root){
   root.innerHTML='<div class="stats"><div><b>'+KG.nodes.length+'</b><span>항목(노드)</span></div><div><b>'+KG.edges.length+'</b><span>관계</span></div>'+
     '<div><b>'+((count.Concept||0)+(count.Method||0))+'</b><span>개념·방법</span></div><div><b>'+((count.Analogy||0)+(count.BioAnalogue||0))+'</b><span>비유</span></div>'+
     '<div><b>'+csrc+'/'+claims.length+'</b><span>출처 있는 주장</span></div><div><b>'+topics+'</b><span>뼈대 주제 연결</span></div></div>'+
-    '<div class="tools"><input type="search" placeholder="찾기 — 기본키, foreign key, 정규화, JOIN …" aria-label="지식 색인 검색"></div>'+
+    '<div class="tools"><input type="search" placeholder="찾기 — 히트맵, 중앙값, 대시보드, 기준선 …" aria-label="지식 색인 검색"></div>'+
     '<div class="tools chips" role="group" aria-label="종류"></div>'+
     '<div class="grid2"><div class="list" role="listbox" aria-label="검색 결과"></div>'+
     '<div><div class="gbox"><canvas aria-label="선택한 항목과 이웃 관계 그래프"></canvas></div><div class="legend"></div>'+
