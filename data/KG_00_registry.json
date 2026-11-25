@@ -1,0 +1,1218 @@
+{
+ "version": "1.0",
+ "series": "데이터 시각화 디자인 연구실",
+ "updated": "2026-11-26",
+ "domain": "dataviz",
+ "ids": {
+  "lab:topic/dv-w01": {
+   "ko": "차트는 그리는데 결론이 없다",
+   "en": "Orientation: visualization as translation",
+   "type": "Topic",
+   "pages": [
+    "dv_w01",
+    "dv_w02"
+   ]
+  },
+  "lab:topic/data-visualization": {
+   "ko": "데이터 시각화",
+   "en": "data visualization",
+   "type": "Area",
+   "pages": [
+    "dv_w01",
+    "dv_w02",
+    "dv_w03",
+    "dv_w04",
+    "dv_w08",
+    "dv_w09",
+    "dv_w10",
+    "dv_w11",
+    "dv_w12"
+   ]
+  },
+  "lab:concept/data-visualization-basics": {
+   "ko": "데이터 시각화",
+   "en": "data visualization as translation",
+   "type": "Concept",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:concept/prompt-to-code-workflow": {
+   "ko": "프롬프트 기반 시각화 흐름",
+   "en": "prompt to code workflow",
+   "type": "Concept",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:concept/data-use-principles": {
+   "ko": "데이터 사용 원칙",
+   "en": "data use principles",
+   "type": "Concept",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:concept/grading-and-ai-ethics": {
+   "ko": "평가 비율과 AI 사용 윤리",
+   "en": "grading and AI ethics",
+   "type": "Concept",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:term/visualization": {
+   "ko": "시각화",
+   "en": "visualization",
+   "type": "Term",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:term/prompt": {
+   "ko": "프롬프트",
+   "en": "prompt",
+   "type": "Term",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:term/google-colab": {
+   "ko": "Colab",
+   "en": "google colab",
+   "type": "Term",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:term/readme": {
+   "ko": "README",
+   "en": "readme",
+   "type": "Term",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:term/weighted-average": {
+   "ko": "가중평균",
+   "en": "weighted average",
+   "type": "Term",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:term/open-data": {
+   "ko": "공개 데이터",
+   "en": "open data",
+   "type": "Term",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:work/syllabus2026": {
+   "ko": "데이터시각화 강의계획서 (2026-2학기, EB24201-03)",
+   "en": "데이터시각화 강의계획서 (2026-2학기, EB24201-03)",
+   "type": "Work",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:work/ot_slides": {
+   "ko": "데이터시각화 OT 슬라이드 (KO·ZH, v02)",
+   "en": "데이터시각화 OT 슬라이드 (KO·ZH, v02)",
+   "type": "Work",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:work/payments": {
+   "ko": "payments.csv — 수업용 합성 결제 데이터 (800건)",
+   "en": "payments.csv — 수업용 합성 결제 데이터 (800건)",
+   "type": "Work",
+   "pages": [
+    "dv_w01",
+    "dv_w02",
+    "dv_w03"
+   ]
+  },
+  "lab:method/dv_w01-fly": {
+   "ko": "질문 → 명세(열·차트·조건) → 코드",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:method/dv_w01-robo": {
+   "ko": "도구 세 개 동시에 · “그래프 그려줘”",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w01"
+   ]
+  },
+  "lab:topic/dv-w02": {
+   "ko": "코드를 잘 쓰는 사람이 아니라 차트를 고르는 사람",
+   "en": "Chart principles and choosing the right chart",
+   "type": "Topic",
+   "pages": [
+    "dv_w02",
+    "dv_w03",
+    "dv_w08"
+   ]
+  },
+  "lab:concept/chart-junk": {
+   "ko": "차트 정크와 데이터-잉크 비율",
+   "en": "chart junk and data-ink ratio",
+   "type": "Concept",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:concept/zero-baseline": {
+   "ko": "축의 정직성",
+   "en": "honest axis and zero baseline",
+   "type": "Concept",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:concept/chart-choice": {
+   "ko": "목적별 차트 선택",
+   "en": "choosing chart by question type",
+   "type": "Concept",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:concept/prompt-elements": {
+   "ko": "프롬프트 4요소와 실습 사이클",
+   "en": "prompt elements and PRCO cycle",
+   "type": "Concept",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/chart-junk": {
+   "ko": "차트 정크",
+   "en": "chart junk",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/data-ink-ratio": {
+   "ko": "데이터-잉크 비율",
+   "en": "data ink ratio",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/histogram": {
+   "ko": "히스토그램",
+   "en": "histogram",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/scatter-plot": {
+   "ko": "산점도",
+   "en": "scatter plot",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/correlation-coefficient": {
+   "ko": "상관계수",
+   "en": "correlation coefficient",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/missing-value": {
+   "ko": "결측",
+   "en": "missing value",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:term/box-plot": {
+   "ko": "상자그림",
+   "en": "box plot",
+   "type": "Term",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:work/w02_slides": {
+   "ko": "제2주차 · 차트 이론과 첫 시각화 실습 (v04, 50쪽)",
+   "en": "제2주차 · 차트 이론과 첫 시각화 실습 (v04, 50쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:work/w02_guide": {
+   "ko": "2주차 강의 슬라이드 지침서 (v04)",
+   "en": "2주차 강의 슬라이드 지침서 (v04)",
+   "type": "Work",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:work/tufte1983": {
+   "ko": "The Visual Display of Quantitative Information",
+   "en": "The Visual Display of Quantitative Information",
+   "type": "Work",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:work/cleveland1984": {
+   "ko": "Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods",
+   "en": "Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods",
+   "type": "Work",
+   "pages": [
+    "dv_w02",
+    "dv_w04"
+   ]
+  },
+  "lab:method/dv_w02-fly": {
+   "ko": "정렬 막대",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:method/dv_w02-robo": {
+   "ko": "다섯 조각 파이",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w02"
+   ]
+  },
+  "lab:topic/dv-w03": {
+   "ko": "그리기 전에 씻는다",
+   "en": "Cleaning data with generative AI before plotting",
+   "type": "Topic",
+   "pages": [
+    "dv_w03",
+    "dv_w04"
+   ]
+  },
+  "lab:concept/data-preprocessing": {
+   "ko": "데이터 전처리",
+   "en": "data preprocessing",
+   "type": "Concept",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:concept/missing-values": {
+   "ko": "결측치 처리",
+   "en": "missing value handling",
+   "type": "Concept",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:concept/ai-preprocessing-check": {
+   "ko": "AI 전처리 검증",
+   "en": "verifying AI preprocessing",
+   "type": "Concept",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:concept/matplotlib-seaborn": {
+   "ko": "Matplotlib과 Seaborn",
+   "en": "matplotlib and seaborn roles",
+   "type": "Concept",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/preprocessing": {
+   "ko": "전처리",
+   "en": "preprocessing",
+   "type": "Term",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/unique-values": {
+   "ko": "고유값",
+   "en": "unique values",
+   "type": "Term",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/median": {
+   "ko": "중앙값",
+   "en": "median",
+   "type": "Term",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/outlier": {
+   "ko": "이상치",
+   "en": "outlier",
+   "type": "Term",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/duplicate": {
+   "ko": "중복",
+   "en": "duplicate",
+   "type": "Term",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/violin-plot": {
+   "ko": "바이올린",
+   "en": "violin plot",
+   "type": "Term",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:term/heatmap": {
+   "ko": "히트맵",
+   "en": "heatmap",
+   "type": "Term",
+   "pages": [
+    "dv_w03",
+    "dv_w11"
+   ]
+  },
+  "lab:work/w03_slides": {
+   "ko": "数据可视化 第3周 · 用生成式AI清洗并可视化数据 (중국어판, 50쪽)",
+   "en": "数据可视化 第3周 · 用生成式AI清洗并可视化数据 (중국어판, 50쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:work/nb233": {
+   "ko": "실습 노트북 Untitled233.ipynb (AI 생성 결제 분석 코드, 중국어 주석)",
+   "en": "실습 노트북 Untitled233.ipynb (AI 생성 결제 분석 코드, 중국어 주석)",
+   "type": "Work",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:method/dv_w03-fly": {
+   "ko": "비워 두기 (통계에서 제외)",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:method/dv_w03-robo": {
+   "ko": "0으로 채우기",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w03"
+   ]
+  },
+  "lab:topic/dv-w04": {
+   "ko": "산업마다 보는 숫자가 다르다",
+   "en": "Industry visualization 1: finance and fintech",
+   "type": "Topic",
+   "pages": [
+    "dv_w04",
+    "dv_w08"
+   ]
+  },
+  "lab:concept/industry-classification": {
+   "ko": "산업 분류",
+   "en": "industry classification GICS and X-Tech",
+   "type": "Concept",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:concept/visual-encoding": {
+   "ko": "시각 부호화와 정확도 순위",
+   "en": "visual encoding and perceptual accuracy",
+   "type": "Concept",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:concept/average-trap": {
+   "ko": "차트 선택과 평균의 함정",
+   "en": "chart selection and the trap of averages",
+   "type": "Concept",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:concept/dashboard-ethics": {
+   "ko": "산업별 대시보드 원칙",
+   "en": "industry dashboards and ethics",
+   "type": "Concept",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/gics": {
+   "ko": "GICS",
+   "en": "gics",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/x-tech": {
+   "ko": "X-Tech",
+   "en": "x tech",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/visual-variable": {
+   "ko": "시각 변수",
+   "en": "visual variable",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/diverging-palette": {
+   "ko": "발산형",
+   "en": "diverging palette",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/treemap": {
+   "ko": "트리맵",
+   "en": "treemap",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/sankey": {
+   "ko": "샌키",
+   "en": "sankey",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:term/dashboard": {
+   "ko": "대시보드",
+   "en": "dashboard",
+   "type": "Term",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:work/w04_slides": {
+   "ko": "数据可视化 CHAPTER 01 · 从一张张图读懂不同产业 (중국어판 학생 교재, 47쪽)",
+   "en": "数据可视化 CHAPTER 01 · 从一张张图读懂不同产业 (중국어판 학생 교재, 47쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:work/w04_dash": {
+   "ko": "第4周 · 按产业的数据可视化 仪表盘 (중국어판 HTML)",
+   "en": "第4周 · 按产业的数据可视化 仪表盘 (중국어판 HTML)",
+   "type": "Work",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:work/gics": {
+   "ko": "Global Industry Classification Standard (GICS)",
+   "en": "Global Industry Classification Standard (GICS)",
+   "type": "Work",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:work/bertin1967": {
+   "ko": "Sémiologie graphique",
+   "en": "Sémiologie graphique",
+   "type": "Work",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:work/tukey1977": {
+   "ko": "Exploratory Data Analysis",
+   "en": "Exploratory Data Analysis",
+   "type": "Work",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:method/dv_w04-fly": {
+   "ko": "상자그림 + 30분 기준선",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:method/dv_w04-robo": {
+   "ko": "평균 막대 두 개",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w04"
+   ]
+  },
+  "lab:topic/dv-w08": {
+   "ko": "다섯 문항으로 다지는 시각화 기본기",
+   "en": "Midterm assignment: five questions on visualization",
+   "type": "Topic",
+   "pages": [
+    "dv_w08",
+    "dv_w09",
+    "dv_w10"
+   ]
+  },
+  "lab:concept/chart-traps": {
+   "ko": "좋은 차트 5원칙과 나쁜 차트 5함정",
+   "en": "good chart principles and bad chart traps",
+   "type": "Concept",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:concept/python-viz-libraries": {
+   "ko": "파이썬 시각화 라이브러리",
+   "en": "python visualization libraries",
+   "type": "Concept",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:concept/run-and-check": {
+   "ko": "코드 실행과 검수",
+   "en": "running and checking chart code",
+   "type": "Concept",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:concept/diagnose-flawed-charts": {
+   "ko": "상황별 차트 선택과 오류 차트 진단",
+   "en": "chart choice and diagnosing flawed charts",
+   "type": "Concept",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:term/trap-truncated-axis": {
+   "ko": "T1",
+   "en": "trap truncated axis",
+   "type": "Term",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:term/dual-axis": {
+   "ko": "이중축",
+   "en": "dual axis",
+   "type": "Term",
+   "pages": [
+    "dv_w08",
+    "dv_w10"
+   ]
+  },
+  "lab:term/confounder": {
+   "ko": "숨은 변수",
+   "en": "confounder",
+   "type": "Term",
+   "pages": [
+    "dv_w08",
+    "dv_w10"
+   ]
+  },
+  "lab:term/growth-rate": {
+   "ko": "증가율",
+   "en": "growth rate",
+   "type": "Term",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:term/multiple-response": {
+   "ko": "복수 응답",
+   "en": "multiple response",
+   "type": "Term",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:work/assignment": {
+   "ko": "数据可视化 课程作业 (중간고사 과제, 중·영·한, 6쪽)",
+   "en": "数据可视化 课程作业 (중간고사 과제, 중·영·한, 6쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:work/review_ko": {
+   "ko": "중간고사 과제 Review — 현장에 적용하는 시각화 (59쪽)",
+   "en": "중간고사 과제 Review — 현장에 적용하는 시각화 (59쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w08",
+    "dv_w09"
+   ]
+  },
+  "lab:work/nbs_cn": {
+   "ko": "National Bureau of Statistics of China (English)",
+   "en": "National Bureau of Statistics of China (English)",
+   "type": "Work",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:work/yt_ref": {
+   "ko": "시각화 참고 영상 (강의에서 소개)",
+   "en": "시각화 참고 영상 (강의에서 소개)",
+   "type": "Work",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:method/dv_w08-fly": {
+   "ko": "축을 0부터 다시 그리고 읽기",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:method/dv_w08-robo": {
+   "ko": "보이는 막대 높이 그대로 읽기",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w08"
+   ]
+  },
+  "lab:topic/dv-w09": {
+   "ko": "차트는 결정으로 끝난다",
+   "en": "Midterm review: visualization applied in the field",
+   "type": "Topic",
+   "pages": [
+    "dv_w09",
+    "dv_w10"
+   ]
+  },
+  "lab:concept/three-sentences": {
+   "ko": "세 문장 해석",
+   "en": "what so-what now-what",
+   "type": "Concept",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:concept/marketing-charts": {
+   "ko": "마케팅 분석 차트",
+   "en": "funnel RFM cohort and basket analysis",
+   "type": "Concept",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:concept/retail-vs-finance": {
+   "ko": "분야별 대시보드 비교",
+   "en": "retail vs finance dashboards",
+   "type": "Concept",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:concept/kpi-dashboard": {
+   "ko": "KPI 대시보드 설계와 모형 점검",
+   "en": "KPI dashboard design and model checking",
+   "type": "Concept",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:term/funnel": {
+   "ko": "깔때기",
+   "en": "funnel",
+   "type": "Term",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:term/cohort": {
+   "ko": "코호트",
+   "en": "cohort",
+   "type": "Term",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:term/lift": {
+   "ko": "향상도",
+   "en": "lift",
+   "type": "Term",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:term/conversion-rate": {
+   "ko": "전환율",
+   "en": "conversion rate",
+   "type": "Term",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:term/average-order-value": {
+   "ko": "객단가",
+   "en": "average order value",
+   "type": "Term",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:term/moving-average": {
+   "ko": "이동평균",
+   "en": "moving average",
+   "type": "Term",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:work/field2_zh": {
+   "ko": "系列 02 · 现场应用的可视化 (2) (중국어판, 24쪽)",
+   "en": "系列 02 · 现场应用的可视化 (2) (중국어판, 24쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:work/cafe_sim": {
+   "ko": "咖啡馆营收模拟器 (카페 월 매출 시뮬레이터, Qwen 제작 HTML)",
+   "en": "咖啡馆营收模拟器 (카페 월 매출 시뮬레이터, Qwen 제작 HTML)",
+   "type": "Work",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:work/dash_cmp": {
+   "ko": "业务仪表盘对比分析 (리테일 vs 리스크 대시보드 비교 HTML)",
+   "en": "业务仪表盘对比分析 (리테일 vs 리스크 대시보드 비교 HTML)",
+   "type": "Work",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:work/knaflic2015": {
+   "ko": "Storytelling with Data",
+   "en": "Storytelling with Data",
+   "type": "Work",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:method/dv_w09-fly": {
+   "ko": "주말 하루 평균 +56%",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:method/dv_w09-robo": {
+   "ko": "토요일 +62%",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w09"
+   ]
+  },
+  "lab:topic/dv-w10": {
+   "ko": "건강검진 3만 명을 차트 한 장으로",
+   "en": "Industry visualization 3: healthcare check-up data",
+   "type": "Topic",
+   "pages": [
+    "dv_w10",
+    "dv_w11"
+   ]
+  },
+  "lab:concept/health-data-check": {
+   "ko": "의료 데이터 점검",
+   "en": "health data checking and BMI",
+   "type": "Concept",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:concept/clinical-thresholds": {
+   "ko": "기준선이 있는 분포 읽기",
+   "en": "comparison and distribution with clinical thresholds",
+   "type": "Concept",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:concept/confounding": {
+   "ko": "상관과 숨은 변수",
+   "en": "correlation and confounding by age",
+   "type": "Concept",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:concept/reverse-learning": {
+   "ko": "구성·시계열과 함정 재현",
+   "en": "composition time series and reproducing traps",
+   "type": "Concept",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:concept/app-prompt-rules": {
+   "ko": "앱 만들기 프롬프트 규칙",
+   "en": "prompt rules for a beginner-readable Colab app",
+   "type": "Concept",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:term/bmi": {
+   "ko": "BMI",
+   "en": "bmi",
+   "type": "Term",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:term/fasting-glucose": {
+   "ko": "공복혈당",
+   "en": "fasting glucose",
+   "type": "Term",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:term/reference-line": {
+   "ko": "기준선",
+   "en": "reference line",
+   "type": "Term",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:term/small-multiples": {
+   "ko": "small multiples",
+   "en": "small multiples",
+   "type": "Term",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:term/codebook": {
+   "ko": "코드표",
+   "en": "codebook",
+   "type": "Term",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:work/w10_slides": {
+   "ko": "산업별 데이터시각화 · 헬스케어/의료 — 건강검진 3만 명을 차트 한 장으로 (40쪽)",
+   "en": "산업별 데이터시각화 · 헬스케어/의료 — 건강검진 3만 명을 차트 한 장으로 (40쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:work/mock": {
+   "ko": "건강검진 모의 데이터 health_2020~2024.csv · codebook.csv (재생성판)",
+   "en": "건강검진 모의 데이터 health_2020~2024.csv · codebook.csv (재생성판)",
+   "type": "Work",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:work/w10_prompt": {
+   "ko": "10주차 프롬프트 — 프롬프트로 앱 만들기 (한·중)",
+   "en": "10주차 프롬프트 — 프롬프트로 앱 만들기 (한·중)",
+   "type": "Work",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:work/nhis": {
+   "ko": "국민건강보험공단_건강검진정보 (모의 데이터의 원형)",
+   "en": "국민건강보험공단_건강검진정보 (모의 데이터의 원형)",
+   "type": "Work",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:method/dv_w10-fly": {
+   "ko": "히스토그램 + 기준선 126",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:method/dv_w10-robo": {
+   "ko": "평균 한 줄",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w10"
+   ]
+  },
+  "lab:topic/dv-w11": {
+   "ko": "좋은 차트는 이어 묻는 프롬프트에서 나온다",
+   "en": "Industry visualization 4: smart city and logistics",
+   "type": "Topic",
+   "pages": [
+    "dv_w11",
+    "dv_w12"
+   ]
+  },
+  "lab:concept/when-where-howmuch": {
+   "ko": "시간·장소·크기로 읽기",
+   "en": "when where how much",
+   "type": "Concept",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:concept/prompt-chain": {
+   "ko": "프롬프트 사슬",
+   "en": "prompt chaining",
+   "type": "Concept",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:concept/weekday-hour-heatmap": {
+   "ko": "시간 교차 히트맵",
+   "en": "weekday by hour heatmap",
+   "type": "Concept",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:concept/pareto-chart": {
+   "ko": "파레토 차트",
+   "en": "pareto chart for delay causes",
+   "type": "Concept",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:term/pareto-chart": {
+   "ko": "파레토",
+   "en": "pareto chart",
+   "type": "Term",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:term/cumulative-share": {
+   "ko": "누적 비율",
+   "en": "cumulative share",
+   "type": "Term",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:term/prompt-chaining": {
+   "ko": "프롬프트 사슬",
+   "en": "prompt chaining",
+   "type": "Term",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:term/bubble-map": {
+   "ko": "버블 지도",
+   "en": "bubble map",
+   "type": "Term",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:term/annotation": {
+   "ko": "주석",
+   "en": "annotation",
+   "type": "Term",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:work/w11_slides": {
+   "ko": "스마트시티 · 물류 데이터 시각화 — 좋은 차트는 이어 묻는 프롬프트에서 나온다 (40쪽)",
+   "en": "스마트시티 · 물류 데이터 시각화 — 좋은 차트는 이어 묻는 프롬프트에서 나온다 (40쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:work/qwen": {
+   "ko": "Qwen Chat",
+   "en": "Qwen Chat",
+   "type": "Work",
+   "pages": [
+    "dv_w11",
+    "dv_w12"
+   ]
+  },
+  "lab:method/dv_w11-fly": {
+   "ko": "다섯 번 이어 묻기",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:method/dv_w11-robo": {
+   "ko": "한 번에 일곱 개",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w11"
+   ]
+  },
+  "lab:topic/dv-w12": {
+   "ko": "차트 셋이 함께 움직이면 판이 된다",
+   "en": "Dashboards with Google AI Studio across industries",
+   "type": "Topic",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:concept/dashboard-filter": {
+   "ko": "대시보드와 필터",
+   "en": "dashboard and linked filters",
+   "type": "Concept",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:concept/tool-split": {
+   "ko": "도구 나누기와 대시보드 사슬",
+   "en": "tool split and dashboard prompt chain",
+   "type": "Concept",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:concept/industry-dashboards": {
+   "ko": "산업별 대시보드",
+   "en": "industry dashboards healthcare medical fintech",
+   "type": "Concept",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:concept/answering-title": {
+   "ko": "답하는 제목",
+   "en": "titles that answer the question",
+   "type": "Concept",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:term/filter": {
+   "ko": "필터",
+   "en": "filter",
+   "type": "Term",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:term/google-ai-studio": {
+   "ko": "Google AI Studio",
+   "en": "google ai studio",
+   "type": "Term",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:term/gauge": {
+   "ko": "게이지",
+   "en": "gauge",
+   "type": "Term",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:term/anomalous-transaction": {
+   "ko": "이상 거래",
+   "en": "anomalous transaction",
+   "type": "Term",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:term/achievement-rate": {
+   "ko": "달성률",
+   "en": "achievement rate",
+   "type": "Term",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:work/w12_slides": {
+   "ko": "산업별 데이터 시각화 — Google AI Studio로 대시보드를 완성하는 따라하기 실습 (40쪽)",
+   "en": "산업별 데이터 시각화 — Google AI Studio로 대시보드를 완성하는 따라하기 실습 (40쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:work/aistudio": {
+   "ko": "Google AI Studio",
+   "en": "Google AI Studio",
+   "type": "Work",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:method/dv_w12-fly": {
+   "ko": "차트 셋 + 필터 하나",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w12"
+   ]
+  },
+  "lab:method/dv_w12-robo": {
+   "ko": "필터 없는 차트 스무 장",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w12"
+   ]
+  }
+ }
+}
