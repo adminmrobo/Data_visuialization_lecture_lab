@@ -844,7 +844,8 @@ var REL={prerequisiteOf:'먼저 알아야 함',hasLimitation:'한계',addressedB
   supersededBy:'개정으로 대체',measuredBy:'지표로 잼',appliesIn:'적용 관할'};
 function tl(t){return (TYPE[t]||[t])[0];} function tc(t){return (TYPE[t]||[0,'#9d9bb8'])[1];}
 function pn(p){return p.replace(/^lab:/,'');}
-function lab(n){return n.label?(n.label.ko||n.label.en):n.id;}
+var KL=((document.documentElement.lang||'ko')+'').slice(0,2);function loc(o){return o?(o[KL]||o.ko||o.en||''):'';}
+function lab(n){return n.label?loc(n.label):n.id;}
 
 /* ── 변환기 ─────────────────────────────────────────── */
 var NS='urn:lab:';
@@ -1088,7 +1089,7 @@ function mountIndex(root){
   var lg=root.querySelector('.legend'); types.forEach(function(t){lg.insertAdjacentHTML('beforeend','<span><i style="background:'+tc(t)+'"></i>'+tl(t)+'</span>');});
   lg.insertAdjacentHTML('beforeend','<span>── 화살표: 관계 방향</span>');
   inp.addEventListener('input',function(){q=inp.value.trim().toLowerCase(); render();});
-  function hay(n){return [n.id,n.label&&n.label.ko,n.label&&n.label.en,n.definition&&n.definition.ko,n.altLabel&&[].concat(n.altLabel.ko||[]).join(' ')].join(' ').toLowerCase();}
+  function hay(n){return [n.id,n.label&&n.label.ko,n.label&&n.label.en,n.definition&&loc(n.definition),n.altLabel&&[].concat(n.altLabel.ko||[]).join(' ')].join(' ').toLowerCase();}
   function relHtml(n){
     var h=[]; OUT[n.id].forEach(function(e){ var o=N[e.o]; var nm=o?lab(o):((KG.topicLabels||{})[e.o]||e.o.replace(/^lab:(topic|area)\//,'').replace(/-/g,' '));
       h.push('<span class="rel" data-go="'+esc(o?e.o:'')+'">'+esc(REL[pn(e.p)]||pn(e.p))+' → '+esc(nm)+'</span>');});
@@ -1101,7 +1102,7 @@ function mountIndex(root){
       var alt=n.altLabel&&n.altLabel.ko?' · '+[].concat(n.altLabel.ko).join(', '):'';
       var src=(n.source||[]).length?' · 출처 '+n.source.length:'';
       d.innerHTML='<div class="h"><span class="ty" style="background:'+tc(n.type)+'">'+tl(n.type)+'</span><span class="nm">'+esc(lab(n))+'</span><span class="en">'+esc((n.label&&n.label.en)||'')+esc(alt)+'</span></div>'+
-        (n.definition?'<p class="df">'+esc(n.definition.ko)+'</p>':'')+
+        (n.definition?'<p class="df">'+esc(loc(n.definition))+'</p>':'')+
         '<div class="more">'+(n.anchor?'<a href="'+n.anchor+'">설명 보러 가기 →</a>':'')+' <span>'+esc(src)+(n.confidence&&n.confidence!=='high'?' · 확신도 '+n.confidence:'')+'</span><div style="margin-top:6px">'+relHtml(n)+'</div></div>';
       d.onclick=function(ev){var g=ev.target.closest('.rel'); if(g){ if(g.dataset.go)pick(g.dataset.go,true); ev.stopPropagation(); return;}
         if(ev.target.tagName==='A')return; pick(n.id);};
@@ -1168,7 +1169,7 @@ function mountIndex(root){
   lad.innerHTML=html.length?html.join(''):'<span class="note">이 페이지에는 선수 개념 사슬이 없다.</span>';
   lad.addEventListener('click',function(ev){var s=ev.target.closest('[data-go]'); if(s)pick(s.dataset.go,true);});
   var qs=root.querySelector('.qs'); KG.nodes.filter(function(n){return n.type==='Question';}).forEach(function(n){
-    var li=el('li',null,'<b>'+esc(lab(n))+'</b>'+(n.definition?' — '+esc(n.definition.ko):'')+(n.confidence==='low'?' <span class="badge no">확인 필요</span>':'')+(n.anchor?' <a href="'+n.anchor+'" style="color:var(--gfp,#5ee39c)">본문</a>':''));
+    var li=el('li',null,'<b>'+esc(lab(n))+'</b>'+(n.definition?' — '+esc(loc(n.definition)):'')+(n.confidence==='low'?' <span class="badge no">확인 필요</span>':'')+(n.anchor?' <a href="'+n.anchor+'" style="color:var(--gfp,#5ee39c)">본문</a>':''));
     qs.appendChild(li);});
   render();
 }

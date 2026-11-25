@@ -497,14 +497,14 @@ LAB.Pick($('#w2pick'),[
  {q:'“결제 금액은 어느 구간에 몰려 있나?”',a:4,why:'“어디에·몰려”는 분포 → 히스토그램입니다.'}],['막대(비교)','꺾은선(추세)','도넛(구성)','산점도(관계)','히스토그램(분포)']);
 var day={};OK.forEach(function(r){day[r.date]=(day[r.date]||0)+r.amount;});var days=Object.keys(day).sort();
 var ch={};OK.forEach(function(r){ch[r.channel]=(ch[r.channel]||0)+r.amount;});
-var FIVE={비교:function(el){V.bar(el,{labels:CITY.map(function(r){return r[0];}),values:CITY.map(function(r){return r[1];}),hl:0,title:'비교 — 도시별 결제 합계 (정렬 막대)',h:290});return '베이징 245,996이 1위, 청두 130,592가 5위. 약 1.9배.';},
- 추세:function(el){var vals=days.map(function(d){return day[d];}),mx=vals.indexOf(Math.max.apply(null,vals));V.line(el,{labels:days.map(function(d){return d.slice(5);}),series:[{name:'일별 합계',values:vals}],hl:{s:0,i:mx},y0:0,title:'추세 — 날짜별 결제 합계 (꺾은선)',h:290});return '최고는 '+days[mx]+'(금) '+V.nf(vals[mx])+'. 하루 평균 '+V.nf(vals.reduce(function(a,b){return a+b;},0)/vals.length)+'의 약 1.5배.';},
- 구성:function(el){var t=ch.app+ch.web+ch.offline;V.pie(el,{labels:['앱','오프라인','웹'],values:[ch.app,ch.offline,ch.web],donut:true,center:'결측 제외',title:'구성 — 채널별 결제 비중 (도넛)'});return '앱 '+(100*ch.app/t).toFixed(1)+'% · 오프라인 '+(100*ch.offline/t).toFixed(1)+'% · 웹 '+(100*ch.web/t).toFixed(1)+'%. 항목 3개, 합 100%라 도넛이 맞는 경우.';},
- 관계:function(el){var mxi=0;OK.forEach(function(r,i){if(r.amount>OK[mxi].amount)mxi=i;});V.scatter(el,{pts:OK.map(function(r){return [r.items,r.amount];}),jitter:.3,fit:true,hl:[mxi],xlab:'상품 수 (items)',ylab:'결제 금액',title:'관계 — 상품 수 × 결제 금액 (산점도)',h:310,alpha:.45});var s=V.stats(OK.map(function(r){return r.items;}),OK.map(function(r){return r.amount;}));return '상관계수 r ≈ '+s.r.toFixed(2)+'. 앰버 점은 가장 큰 결제(3월 23일 청두 웹, 상품 9개, '+V.nf(OK[mxi].amount)+').';},
- 분포:function(el){V.hist(el,{values:OK.map(function(r){return r.amount;}),lo:0,hi:5000,bin:500,hlTop:true,unit:'결제 금액 (구간 폭 500)',title:'분포 — 결제 금액 (히스토그램)',h:280});return '500~1,000 구간이 가장 많고(311건), 오른쪽으로 꼬리가 길다. 평균 1,132 > 중앙값 960.';}};
-$('#w2five').innerHTML=Object.keys(FIVE).map(function(k){return '<button type="button" class="bt" data-k="'+k+'">'+k+'</button>';}).join('');
+var FIVE={cmp:function(el){V.bar(el,{labels:CITY.map(function(r){return r[0];}),values:CITY.map(function(r){return r[1];}),hl:0,title:'비교 — 도시별 결제 합계 (정렬 막대)',h:290});return '베이징 245,996이 1위, 청두 130,592가 5위. 약 1.9배.';},
+ trend:function(el){var vals=days.map(function(d){return day[d];}),mx=vals.indexOf(Math.max.apply(null,vals));V.line(el,{labels:days.map(function(d){return d.slice(5);}),series:[{name:'일별 합계',values:vals}],hl:{s:0,i:mx},y0:0,title:'추세 — 날짜별 결제 합계 (꺾은선)',h:290});return '최고는 '+days[mx]+'(금) '+V.nf(vals[mx])+'. 하루 평균 '+V.nf(vals.reduce(function(a,b){return a+b;},0)/vals.length)+'의 약 1.5배.';},
+ comp:function(el){var t=ch.app+ch.web+ch.offline;V.pie(el,{labels:['앱','오프라인','웹'],values:[ch.app,ch.offline,ch.web],donut:true,center:'결측 제외',title:'구성 — 채널별 결제 비중 (도넛)'});return '앱 '+(100*ch.app/t).toFixed(1)+'% · 오프라인 '+(100*ch.offline/t).toFixed(1)+'% · 웹 '+(100*ch.web/t).toFixed(1)+'%. 항목 3개, 합 100%라 도넛이 맞는 경우.';},
+ rel:function(el){var mxi=0;OK.forEach(function(r,i){if(r.amount>OK[mxi].amount)mxi=i;});V.scatter(el,{pts:OK.map(function(r){return [r.items,r.amount];}),jitter:.3,fit:true,hl:[mxi],xlab:'상품 수 (items)',ylab:'결제 금액',title:'관계 — 상품 수 × 결제 금액 (산점도)',h:310,alpha:.45});var s=V.stats(OK.map(function(r){return r.items;}),OK.map(function(r){return r.amount;}));return '상관계수 r ≈ '+s.r.toFixed(2)+'. 앰버 점은 가장 큰 결제(3월 23일 청두 웹, 상품 9개, '+V.nf(OK[mxi].amount)+').';},
+ dist:function(el){V.hist(el,{values:OK.map(function(r){return r.amount;}),lo:0,hi:5000,bin:500,hlTop:true,unit:'결제 금액 (구간 폭 500)',title:'분포 — 결제 금액 (히스토그램)',h:280});return '500~1,000 구간이 가장 많고(311건), 오른쪽으로 꼬리가 길다. 평균 1,132 > 중앙값 960.';}};
+var FIVEL={cmp:'비교',trend:'추세',comp:'구성',rel:'관계',dist:'분포'};$('#w2five').innerHTML=Object.keys(FIVE).map(function(k){return '<button type="button" class="bt" data-k="'+k+'">'+FIVEL[k]+'</button>';}).join('');
 function five(k){$$('#w2five button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.k===k));});$('#w2fo').textContent=FIVE[k]($('#w2fv'));}
-$$('#w2five button').forEach(function(b){b.onclick=function(){five(b.dataset.k);};});five('비교');
+$$('#w2five button').forEach(function(b){b.onclick=function(){five(b.dataset.k);};});five('cmp');
 /* 4. 프롬프트 4요소 */
 var EL={role:'너는 데이터 시각화 분석가야.',data:'코랩에 payments.csv가 있어. 열: date, hour, city, channel, items, amount, is_new_user.',goal:'도시별 amount 합계를 세로 막대 그래프로, 큰 값부터 정렬해서 그려 줘.',out:'색은 #1E3A8A, 위·오른쪽 테두리선은 없애 줘. 한국어로, 코드 한 줄마다 한 문장으로 설명해 줘.'};
 function drawP(){var on={};$$('#w2el input').forEach(function(c){on[c.dataset.k]=c.checked;});
@@ -846,7 +846,8 @@ var REL={prerequisiteOf:'먼저 알아야 함',hasLimitation:'한계',addressedB
   supersededBy:'개정으로 대체',measuredBy:'지표로 잼',appliesIn:'적용 관할'};
 function tl(t){return (TYPE[t]||[t])[0];} function tc(t){return (TYPE[t]||[0,'#9d9bb8'])[1];}
 function pn(p){return p.replace(/^lab:/,'');}
-function lab(n){return n.label?(n.label.ko||n.label.en):n.id;}
+var KL=((document.documentElement.lang||'ko')+'').slice(0,2);function loc(o){return o?(o[KL]||o.ko||o.en||''):'';}
+function lab(n){return n.label?loc(n.label):n.id;}
 
 /* ── 변환기 ─────────────────────────────────────────── */
 var NS='urn:lab:';
@@ -1090,7 +1091,7 @@ function mountIndex(root){
   var lg=root.querySelector('.legend'); types.forEach(function(t){lg.insertAdjacentHTML('beforeend','<span><i style="background:'+tc(t)+'"></i>'+tl(t)+'</span>');});
   lg.insertAdjacentHTML('beforeend','<span>── 화살표: 관계 방향</span>');
   inp.addEventListener('input',function(){q=inp.value.trim().toLowerCase(); render();});
-  function hay(n){return [n.id,n.label&&n.label.ko,n.label&&n.label.en,n.definition&&n.definition.ko,n.altLabel&&[].concat(n.altLabel.ko||[]).join(' ')].join(' ').toLowerCase();}
+  function hay(n){return [n.id,n.label&&n.label.ko,n.label&&n.label.en,n.definition&&loc(n.definition),n.altLabel&&[].concat(n.altLabel.ko||[]).join(' ')].join(' ').toLowerCase();}
   function relHtml(n){
     var h=[]; OUT[n.id].forEach(function(e){ var o=N[e.o]; var nm=o?lab(o):((KG.topicLabels||{})[e.o]||e.o.replace(/^lab:(topic|area)\//,'').replace(/-/g,' '));
       h.push('<span class="rel" data-go="'+esc(o?e.o:'')+'">'+esc(REL[pn(e.p)]||pn(e.p))+' → '+esc(nm)+'</span>');});
@@ -1103,7 +1104,7 @@ function mountIndex(root){
       var alt=n.altLabel&&n.altLabel.ko?' · '+[].concat(n.altLabel.ko).join(', '):'';
       var src=(n.source||[]).length?' · 출처 '+n.source.length:'';
       d.innerHTML='<div class="h"><span class="ty" style="background:'+tc(n.type)+'">'+tl(n.type)+'</span><span class="nm">'+esc(lab(n))+'</span><span class="en">'+esc((n.label&&n.label.en)||'')+esc(alt)+'</span></div>'+
-        (n.definition?'<p class="df">'+esc(n.definition.ko)+'</p>':'')+
+        (n.definition?'<p class="df">'+esc(loc(n.definition))+'</p>':'')+
         '<div class="more">'+(n.anchor?'<a href="'+n.anchor+'">설명 보러 가기 →</a>':'')+' <span>'+esc(src)+(n.confidence&&n.confidence!=='high'?' · 확신도 '+n.confidence:'')+'</span><div style="margin-top:6px">'+relHtml(n)+'</div></div>';
       d.onclick=function(ev){var g=ev.target.closest('.rel'); if(g){ if(g.dataset.go)pick(g.dataset.go,true); ev.stopPropagation(); return;}
         if(ev.target.tagName==='A')return; pick(n.id);};
@@ -1170,7 +1171,7 @@ function mountIndex(root){
   lad.innerHTML=html.length?html.join(''):'<span class="note">이 페이지에는 선수 개념 사슬이 없다.</span>';
   lad.addEventListener('click',function(ev){var s=ev.target.closest('[data-go]'); if(s)pick(s.dataset.go,true);});
   var qs=root.querySelector('.qs'); KG.nodes.filter(function(n){return n.type==='Question';}).forEach(function(n){
-    var li=el('li',null,'<b>'+esc(lab(n))+'</b>'+(n.definition?' — '+esc(n.definition.ko):'')+(n.confidence==='low'?' <span class="badge no">확인 필요</span>':'')+(n.anchor?' <a href="'+n.anchor+'" style="color:var(--gfp,#5ee39c)">본문</a>':''));
+    var li=el('li',null,'<b>'+esc(lab(n))+'</b>'+(n.definition?' — '+esc(loc(n.definition)):'')+(n.confidence==='low'?' <span class="badge no">확인 필요</span>':'')+(n.anchor?' <a href="'+n.anchor+'" style="color:var(--gfp,#5ee39c)">본문</a>':''));
     qs.appendChild(li);});
   render();
 }

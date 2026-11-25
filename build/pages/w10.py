@@ -208,7 +208,7 @@ duel=dict(q='재검 안내 대상은 몇 명인가', step=1,
  fly_pick='히스토그램 + 기준선 126', fly_line='평균 말고 꼬리를 세. 126 오른쪽이 몇 명이야?',
  robo_pick='평균 한 줄', robo_line='평균 93.9! 기준 아래니까 다들 괜찮아!',
  metric='찾아낸 재검 대상 인원',
- run='var H=JSON.parse(HSUM);return {fly:H.glu.n126,robo:0,flyTxt:LAB.nf(H.glu.n126)+"명",roboTxt:"0명",p:H.glu.ge126,n:H.glu.n};',
+ run='var H=HOBJ;return {fly:H.glu.n126,robo:0,flyTxt:LAB.nf(H.glu.n126)+"명",roboTxt:"0명",p:H.glu.ge126,n:H.glu.n};',
  announce='return "혈당 값이 있는 "+LAB.nf(r.n)+"명 중 126 이상은 "+r.flyTxt+"("+r.p+"%)예요. 평균만 본 주판봇 조는 재검 대상을 한 명도 찾지 못했어요.";',
  verdict='if(res==="F")return "초파리 조 승. 평균은 꼬리를 숨긴다. 의료 차트에서 숨겨진 꼬리는 <b>사람</b>이다. Now What: 평균 기반 메시지 대신 “126 이상 구간” 대상 재검 안내를 먼저.";return "결과를 다시 보자.";',
  after='<p style="font-size:14px;color:#5b6874">인원은 모의 데이터에서 직접 센 값입니다. 모의 데이터의 숫자를 실제 통계처럼 인용하지 않습니다.</p>'),
@@ -245,8 +245,8 @@ gloss={'BMI': ('BMI', '지표', '체중(kg) ÷ 키(m)². 이 수업에서는 25 
 models=['건강검진 데이터는 공공데이터와 같은 모양의 수업용 모의 데이터이며 실제 개인 기록이 아닙니다.', '산점도는 3만 명 중 무작위 700명 표본(random_state=42)입니다.', '이중축 예시는 함정을 보여 주려고 일부러 만든 그림(T3 예시)입니다.'],
 cover_alt='디자인 연구실 건물의 한 층에 불이 켜지고, 이젤에 히스토그램과 빨간 기준선이 그려진 픽셀 표지',
 toc_faces=[('asst', 'firm'), ('x1', 'think'), ('x2', 'smile')],
-data='var HSUM=' + json.dumps(_H) + ';',
-js='''var V=LAB.VIZ,$=LAB.$,$$=LAB.$$,H=JSON.parse(HSUM);
+data='var HOBJ=' + json.dumps(json.loads(_H), ensure_ascii=False) + ';',
+js='''var V=LAB.VIZ,$=LAB.$,$$=LAB.$$,H=HOBJ;
 /* 1. 전처리 전후 */
 function t1(cl){$('#w10raw').setAttribute('aria-pressed',String(!cl));$('#w10cl').setAttribute('aria-pressed',String(cl));
  var rows=cl?[['허리둘레 (cm)','314 + 12 = 326','55.6','149.8 이하','50~150 밖 12건 비움'],['수축기 혈압 (mmHg)','159 + 7 = 166','70 이상','250 이하','70~250 밖 7건 비움'],['공복혈당 (mg/dL)','254 + 12 = 266','50 이상','291','50~500 밖 12건 비움']]
