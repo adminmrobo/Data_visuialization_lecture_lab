@@ -379,6 +379,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style><link rel="alternate" hreflang="ko" href="w02_chart-theory.html"><link rel="alternate" hreflang="zh-CN" href="w02_chart-theory.zh.html"><link rel="alternate" hreflang="x-default" href="w02_chart-theory.html">
 </head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
@@ -395,9 +417,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>단순성 — 차트 정크, 접시 위 장식을 치우자</h2><span class="tag m">개념: 차트 정크와 데이터-잉크 비율</span><span class="tag a">방법: 장식을 하나씩 꺼 보기</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — <b>①단순성</b> → ②정확성 → ③목적성과 다섯 갈래 → ④첫 실습</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 주판봇 조 차트에는 입체 효과, 그라데이션 배경, 풍경 사진, 촘촘한 세로 격자, 같은 뜻의 범례 두 개가 붙어 있습니다. 회의에서 이 차트를 3초 보여 주면, 사람들은 무엇을 기억할까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 차트를 “보고서용으로 예쁘게” 만들라고 하면 입체 효과와 색이 늘어납니다.</li><li><b>앞 방법의 한계</b> — 장식은 데이터와 상관없는 잉크입니다. 입체 효과는 거리감 때문에 비율까지 다르게 보이게 합니다.</li><li><b>해법</b> — <b>데이터-잉크 비율</b>을 높입니다 — 데이터를 나타내는 잉크만 남기고 나머지를 지웁니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 메뉴를 보려는 손님에게 접시 가장자리 꽃무늬는 필요 없습니다. 음식(데이터)만 깔끔하게 보이면 됩니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 데이터-잉크 “비율”이라는데, 잉크를 어떻게 재요?</p></div><p class="school">학교 수학으로 보면: 초등 분수, 중학교 비율</p><p><b>박사</b> 정확히 재는 공식이라기보다 “전체 잉크 중 데이터에 쓴 몫”이라는 생각의 틀이에요. 분수로 쓰면 이렇습니다.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>데이터에 쓴 잉크</td><td>막대·선·점처럼 숫자를 나타내는 부분</td></tr><tr><td>÷ 전체 잉크</td><td>장식·격자·배경까지 포함한 모든 그림</td></tr><tr><td>= 비율 (0~1)</td><td>1에 가까울수록 데이터만 남은 차트</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>막대 잉크 50, 장식 잉크 50이면 50 ÷ (50+50) = <b>0.5</b><br>장식을 40만큼 지우면 50 ÷ (50+10) ≈ <b>0.83</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 데이터는 하나도 안 건드렸는데 비율만 올라가네요. 지운 건 장식뿐이고요.</p></div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>레스토랑 접시: 음식 주위의 꽃·소스 장식·옛날 사진은 메뉴를 고르는 데 도움이 되지 않습니다.</p></div><div><h4>시각화에서는</h4><p>정크의 다섯 얼굴: ① 입체 효과 ② 그라데이션·그림자 ③ 상관없는 사진 ④ 촘촘한 장식 격자 ⑤ 같은 뜻의 범례 중복. 지워도 데이터는 그대로입니다.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 시각화에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>레스토랑 접시: 음식 주위의 꽃·소스 장식·옛날 사진은 메뉴를 고르는 데 도움이 되지 않습니다.</p></div><div><h4>시각화에서는</h4><p>정크의 다섯 얼굴: ① 입체 효과 ② 그라데이션·그림자 ③ 상관없는 사진 ④ 촘촘한 장식 격자 ⑤ 같은 뜻의 범례 중복. 지워도 데이터는 그대로입니다.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="doc" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">박사</span><p>아래 차트에서 장식을 하나씩 꺼 보세요. 데이터(막대 길이)는 그대로인지 확인하면서요.</p></div></div><div class="say"><img data-who="robo" data-mood="chart" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>장식을 끄면 심심해 보이잖아. 심심하면 아무도 안 봐!</p></div></div><div class="say"><img data-who="fly" data-mood="magnify" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>심심한지 아닌지 말고, 베이징이 몇 배인지 몇 초 만에 읽히는지 재 봐.</p></div></div><div class="say"><img data-who="x2" data-mood="flustered" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x2">X2</span><p>(무지개색 스위치를 조심스럽게 끈다)</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 장식 스위치를 하나씩 끄기</p><div class="chips" id="w2j"></div>
 <div id="w2jv" class="viz"></div>
@@ -411,13 +434,45 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>정확성 — 막대의 Y축은 0에서 시작한다</h2><span class="tag m">개념: 축의 정직성</span><span class="tag a">방법: 축 시작점을 움직여 보기</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①단순성 → <b>②정확성</b> → ③목적성과 다섯 갈래 → ④첫 실습</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 같은 다섯 도시 결제 합계입니다. 누군가 Y축을 0이 아니라 120,000에서 시작하게 그렸습니다. 베이징은 청두의 몇 배로 <b>보일까요?</b></div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 도시 간 차이가 작아 보이면 “차이를 키워 보이고 싶은” 마음이 생깁니다.</li><li><b>앞 방법의 한계</b> — 막대그래프는 <b>길이</b>로 값을 말합니다. 시작점을 0이 아닌 곳에 두면 길이의 비율이 실제 값의 비율과 달라집니다.</li><li><b>해법</b> — 막대·파이·도넛은 0(또는 합계 100%)을 기준으로 그립니다. 꺾은선은 변화를 보는 그림이라 0이 아니어도 됩니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 0을 잘라 낸 자로 키를 재면, 150cm와 160cm가 “두 배 차이”처럼 보입니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 축을 자르면 “보이는 배율”이 왜 바뀌어요?</p></div><p class="school">학교 수학으로 보면: 중학교 일차함수의 그래프 평행이동, 분수의 계산</p><p><b>박사</b> 막대 길이는 “값 − 시작점”입니다. 시작점이 0이면 비율이 그대로지만, 시작점을 올리면 분자와 분모에서 같은 수를 빼게 되어 비율이 커져요.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>큰 값 − 시작점</td><td>큰 막대의 화면 길이</td></tr><tr><td>작은 값 − 시작점</td><td>작은 막대의 화면 길이</td></tr><tr><td>두 길이의 나눗셈</td><td>눈에 보이는 배율</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>시작점 0: 245,996 ÷ 130,592 ≈ <b>1.9배</b><br>시작점 120,000: (245,996 − 120,000) ÷ (130,592 − 120,000) = 125,996 ÷ 10,592 ≈ <b>11.9배</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 데이터는 같은데 축 하나 바꿨더니 1.9배가 11.9배로 보이네요. 이게 축이 거짓말한다는 거군요.</p></div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>자의 0을 잘라 내고 길이만 재는 사람과 같습니다. 숫자는 맞게 읽어도 비교는 틀립니다.</p></div><div><h4>시각화에서는</h4><p>정확성 체크 세 가지: ① 막대·파이·도넛은 0부터(또는 합계 기준) ② 꺾은선은 X축이 시간 순서, Y축 0은 강제 아님 ③ 축 눈금은 데이터에 맞게 정직하게.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 시각화에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>자의 0을 잘라 내고 길이만 재는 사람과 같습니다. 숫자는 맞게 읽어도 비교는 틀립니다.</p></div><div><h4>시각화에서는</h4><p>정확성 체크 세 가지: ① 막대·파이·도넛은 0부터(또는 합계 기준) ② 꺾은선은 X축이 시간 순서, Y축 0은 강제 아님 ③ 축 눈금은 데이터에 맞게 정직하게.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="doc" data-mood="board" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">박사</span><p>막대(슬라이더)로 축 시작점을 올려 보세요. 보이는 배율과 실제 배율이 언제부터 벌어지는지 봅니다.</p></div></div><div class="say"><img data-who="robo" data-mood="wow" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>와, 축을 올리니까 베이징이 압도적이야! 이게 더 극적이잖아?</p></div></div><div class="say"><img data-who="fly" data-mood="arms" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>극적인 거랑 정직한 건 달라. 아래 실제 배율 숫자를 봐. 그대로야.</p></div></div><div class="say"><img data-who="asst" data-mood="report" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-asst">조수 하루</span><p>실제 배율은 계속 1.88배예요. 보이는 배율만 바뀌어요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 축을 자르면 무엇이 달라지나</p><div class="ctrl"><label>Y축 시작점 <input type="range" id="w2y" min="0" max="125000" step="5000" value="0"> <b id="w2yv">0</b></label><button type="button" class="bt" id="w2y0">0으로 되돌리기</button></div>
 <div id="w2yc" class="viz"></div>
 <div class="kpis" id="w2yk"></div></div>
+<div class="colab" id="cb-w02_1"><p class="cb-head">실제 화면으로 보기 — Y축이 잘린 막대와 0부터 막대</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 차트 품질을 점검하는 분석가야.<br>[데이터] payments.csv — 열: date(날짜), hour(시), city(도시), channel(app·web·offline), items(품목 수), amount(결제액, 위안), is_new_user(신규 1·기존 0). 800행.<br>[요청] 채널별 결제 건수를 막대 두 개로 나란히 그려 줘. 왼쪽은 Y축을 가장 작은 값 근처에서 시작한 잘못된 예, 오른쪽은 Y축을 0부터 시작한 바른 예. 두 그림의 1·2위 막대 길이 비를 출력해 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 채널별 결제 건수를 센다 / 统计各渠道的支付笔数
+cnt = df[&#x27;channel&#x27;].value_counts()
+print(cnt)</pre><details class="cb-more"><summary>코드 전체 보기 (16줄 더)</summary><pre class="cb-code" data-i18n-skip># 2. 그림 두 개를 나란히 만든다 / 并排创建两张图
+fig, ax = plt.subplots(1, 2, figsize=(10, 4))
+# 3. 왼쪽: Y축을 가장 작은 값 근처에서 시작한 잘못된 예 / 左图: Y 轴从最小值附近开始的错误示例
+low = cnt.min() * 0.9
+ax[0].bar(cnt.index, cnt.values, color=&#x27;#b45309&#x27;)
+ax[0].set_ylim(low, cnt.max() * 1.05)
+ax[0].set_title(&#x27;Wrong: Y axis starts at &#x27; + str(int(low)))
+ax[0].set_ylabel(&#x27;Number of payments&#x27;)
+# 4. 오른쪽: Y축을 0부터 시작한 바른 예 / 右图: Y 轴从 0 开始的正确示例
+ax[1].bar(cnt.index, cnt.values, color=&#x27;#0b7a86&#x27;)
+ax[1].set_ylim(0, cnt.max() * 1.05)
+ax[1].set_title(&#x27;Right: Y axis starts at 0&#x27;)
+# 5. 1위와 2위 막대의 눈에 보이는 길이 비와 실제 비를 비교한다 / 比较第一、第二名柱子的视觉长度比和实际比
+print(&#x27;real ratio      =&#x27;, round(cnt.iloc[0] / cnt.iloc[1], 2))
+print(&#x27;wrong-chart ratio =&#x27;, round((cnt.iloc[0] - low) / (cnt.iloc[1] - low), 2))
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+channel
+app        526
+offline    156
+web        118
+Name: count, dtype: int64
+real ratio      = 3.37
+wrong-chart ratio = 8.43</pre><img src="../assets/img/colab/w02_1_1.webp" width="938" height="416" alt="실행 결과 차트 — Y축이 잘린 막대와 0부터 막대" loading="lazy"></div><p class="cb-note">같은 숫자인데 왼쪽은 app이 web보다 몇 배나 커 보입니다. 출력된 “길이 비”를 실제 비와 비교해 보세요. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>원자료 슬라이드의 예시(서울 2,540 / 부산 1,210 …, 축 1,000~2,700)는 이 페이지에서 실제 payments.csv 값으로 바꿨습니다. 원리는 같습니다. <b>파이·도넛</b>은 다른 방식으로 정직해야 합니다 — 조각을 모두 더하면 100%여야 합니다. 결측(빈 값)을 어디에 넣을지 정하지 않으면 합계가 100%가 아닌 파이가 됩니다. 2주차에서는 결측 4%를 빼고 나머지로 100%를 계산하고, 결측 처리는 3주차에 다시 다룹니다.</p></div>
 <p class="calm">“거짓말 지수”라는 말이 어렵게 들려도, 뜻은 하나입니다. 그림 속 차이가 실제 차이보다 몇 배 커 보이나. 1이면 정직합니다.</p>
 <div class="ai-check"><h4>AI 결과 판단 코너</h4><p>AI에게 “도시별 차이가 잘 보이게 막대그래프를 그려 줘”라고 했더니, Y축이 120,000에서 시작하는 차트를 돌려줬습니다. 제목은 “베이징, 압도적 1위”. <b>확인 질문</b>: ① 막대인데 축이 0부터인가? → 아니오. ② 제목의 “압도적”이 실제 배율(1.9배)과 맞는가? → 과장. 다시 요청할 문장: “Y축을 0부터 시작하게 다시 그려 줘. 제목은 ‘도시별 결제 합계’로 중립적으로.”</p></div>
@@ -429,9 +484,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>목적성 — 질문 낱말이 차트를 고른다</h2><span class="tag m">개념: 목적별 차트 선택</span><span class="tag a">방법: 질문 → 갈래 → 차트</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①단순성 → ②정확성 → <b>③목적성과 다섯 갈래</b> → ④첫 실습</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 시아가 질문 다섯 개를 받았습니다. “어느 도시가 가장 많이?” “날짜에 따라 어떻게 변했나?” “채널별 비중은?” “상품 수가 많으면 금액도 큰가?” “금액은 어디에 몰려 있나?” 차트 다섯 개를 고를 수 있을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — “그래프 그려줘”라고만 하면 AI도 사람도 아무 차트나 고릅니다.</li><li><b>앞 방법의 한계</b> — 차트 종류는 50가지가 넘어서, 모양을 외우는 방식으로는 고를 수 없습니다.</li><li><b>해법</b> — 차트를 만들기 전에 두 가지를 정합니다: ① 누구에게 보여 주나 ② 무엇을 말하고 싶나. 그리고 질문 낱말로 <b>다섯 갈래</b> 중 하나를 고릅니다.</li></ol><div class="easy"><b>쉽게 말하면</b> “어느·더·순위”가 들리면 막대, “언제·변화”는 꺾은선, “구성·비율”은 도넛, “함께·영향”은 산점도, “어디에·몰려”는 히스토그램.</div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>길을 물을 때 “어디야?”에는 지도를, “얼마나 걸려?”에는 시간표를 보여 주는 것과 같습니다. 질문의 낱말이 보여 줄 것을 정합니다.</p></div><div><h4>시각화에서는</h4><p>비교 → 막대 · 추세 → 꺾은선 · 구성 → 파이/도넛(합 100%, 5개 이하) · 관계 → 산점도 · 분포 → 히스토그램(그룹 비교는 상자그림).</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 시각화에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>길을 물을 때 “어디야?”에는 지도를, “얼마나 걸려?”에는 시간표를 보여 주는 것과 같습니다. 질문의 낱말이 보여 줄 것을 정합니다.</p></div><div><h4>시각화에서는</h4><p>비교 → 막대 · 추세 → 꺾은선 · 구성 → 파이/도넛(합 100%, 5개 이하) · 관계 → 산점도 · 분포 → 히스토그램(그룹 비교는 상자그림).</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="sia" data-mood="explain" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">인턴 시아</span><p>초파리 조 발표를 맡았습니다. 질문 낱말에 밑줄을 긋고 차트를 고르겠습니다.</p></div></div><div class="say"><img data-who="robo" data-mood="coin" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>전부 막대로 그리면 되잖아? 막대가 제일 튼튼해!</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>“날짜에 따라”를 막대로 그리면 30개 막대가 줄 서. 흐름이 안 보여. 아래 게임으로 확인해.</p></div></div><div class="say"><img data-who="x1" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x1">X1</span><p>(……“함께”라는 낱말에 동그라미를 친다)</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 질문을 보고 차트 고르기</p><div id="w2pick"></div>
 <h3 style="margin-top:14px">같은 데이터, 다섯 갈래 — 버튼을 누르면 차트가 바뀝니다</h3>
@@ -445,9 +501,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>첫 실습 — 프롬프트 4요소와 P·R·C·O</h2><span class="tag m">개념: 프롬프트 4요소와 실습 사이클</span><span class="tag a">방법: 역할 · 데이터 · 목표 · 출력 형식</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①단순성 → ②정확성 → ③목적성과 다섯 갈래 → <b>④첫 실습</b></p>
+
 <div class="docline"><b>박사의 상황 질문</b> 모아가 Qwen에 “그래프 그려줘”라고 보냈더니 꺾은선이 나왔습니다. 원했던 건 도시별 막대였어요. 무엇이 빠졌을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — AI는 우리가 말하지 않은 것을 추측해서 채웁니다. 추측이 틀리면 엉뚱한 차트가 나옵니다.</li><li><b>앞 방법의 한계</b> — 한 번에 모든 것을 길게 쓰면 절반만 반영되고, 너무 짧게 쓰면 추측이 늘어납니다.</li><li><b>해법</b> — 프롬프트 <b>4요소</b>(역할·데이터·목표·출력 형식)를 채우고, 특히 목표에는 “무엇을 보여 줄지 + 차트 종류”를 함께 씁니다. 그리고 P·R·C·O 네 단계로 확인합니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 배달 주문서에 메뉴·주소·요청 사항·결제 방법을 다 쓰면 전화가 다시 오지 않습니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 히스토그램 “구간 폭(bin)”은 몇으로 정해요?</p></div><p class="school">학교 수학으로 보면: 초등 나눗셈, 중학교 도수분포표</p><p><b>박사</b> 전체 범위를 구간 폭으로 나누면 막대 개수가 나와요. 막대가 너무 많으면 들쭉날쭉(잡음), 너무 적으면 모양이 뭉개집니다.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>범위 (최대 − 최소)</td><td>값이 퍼져 있는 전체 길이</td></tr><tr><td>÷ 구간 폭</td><td>한 막대가 맡는 값의 폭</td></tr><tr><td>= 막대 개수</td><td>보통 5~15개 사이에서 모양을 본다</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>결제 금액 0 ~ 5,000을 폭 500으로 나누면 5,000 ÷ 500 = <b>막대 10개</b><br>폭 100이면 <b>50개</b>(들쭉날쭉), 폭 2,500이면 <b>2개</b>(모양이 사라짐)</div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 아래 막대(슬라이더)로 폭을 바꿔 보니 500 근처에서 모양이 제일 잘 보이네요.</p></div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>배달 주문서: “누가(역할) · 무엇을 보고(메뉴=데이터) · 무엇을(목표) · 어떻게(출력 형식)”.</p></div><div><h4>시각화에서는</h4><p>P(프롬프트 설계) → R(결과가 의도와 같은지 세 가지 확인: 차트 종류·열·정렬과 색) → C(“그 차트의 코드를 줘”) → O(Colab 실행 → 세 원칙 점검 → 한 문장 해석).</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 시각화에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>배달 주문서: “누가(역할) · 무엇을 보고(메뉴=데이터) · 무엇을(목표) · 어떻게(출력 형식)”.</p></div><div><h4>시각화에서는</h4><p>P(프롬프트 설계) → R(결과가 의도와 같은지 세 가지 확인: 차트 종류·열·정렬과 색) → C(“그 차트의 코드를 줘”) → O(Colab 실행 → 세 원칙 점검 → 한 문장 해석).</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="moa" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">인턴 모아</span><p>제 프롬프트에 빠진 요소를 찾아서 체크해 볼게요.</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>요소를 다 넣으면 너무 길어지잖아. 짧은 게 멋있어!</p></div></div><div class="say"><img data-who="fly" data-mood="clip" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>짧고 엉뚱한 차트 세 번보다 네 줄짜리 프롬프트 한 번이 빨라.</p></div></div><div class="say"><img data-who="x3" data-mood="proud" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x3">X3</span><p>(히스토그램 막대 폭을 500에 맞추고 뿌듯해한다)</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 4요소를 채우면 차트가 어떻게 바뀌나</p><div class="grid2"><div>
 <div class="ctrl" style="flex-direction:column;align-items:flex-start;gap:4px" id="w2el">
@@ -460,12 +517,38 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <h3>히스토그램 구간 폭 정하기</h3>
 <div class="ctrl"><label>구간 폭 <input type="range" id="w2b" min="100" max="2500" step="100" value="500"> <b id="w2bv">500</b></label></div>
 <div id="w2bh" class="viz"></div></div>
+<div class="colab" id="cb-w02_2"><p class="cb-head">실제 화면으로 보기 — 첫 실습 — 파이 대신 정렬 막대</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 친절한 데이터 시각화 조교야.<br>[데이터] 방금 쓴 payments.csv야.<br>[요청] 도시별 매출 비중을 먼저 파이 차트로, 이어서 같은 숫자를 큰 것부터 정렬한 가로 막대로 그려 줘. 두 그림을 나란히 놓고, 가로 막대에는 비율을 적어 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 도시별 매출 비중(%)을 계산한다 / 计算各城市销售额占比 (%)
+share = (df.groupby(&#x27;city&#x27;)[&#x27;amount&#x27;].sum() / df[&#x27;amount&#x27;].sum() * 100).round(1)
+fig, ax = plt.subplots(1, 2, figsize=(11, 4.2))</pre><details class="cb-more"><summary>코드 전체 보기 (12줄 더)</summary><pre class="cb-code" data-i18n-skip># 2. 왼쪽: 파이 차트 (비율 숫자는 일부러 빼서 눈으로만 읽게 한다) / 左图: 饼图 (故意不标数字, 只靠眼睛读)
+ax[0].pie(share.values, labels=share.index, startangle=90, counterclock=False)
+ax[0].set_title(&#x27;Pie: which is bigger, Shenzhen or Shanghai?&#x27;)
+# 3. 오른쪽: 같은 숫자를 큰 것부터 정렬한 가로 막대 / 右图: 同样的数字按从大到小排序的横向柱状图
+s = share.sort_values()
+bars = ax[1].barh(s.index, s.values, color=&#x27;#0b7a86&#x27;)
+ax[1].bar_label(bars, labels=s.astype(str) + &#x27;%&#x27;, padding=3)
+ax[1].set_xlim(0, s.max() * 1.2)
+ax[1].set_title(&#x27;Sorted bar: Shenzhen 20.1% &gt; Shanghai 19.7%&#x27;)
+ax[1].set_xlabel(&#x27;Share of sales (%)&#x27;)
+print(share.sort_values(ascending=False))
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+city
+Beijing     28.3
+Shenzhen    20.1
+Shanghai    19.7
+Hangzhou    17.0
+Chengdu     15.0
+Name: amount, dtype: float64</pre><img src="../assets/img/colab/w02_2_1.webp" width="962" height="458" alt="실행 결과 차트 — 첫 실습 — 파이 대신 정렬 막대" loading="lazy"></div><p class="cb-note">파이에서는 2·3위(선전 20.1%, 상하이 19.7%)의 차이가 거의 안 보이지만, 정렬 막대에서는 바로 읽힙니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>오늘의 네 장: ① 비교 막대(도시별 합계) ② 추세 꺾은선(날짜별 합계) ③ 분포 히스토그램(금액) ④ 관계 산점도(상품 수 × 금액). 원자료의 해석 예시 “3월 15일이 최고, 다른 평일의 1.8배”는 실제 데이터와 달라 이 페이지에서 <b>“최고는 3월 27일(금) 46,463, 하루 평균 31,059의 약 1.5배”</b>로 바꿉니다. 산점도의 상관계수는 교안 설계대로 약 <b>0.56</b>입니다. 가장 멀리 떨어진 점은 3월 23일 청두 웹 결제(상품 9개, 4,893)로, 원자료 예시(“상품 13개 2,800”)와 달라 실제 값으로 바꿉니다.</p><p><b>흔한 실수 다섯 가지</b>: ① “그래프 그려줘”만 쓰기 ② 막대 Y축 0을 강제하지 않기 ③ 축 이름 빠뜨리기 ④ 정렬 없이 그리기 ⑤ 한 문장 해석 없이 차트만 내기.</p></div>
 <p class="calm">첫 실습에서 오류가 나는 것이 정상입니다. 오류 문장을 그대로 복사해 AI에게 “쉬운 말로 설명하고 고쳐 줘”라고 붙여 넣으세요.</p>
 <div class="ai-check"><h4>AI 결과 판단 코너</h4><p>AI가 날짜별 결제 꺾은선을 그리고 “주말 결제가 평일의 두 배입니다”라고 해석했습니다. 교안의 <b>믿어도 되는가 세 질문</b>으로 확인합니다. ① 축이 0인가(꺾은선은 필수 아님) ② 데이터가 맞는가 ③ 결론이 상식적인가 — 실제로 계산하면 주말 하루 평균 35,534, 평일 하루 평균 29,269로 <b>약 1.21배</b>입니다. “두 배”는 과장입니다. 숫자가 그럴듯해 보여도 한 번은 직접 나눠 보세요.</p></div>
 <div class="docline"><b>박사의 해석 한 줄</b> 차트 한 장 = 질문 하나 = 해석 한 문장. 예: “2026년 3월 결제 합계에서 베이징(245,996)은 청두(130,592)의 약 1.9배다.”</div>
 <p class="limit"><b>이 단계의 한계 —</b> 오늘 데이터에는 비어 있는 금액이 4% 있었고, 우리는 그냥 뺐습니다. 빼는 것이 늘 맞을까요? 다음 층에서 더러운 데이터를 씻는 법을 배웁니다.</p>
-<details class="codebox"><summary>교안의 막대 차트 코드로 보면 (몰라도 됩니다)</summary><table><thead><tr><th>코드 한 줄</th><th>뜻 한 줄</th></tr></thead><tbody><tr><td>df = df.dropna(subset=[&quot;amount&quot;])</td><td>amount가 비어 있는 행을 뺀다 (800 → 768행)</td></tr><tr><td>city_sum = df.groupby(&quot;city&quot;)[&quot;amount&quot;].sum()</td><td>도시별로 묶어 금액을 더한다</td></tr><tr><td>city_sum = city_sum.sort_values(ascending=False)</td><td>큰 값부터 정렬한다</td></tr><tr><td>plt.bar(city_sum.index, city_sum.values, color=&quot;#1E3A8A&quot;)</td><td>인디고색 세로 막대로 그린다</td></tr><tr><td>ax.spines[[&quot;top&quot;,&quot;right&quot;]].set_visible(False)</td><td>위·오른쪽 테두리선을 지운다</td></tr><tr><td>plt.show()</td><td>그림을 화면에 띄운다</td></tr></tbody></table></details>
 <div class="quiz" data-quiz="lv4"></div>
 </div></section>
 <section class="level" id="duel"><div class="wrap">

@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv')\n# 1. 채널별 결제 건수를 센다 / 统计各渠道的支付笔数\ncnt = df['channel'].value_counts()\nprint(cnt)\n# 2. 그림 두 개를 나란히 만든다 / 并排创建两张图\nfig, ax = plt.subplots(1, 2, figsize=(10, 4))\n# 3. 왼쪽: Y축을 가장 작은 값 근처에서 시작한 잘못된 예 / 左图: Y 轴从最小值附近开始的错误示例\nlow = cnt.min() * 0.9\nax[0].bar(cnt.index, cnt.values, color='#b45309')\nax[0].set_ylim(low, cnt.max() * 1.05)\nax[0].set_title('Wrong: Y axis starts at ' + str(int(low)))\nax[0].set_ylabel('Number of payments')\n# 4. 오른쪽: Y축을 0부터 시작한 바른 예 / 右图: Y 轴从 0 开始的正确示例\nax[1].bar(cnt.index, cnt.values, color='#0b7a86')\nax[1].set_ylim(0, cnt.max() * 1.05)\nax[1].set_title('Right: Y axis starts at 0')\n# 5. 1위와 2위 막대의 눈에 보이는 길이 비와 실제 비를 비교한다 / 比较第一、第二名柱子的视觉长度比和实际比\nprint('real ratio      =', round(cnt.iloc[0] / cnt.iloc[1], 2))\nprint('wrong-chart ratio =', round((cnt.iloc[0] - low) / (cnt.iloc[1] - low), 2))\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\nchannel\napp        526\noffline    156\nweb        118\nName: count, dtype: int64\nreal ratio      = 3.37\nwrong-chart ratio = 8.43",
+ "imgs": [
+  "w02_1_1.webp"
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv')\n# 1. 날짜 글자를 날짜 형식으로 바꾼다 / 把日期文字转换成日期格式\ndf['date'] = pd.to_datetime(df['date'])\n# 2. 날짜별 매출 합계 / 每天的销售额合计\ndaily = df.groupby('date')['amount'].sum()\ntop_day = daily.idxmax()\nprint('days =', len(daily), '| mean =', round(daily.mean(), 1), '| max =', top_day.date(), round(daily.max(), 1))\nplt.figure(figsize=(9, 4))\nplt.plot(daily.index, daily.values, color='#0b7a86', marker='o', markersize=3)\n# 3. 평균선은 회색 점선 / 平均线用灰色虚线\nplt.axhline(daily.mean(), color='gray', linestyle='--', label='Daily mean')\n# 4. 가장 높은 날 한 곳에만 주석을 단다 / 只在最高的那一天加注释\nplt.annotate('Peak ' + str(top_day.date()), xy=(top_day, daily.max()), xytext=(top_day, daily.max() * 1.08), ha='center', arrowprops=dict(arrowstyle='->', color='#b45309'), color='#b45309')\nplt.ylim(0, daily.max() * 1.2)\nplt.title('Sales peaked on March 27')\nplt.ylabel('Sales (CNY)')\nplt.legend()\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\ndays = 28 | mean = 31058.6 | max = 2026-03-27 46462.8",
+ "imgs": [
+  "w08_1_1.webp"
+ ]
+}

@@ -379,6 +379,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style><link rel="alternate" hreflang="ko" href="w03_data-cleaning.html"><link rel="alternate" hreflang="zh-CN" href="w03_data-cleaning.zh.html"><link rel="alternate" hreflang="x-default" href="w03_data-cleaning.html">
 </head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
@@ -396,9 +418,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>다섯 가지 더러운 데이터 — 시아의 발표</h2><span class="tag m">개념: 데이터 전처리</span><span class="tag a">방법: 찾기 → 고치기 → 확인하기</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — <b>①다섯 가지 더러움</b> → ②빈 값 처리 → ③중복·이상치와 AI 검사 → ④도구와 고급 차트</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 가상 대학가 음료 데이터에 브랜드가 Mixue·MIXUE·mixue·미쉐·蜜雪冰城로 섞여 있습니다. 브랜드별 주문 수 막대를 그리면, 1위는 어느 가게가 될까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 사람 눈에는 같은 가게인데, 컴퓨터는 글자가 하나라도 다르면 다른 가게로 셉니다.</li><li><b>앞 방법의 한계</b> — 그대로 그리면 한 가게의 주문이 다섯 막대로 쪼개져, 실제 1위가 중간 순위로 내려갑니다. “4,500원” 같은 글자는 평균을 낼 수도 없습니다.</li><li><b>해법</b> — 그리기 전에 다섯 가지(표기·형식·빈 값·중복·이상치)를 <b>찾고 → 고치고 → 확인</b>합니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 요리 전에 재료를 씻고 다듬듯, 차트 전에 데이터를 다듬습니다. 안 씻고 끓이면 맛이 달라집니다.</div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>같은 친구를 “지수”, “지수야”, “김지수”, “JS”, “수”로 저장해 두면, 연락처 앱은 친구 다섯 명으로 셉니다. 누구와 가장 자주 연락했는지 순위가 틀어집니다.</p></div><div><h4>데이터에서는</h4><p>브랜드 표기를 6개 이름(CHAGEE · Mixue · HEYTEA · Auntea Jenny · Mega Coffee · Compose Coffee)으로 통일하고, 가격은 “4,500원”·“4.5k”를 모두 숫자 4500으로 바꿉니다.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 데이터에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>같은 친구를 “지수”, “지수야”, “김지수”, “JS”, “수”로 저장해 두면, 연락처 앱은 친구 다섯 명으로 셉니다. 누구와 가장 자주 연락했는지 순위가 틀어집니다.</p></div><div><h4>데이터에서는</h4><p>브랜드 표기를 6개 이름(CHAGEE · Mixue · HEYTEA · Auntea Jenny · Mega Coffee · Compose Coffee)으로 통일하고, 가격은 “4,500원”·“4.5k”를 모두 숫자 4500으로 바꿉니다.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="sia" data-mood="explain" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">인턴 시아</span><p>아래 작은 표는 교안 데이터를 12줄로 줄인 예시입니다. 버튼을 하나씩 눌러 고쳐 보세요.</p></div></div><div class="say"><img data-who="robo" data-mood="coin" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>그냥 한꺼번에 다 지우면 되잖아? 이상한 줄은 다 삭제!</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>그러면 1,000줄이 700줄이 돼. 무엇을 몇 줄 지웠는지 숫자를 보면서 해.</p></div></div><div class="say"><img data-who="x1" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x1">X1</span><p>확인할게요. 버튼을 누를 때마다 행 수와 평균 가격을 같이 봐요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 작은 음료 주문표를 씻어 보기 (12줄 예시)</p><div class="chips" id="w3fix"></div>
 <div id="w3t"></div>
@@ -414,27 +437,62 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>빈 값 — 지울까, 채울까, 둘까 (하루의 발표)</h2><span class="tag m">개념: 결측치 처리</span><span class="tag a">방법: 같은 데이터, 세 가지 처리 비교</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①다섯 가지 더러움 → <b>②빈 값 처리</b> → ③중복·이상치와 AI 검사 → ④도구와 고급 차트</p>
+
 <div class="docline"><b>박사의 상황 질문</b> payments.csv 800건 중 결제 금액이 비어 있는 32건. 주판봇 조는 0으로 채웠고, 초파리 조는 비워 둔 채 계산했습니다. 두 조가 발표한 “평균 결제 금액”은 같을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 빈 값이 있으면 그래프 도구가 오류를 내거나, 사람마다 다르게 처리합니다.</li><li><b>앞 방법의 한계</b> — 0으로 채우면 “결제를 안 했다”는 뜻이 되어 평균이 내려갑니다. 무조건 지우면 그 행의 다른 정보(도시·채널)까지 사라집니다.</li><li><b>해법</b> — 세 가지 길 — <b>지우기</b>(그 값이 꼭 필요한 분석에서만), <b>채우기</b>(근거 있는 값으로만), <b>두기</b>(통계에서 자동으로 빠지게 표시만). 교안은 이번 주 가장 안전한 “두기”를 고릅니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 시험을 안 본 학생에게 0점을 주면 반 평균이 내려갑니다. 그 학생을 빼고 평균을 내는 것이 “두기”입니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 0을 몇 개 넣었을 뿐인데 평균이 왜 그렇게 많이 바뀌어요?</p></div><p class="school">학교 수학으로 보면: 중학교 자료의 정리 — 평균 = 합 ÷ 개수</p><p><b>박사</b> 평균은 “합 ÷ 개수”예요. 0을 넣으면 합은 그대로인데 개수만 늘어나니, 나누는 수가 커져서 평균이 작아집니다.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>합</td><td>값이 있는 768건의 금액을 모두 더한 것</td></tr><tr><td>÷ 개수</td><td>두기: 768로 나눈다 / 0 채우기: 800으로 나눈다</td></tr><tr><td>중앙값</td><td>크기순으로 줄 세웠을 때 한가운데 값 — 이상치에 덜 흔들린다</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>합 869,640 ÷ 768 = <b>1,132.3</b> (두기)<br>합 869,640 ÷ 800 = <b>1,087.1</b> (0 채우기) → 약 <b>4.0% 낮아짐</b><br>빈 값을 중앙값 960.3으로 채우면 (869,640 + 32×960.3) ÷ 800 = <b>1,125.5</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 0 채우기는 합은 그대로 두고 개수만 늘리는 거네요. 그래서 평균이 깎이는 거고요.</p></div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>시험을 안 본 학생 3명에게 0점을 주고 반 평균을 내면, 반 전체 실력이 낮아 보입니다.</p></div><div><h4>데이터에서는</h4><p>결제 금액 빈 값을 0으로 채우면 “0원 결제”가 32건 생긴 셈입니다. 평균 객단가가 1,132 → 1,087로 내려가고, 히스토그램 맨 왼쪽에 없던 막대가 생깁니다.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 데이터에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>시험을 안 본 학생 3명에게 0점을 주고 반 평균을 내면, 반 전체 실력이 낮아 보입니다.</p></div><div><h4>데이터에서는</h4><p>결제 금액 빈 값을 0으로 채우면 “0원 결제”가 32건 생긴 셈입니다. 평균 객단가가 1,132 → 1,087로 내려가고, 히스토그램 맨 왼쪽에 없던 막대가 생깁니다.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="asst" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-asst">조수 하루</span><p>세 가지 처리를 버튼으로 바꿔 가며 평균과 히스토그램을 보겠습니다.</p></div></div><div class="say"><img data-who="robo" data-mood="chart" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>0으로 채우면 행이 800개 그대로잖아. 데이터를 하나도 안 버렸으니 더 정확하지!</p></div></div><div class="say"><img data-who="fly" data-mood="arms" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>행 수가 그대로인 거랑 값이 정확한 건 달라. 히스토그램 맨 왼쪽을 봐.</p></div></div><div class="say"><img data-who="moa" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">인턴 모아</span><p>0원 결제 32건이 생겼어요… 실제로는 없던 결제인데요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 빈 값 32건을 어떻게 할까</p><div class="ctrl" id="w3m"><button type="button" class="bt" data-m="keep" aria-pressed="true">두기 (통계에서 제외)</button><button type="button" class="bt" data-m="zero">0으로 채우기</button><button type="button" class="bt" data-m="med">중앙값으로 채우기</button><button type="button" class="bt" data-m="drop">행째 지우기</button></div>
 <div class="kpis" id="w3mk"></div><div id="w3mh" class="viz"></div><div class="insight" id="w3mo" aria-live="polite"></div></div>
+<div class="colab" id="cb-w03_1"><p class="cb-head">실제 화면으로 보기 — 빈 값 찾기와 세 가지 처리 비교</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 데이터 전처리를 가르치는 조교야.<br>[데이터] payments.csv — 열: date(날짜), hour(시), city(도시), channel(app·web·offline), items(품목 수), amount(결제액, 위안), is_new_user(신규 1·기존 0). 800행.<br>[요청] 열마다 빈 값이 몇 개인지 보여 주고, amount의 빈 값을 ① 0으로 채우기 ② 중앙값으로 채우기 ③ 빈 행 빼기로 처리했을 때 평균이 어떻게 달라지는지 표로 비교해 줘. 결과를 막대로도 그려 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 열마다 빈 값(NaN)이 몇 개인지 센다 / 统计每一列有多少缺失值 (NaN)
+print(df.isna().sum())
+# 2. 세 가지 처리 방법으로 amount를 만든다 / 用三种方法处理 amount</pre><details class="cb-more"><summary>코드 전체 보기 (14줄 더)</summary><pre class="cb-code" data-i18n-skip>fill_zero = df[&#x27;amount&#x27;].fillna(0)
+fill_median = df[&#x27;amount&#x27;].fillna(df[&#x27;amount&#x27;].median())
+drop_rows = df[&#x27;amount&#x27;].dropna()
+# 3. 방법별 평균과 건수를 표로 만든다 / 把每种方法的平均值和笔数做成表
+result = pd.DataFrame({&#x27;method&#x27;: [&#x27;Fill with 0&#x27;, &#x27;Fill with median&#x27;, &#x27;Drop missing rows&#x27;], &#x27;mean&#x27;: [fill_zero.mean(), fill_median.mean(), drop_rows.mean()], &#x27;rows&#x27;: [len(fill_zero), len(fill_median), len(drop_rows)]}).round(2)
+print(result)
+# 4. 평균을 막대로 비교한다 (Y축은 0부터) / 用柱状图比较平均值 (Y 轴从 0 开始)
+plt.figure(figsize=(7, 4))
+bars = plt.bar(result[&#x27;method&#x27;], result[&#x27;mean&#x27;], color=[&#x27;#b45309&#x27;, &#x27;#0b7a86&#x27;, &#x27;#1e3a8a&#x27;])
+plt.bar_label(bars, labels=result[&#x27;mean&#x27;].astype(str), padding=3)
+plt.ylim(0, result[&#x27;mean&#x27;].max() * 1.15)
+plt.title(&#x27;Filling missing amounts with 0 pulls the mean down&#x27;)
+plt.ylabel(&#x27;Mean payment (CNY)&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+date            0
+hour            0
+city            0
+channel         0
+items           0
+amount         32
+is_new_user     0
+dtype: int64
+              method     mean  rows
+0        Fill with 0  1087.05   800
+1   Fill with median  1125.46   800
+2  Drop missing rows  1132.34   768</pre><img src="../assets/img/colab/w03_1_1.webp" width="689" height="416" alt="실행 결과 차트 — 빈 값 찾기와 세 가지 처리 비교" loading="lazy"></div><p class="cb-note">0으로 채우면 평균이 1,132에서 1,087로 내려갑니다. 실제로 0원을 낸 손님은 없으니 숫자가 거짓말을 한 것입니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>“두기”와 “행째 지우기”는 평균이 같습니다(둘 다 값이 있는 768건만 씁니다). 차이는 <b>도시·채널 같은 다른 열</b>입니다. 행째 지우면 금액이 빈 32건의 도시·채널 정보도 함께 사라져, 도시별 주문 수(건수)가 줄어듭니다. 그래서 교안은 이번 주에 “두기”를 고릅니다. 채우기는 근거가 있을 때만 씁니다 — 예를 들어 같은 주문번호의 다른 기록에 금액이 있을 때.</p></div>
 <p class="calm">여기서 한 번 멈춰도 괜찮아요. “빈 값을 0으로 채우면 왜 안 되나”는 처음 배우는 분이 가장 오래 보는 곳입니다. 결제 예시를 한 번 더 눌러 보세요.</p>
 <div class="ai-check"><h4>AI 결과 판단 코너</h4><p>함께 받은 실습 노트북(Untitled233.ipynb)에서 AI가 만든 코드 한 줄을 봅시다: <code>df = df.fillna({"items": 0, "amount": 0, "is_new_user": 0})</code>. 주석은 “결측값 채우기(있다면)”. <b>무엇이 문제일까요?</b> ① amount를 0으로 채워 평균 객단가가 약 4% 낮게 나옵니다. ② 그 낮은 평균이 그대로 “자동 결론 보고서”의 평균 객단가 문장에 들어갑니다. ③ 코드가 오류 없이 돌아가서 아무도 눈치채지 못합니다. 확인 질문: “채우기 전과 후의 평균을 나란히 출력해 줘.”</p></div>
 <div class="docline"><b>박사의 해석 한 줄</b> 빈 값을 채우는 순간 “없는 정보”가 “있는 정보”로 바뀝니다. 채울 때는 <b>근거</b>를, 두기로 했다면 <b>개수</b>를 캡션에 적으세요.</div>
 <p class="limit"><b>이 단계의 한계 —</b> 빈 값은 “두기”로 정했습니다. 그런데 같은 주문이 두 번 적혀 있거나, 당도 999 같은 값이 섞여 있다면? 그리고 AI에게 “이상한 줄을 정리해 줘”라고 맡기면 어떻게 될까요?</p>
-<details class="codebox"><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><table><thead><tr><th>코드 한 줄</th><th>뜻 한 줄</th></tr></thead><tbody><tr><td>df[&#x27;amount&#x27;].isna().sum()</td><td>amount가 비어 있는 행이 몇 개인지 센다 (32)</td></tr><tr><td>df[&#x27;amount&#x27;].mean()</td><td>빈 값은 자동으로 빼고 평균을 낸다 (1,132.3)</td></tr><tr><td>df[&#x27;amount&#x27;].fillna(0).mean()</td><td>빈 값을 0으로 채운 뒤 평균을 낸다 (1,087.1)</td></tr><tr><td>df.dropna(subset=[&#x27;amount&#x27;])</td><td>금액이 빈 행을 통째로 지운다 (800 → 768행)</td></tr></tbody></table></details>
 <div class="quiz" data-quiz="lv2"></div>
 </div></section>
 <section class="level" id="lv3">
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>중복과 이상치, 그리고 AI 검사 3규칙 — 모아의 발표</h2><span class="tag m">개념: AI 전처리 검증</span><span class="tag a">방법: 행 수 1,000 → 970을 지키기</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①다섯 가지 더러움 → ②빈 값 처리 → <b>③중복·이상치와 AI 검사</b> → ④도구와 고급 차트</p>
+
 <div class="docline"><b>박사의 상황 질문</b> AI에게 “이상한 데이터 정리해 줘”라고 맡겼더니 1,000행이 700행이 되어 돌아왔습니다. 정답은 970행입니다. 사라진 270행에는 무엇이 들어 있었을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 중복 주문은 매출을 부풀리고, 당도 999·가격 0원 같은 값은 평균을 망칩니다.</li><li><b>앞 방법의 한계</b> — AI에게 “정리해 줘”라고 맡기면 그럴듯한 값을 지어내거나(Made-up values), 문제처럼 보이는 행을 한꺼번에 지웁니다. 한 줄씩 보면 맞아 보여도 전체는 틀립니다(Missed patterns).</li><li><b>해법</b> — <b>AI 검사 3규칙</b>: ① 고친 데이터 말고 <b>코드</b>만 받는다 ② 처리 전후 <b>행 수</b>를 비교한다 ③ 이상치는 지우기 전에 <b>표시</b>한다.</li></ol><div class="easy"><b>쉽게 말하면</b> 결제 버튼을 두 번 누르면 한 번은 취소합니다. 카드를 통째로 정지하지 않습니다.</div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>영수증 정리를 맡겼더니 중복 영수증 30장만 빼야 할 것을, 구겨진 것·글씨 흐린 것까지 300장을 버렸습니다. 남은 영수증으로 가계부를 쓰면 지출이 틀립니다.</p></div><div><h4>데이터에서는</h4><p>정답 970행 = 중복 30건만 삭제. AI의 700행 = 가격 형식 오류 200행 + 빈 값 60행 + 이상치 35행까지 함께 지움(원자료 해설). 당도 999·가격 0원은 오타라 <b>값만 비우고 행은 남기고</b>, 대기 300분 이상은 개점 주의 실제 사건이라 <b>지우지 않고 is_event = 1로 표시</b>합니다.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 데이터에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>영수증 정리를 맡겼더니 중복 영수증 30장만 빼야 할 것을, 구겨진 것·글씨 흐린 것까지 300장을 버렸습니다. 남은 영수증으로 가계부를 쓰면 지출이 틀립니다.</p></div><div><h4>데이터에서는</h4><p>정답 970행 = 중복 30건만 삭제. AI의 700행 = 가격 형식 오류 200행 + 빈 값 60행 + 이상치 35행까지 함께 지움(원자료 해설). 당도 999·가격 0원은 오타라 <b>값만 비우고 행은 남기고</b>, 대기 300분 이상은 개점 주의 실제 사건이라 <b>지우지 않고 is_event = 1로 표시</b>합니다.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="moa" data-mood="report" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">인턴 모아</span><p>제가 맡은 건 중복과 이상치예요. 아래 처리 목록에서 “해도 되는 것”만 골라 970행을 만들어 보세요.</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>전부 체크하면 가장 깨끗한 데이터가 되잖아!</p></div></div><div class="say"><img data-who="fly" data-mood="clip" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>깨끗한 게 아니라 작아지는 거야. 행 수 숫자를 봐.</p></div></div><div class="say"><img data-who="x1" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x1">X1</span><p>대기 420분은 지우면 안 될 것 같아요. 그날 실제로 줄이 길었으니까요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — AI가 제안한 처리 중 무엇을 받아들일까</p><div class="ctrl" style="flex-direction:column;align-items:flex-start;gap:2px" id="w3ops">
 <label><input type="checkbox" data-n="30" data-ok="1"> 같은 order_id가 두 번 나온 행 지우기 (30행)</label>
@@ -454,17 +512,46 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>Seaborn이 그리고 Matplotlib이 다듬는다 — X3의 발표</h2><span class="tag m">개념: Matplotlib과 Seaborn</span><span class="tag a">방법: 같은 질문, 두 가지 그리기 · 고급 차트 세 가지</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①다섯 가지 더러움 → ②빈 값 처리 → ③중복·이상치와 AI 검사 → <b>④도구와 고급 차트</b></p>
+
 <div class="docline"><b>박사의 상황 질문</b> 씻은 데이터로 “신규 고객과 기존 고객의 결제 금액은 다를까?”, “일주일 중 언제 가장 붐빌까?”를 보려 합니다. 어떤 도구로, 어떤 차트를 그릴까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 같은 차트도 도구에 따라 코드 길이와 다듬을 수 있는 정도가 다릅니다.</li><li><b>앞 방법의 한계</b> — Matplotlib만 쓰면 축·격자·색을 하나하나 정해야 해 코드가 길어지고, Seaborn만 쓰면 화살표·설명 같은 세부 손질이 어렵습니다.</li><li><b>해법</b> — <b>Seaborn이 그리고, Matplotlib이 다듬는다.</b> 빠른 탐색은 Seaborn, 마지막 보고서용 손질은 Matplotlib, 나눠 보기 좋은 화면은 HTML.</li></ol><div class="easy"><b>쉽게 말하면</b> 같은 카메라(Matplotlib 위에 Seaborn이 얹혀 있음)인데 인물 모드(Seaborn)는 빨리 찍고, 수동 모드(Matplotlib)는 세밀하게 고칩니다.</div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>휴대폰 카메라의 인물 모드는 한 번에 그럴듯한 사진을 주고, 수동 모드는 노출·초점을 직접 맞춥니다. 같은 센서를 씁니다.</p></div><div><h4>시각화에서는</h4><p>Seaborn은 <code>hue=</code> 한 단어로 그룹별 색을 나누고, 평균·분포·회귀선을 바로 그립니다. Matplotlib은 제목·축 이름·화살표·강조선을 다듬습니다. 둘 다 pandas 표(DataFrame) 위에서 움직입니다.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 시각화에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>휴대폰 카메라의 인물 모드는 한 번에 그럴듯한 사진을 주고, 수동 모드는 노출·초점을 직접 맞춥니다. 같은 센서를 씁니다.</p></div><div><h4>시각화에서는</h4><p>Seaborn은 <code>hue=</code> 한 단어로 그룹별 색을 나누고, 평균·분포·회귀선을 바로 그립니다. Matplotlib은 제목·축 이름·화살표·강조선을 다듬습니다. 둘 다 pandas 표(DataFrame) 위에서 움직입니다.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="x3" data-mood="proud" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x3">X3</span><p>제 발표는 고급 차트 세 장이에요. 상자그림, 상관 히트맵, 요일×시간 히트맵.</p></div></div><div class="say"><img data-who="robo" data-mood="coin" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>히트맵은 색만 보면 되니까 숫자는 필요 없지?</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>교안에 “색만 있고 숫자 없는 히트맵은 버린 그림”이라고 적혀 있어. 숫자도 써.</p></div></div><div class="say"><img data-who="doc" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">박사</span><p>가장 진한 셀을 찾으면, 먼저 “이게 사실인가?”를 한 번 묻고 결론으로 갑니다.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 결제 데이터로 고급 차트 세 장</p><div class="chips" id="w3adv"><button type="button" class="bt" data-k="box" aria-pressed="true">① 신규 vs 기존 — 상자그림</button><button type="button" class="bt" data-k="corr">② 숫자 열끼리 — 상관 히트맵</button><button type="button" class="bt" data-k="wh">③ 요일 × 시간 — 주문 수 히트맵</button></div>
 <div id="w3av" class="viz"></div><div class="insight" id="w3ao" aria-live="polite"></div></div>
+<div class="colab" id="cb-w03_2"><p class="cb-head">실제 화면으로 보기 — Seaborn이 그리고 Matplotlib이 다듬는다</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 데이터 시각화 조교야.<br>[데이터] 방금 쓴 payments.csv야. amount의 빈 값은 빼고 써.<br>[요청] seaborn으로 결제액 히스토그램을 그리고, matplotlib으로 평균선과 중앙값선, 제목, 축 이름을 다듬어 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+# 1. 파일을 읽고 amount 빈 값이 있는 행은 뺀다 / 读取文件并去掉 amount 缺失的行
+df = pd.read_csv(&#x27;payments.csv&#x27;).dropna(subset=[&#x27;amount&#x27;])
+# 2. Seaborn이 히스토그램을 그린다 / 用 Seaborn 画直方图</pre><details class="cb-more"><summary>코드 전체 보기 (12줄 더)</summary><pre class="cb-code" data-i18n-skip>plt.figure(figsize=(8, 4.2))
+sns.histplot(df[&#x27;amount&#x27;], bins=30, color=&#x27;#0b7a86&#x27;)
+# 3. Matplotlib으로 평균선(빨강 점선)과 중앙값선(파랑 실선)을 더한다 / 用 Matplotlib 加平均线 (红色虚线) 和中位数线 (蓝色实线)
+plt.axvline(df[&#x27;amount&#x27;].mean(), color=&#x27;#b91c1c&#x27;, linestyle=&#x27;--&#x27;, label=&#x27;Mean &#x27; + str(round(df[&#x27;amount&#x27;].mean(), 1)))
+plt.axvline(df[&#x27;amount&#x27;].median(), color=&#x27;#1e3a8a&#x27;, label=&#x27;Median &#x27; + str(round(df[&#x27;amount&#x27;].median(), 1)))
+# 4. 제목·축 이름·범례로 다듬는다 / 用标题、坐标轴名称和图例来润色
+plt.title(&#x27;Long right tail: mean is higher than median&#x27;)
+plt.xlabel(&#x27;Payment amount (CNY)&#x27;)
+plt.ylabel(&#x27;Number of payments&#x27;)
+plt.legend()
+print(df[&#x27;amount&#x27;].describe().round(1))
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+count     768.0
+mean     1132.3
+std       665.4
+min       146.7
+25%       679.5
+50%       960.3
+75%      1440.9
+max      4892.7
+Name: amount, dtype: float64</pre><img src="../assets/img/colab/w03_2_1.webp" width="766" height="458" alt="실행 결과 차트 — Seaborn이 그리고 Matplotlib이 다듬는다" loading="lazy"></div><p class="cb-note">오른쪽 꼬리가 길어서 평균(빨간 점선)이 중앙값(파란 실선)보다 오른쪽에 있습니다. “보통 손님”을 말할 때 중앙값을 쓰는 이유입니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>교안은 campus_tea 데이터로 “비 오는 날 배달이 더 오래 걸리나?”를 바이올린(분포 모양을 보여 주는 차트)으로 봅니다 — 평균만 보면 숨어 버리는 <b>긴 꼬리</b>(가끔 아주 오래 기다린 날)가 바이올린에서는 보입니다. 이 페이지는 같은 생각을 payments.csv로 다시 해 봅니다. 신규 고객의 결제 금액 중앙값(765)은 기존 고객(1,048)보다 낮고, 금액 열과 is_new_user의 상관은 약 −0.19로 약합니다. 요일 × 시간에서 주문 수가 가장 많은 셀은 금요일 12시(16건)입니다.</p><p><b>공유용 HTML 대시보드</b>를 AI에게 맡길 때 네 가지 함정: ① 전체 CSV를 HTML에 통째로 넣지 말고 작은 예시 데이터로 ② 데이터를 인터넷에서 불러오지 않게 ③ 조작 버튼은 핵심 하나만 ④ 대시보드 위에 결론 한 문장.</p></div>
 <p class="calm">도구 이름(Matplotlib, Seaborn)을 외울 필요는 없습니다. “이 도구로 이런 그림이 나온다”만 기억하면 됩니다.</p>
 <div class="docline"><b>박사의 해석 한 줄</b> “가장 진한 셀은 금요일 12시”는 관찰이고, “금요일 점심 인력을 늘리자”는 결정입니다. 그 사이에 <b>“이게 사실인가?”</b>라는 한 번의 확인이 있습니다.</div>
 <p class="limit"><b>이 단계의 한계 —</b> 이번 주까지는 결제 데이터 한 가지만 그렸습니다. 다음 주에는 산업마다 “보는 숫자”가 어떻게 다른지, 금융·핀테크부터 봅니다.</p>
-<details class="codebox"><summary>교안의 파이썬 코드로 보면 (몰라도 됩니다)</summary><table><thead><tr><th>코드 한 줄</th><th>뜻 한 줄</th></tr></thead><tbody><tr><td>sns.boxplot(data=df, x=&#x27;is_new_user&#x27;, y=&#x27;amount&#x27;)</td><td>Seaborn으로 신규/기존 고객별 금액 상자그림을 그린다</td></tr><tr><td>sns.heatmap(df[cols].corr(), annot=True)</td><td>숫자 열끼리 상관 히트맵을 그리고 셀에 숫자를 적는다</td></tr><tr><td>pivot = df.pivot_table(index=&#x27;weekday&#x27;, columns=&#x27;hour&#x27;, values=&#x27;amount&#x27;, aggfunc=&#x27;count&#x27;)</td><td>요일×시간 주문 수 표를 만든다</td></tr><tr><td>ax.set_title(&#x27;요일 × 시간 주문 수&#x27;)</td><td>Matplotlib으로 제목을 다듬는다</td></tr></tbody></table></details>
 <div class="quiz" data-quiz="lv4"></div>
 </div></section>
 <section class="level" id="duel"><div class="wrap">

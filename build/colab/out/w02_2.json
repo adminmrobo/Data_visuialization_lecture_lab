@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv')\n# 1. 도시별 매출 비중(%)을 계산한다 / 计算各城市销售额占比 (%)\nshare = (df.groupby('city')['amount'].sum() / df['amount'].sum() * 100).round(1)\nfig, ax = plt.subplots(1, 2, figsize=(11, 4.2))\n# 2. 왼쪽: 파이 차트 (비율 숫자는 일부러 빼서 눈으로만 읽게 한다) / 左图: 饼图 (故意不标数字, 只靠眼睛读)\nax[0].pie(share.values, labels=share.index, startangle=90, counterclock=False)\nax[0].set_title('Pie: which is bigger, Shenzhen or Shanghai?')\n# 3. 오른쪽: 같은 숫자를 큰 것부터 정렬한 가로 막대 / 右图: 同样的数字按从大到小排序的横向柱状图\ns = share.sort_values()\nbars = ax[1].barh(s.index, s.values, color='#0b7a86')\nax[1].bar_label(bars, labels=s.astype(str) + '%', padding=3)\nax[1].set_xlim(0, s.max() * 1.2)\nax[1].set_title('Sorted bar: Shenzhen 20.1% > Shanghai 19.7%')\nax[1].set_xlabel('Share of sales (%)')\nprint(share.sort_values(ascending=False))\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\ncity\nBeijing     28.3\nShenzhen    20.1\nShanghai    19.7\nHangzhou    17.0\nChengdu     15.0\nName: amount, dtype: float64",
+ "imgs": [
+  "w02_2_1.webp"
+ ]
+}

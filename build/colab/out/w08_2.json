@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv')\n# 1. 날짜에서 요일 이름을 뽑는다 / 从日期中提取星期名称\ndf['weekday'] = pd.to_datetime(df['date']).dt.day_name().str[:3]\norder = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']\n# 2. 요일 × 시간 결제 건수 표 (없는 조합은 0) / 星期 × 小时 的支付笔数表 (没有的组合为 0)\ntable = pd.crosstab(df['weekday'], df['hour']).reindex(order).fillna(0)\n# 3. 가장 많은 셀을 찾는다 / 找出笔数最多的格子\nbest = table.stack().idxmax()\nprint('busiest cell =', best[0], int(best[1]), 'h ->', int(table.stack().max()), 'payments')\nplt.figure(figsize=(10, 3.8))\nplt.imshow(table.values, cmap='GnBu', aspect='auto')\nplt.colorbar(label='Number of payments')\nplt.xticks(range(len(table.columns)), table.columns)\nplt.yticks(range(len(order)), order)\nplt.xlabel('Hour')\nplt.title('Friday noon is the busiest time')\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\nbusiest cell = Fri 12 h -> 16 payments",
+ "imgs": [
+  "w08_2_1.webp"
+ ]
+}

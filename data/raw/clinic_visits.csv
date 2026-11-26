@@ -1,0 +1,701 @@
+date,weekday,hour,department,patients,wait_min
+2026-10-05,Mon,9,Internal Medicine,66,32
+2026-10-05,Mon,10,Internal Medicine,53,26
+2026-10-05,Mon,11,Internal Medicine,75,30
+2026-10-05,Mon,13,Internal Medicine,39,24
+2026-10-05,Mon,14,Internal Medicine,53,28
+2026-10-05,Mon,15,Internal Medicine,44,28
+2026-10-05,Mon,16,Internal Medicine,46,28
+2026-10-05,Mon,9,Surgery,33,16
+2026-10-05,Mon,10,Surgery,36,19
+2026-10-05,Mon,11,Surgery,37,18
+2026-10-05,Mon,13,Surgery,25,14
+2026-10-05,Mon,14,Surgery,24,15
+2026-10-05,Mon,15,Surgery,25,15
+2026-10-05,Mon,16,Surgery,22,17
+2026-10-05,Mon,9,Pediatrics,39,18
+2026-10-05,Mon,10,Pediatrics,44,22
+2026-10-05,Mon,11,Pediatrics,51,22
+2026-10-05,Mon,13,Pediatrics,32,21
+2026-10-05,Mon,14,Pediatrics,39,23
+2026-10-05,Mon,15,Pediatrics,41,21
+2026-10-05,Mon,16,Pediatrics,42,16
+2026-10-05,Mon,9,Orthopedics,32,14
+2026-10-05,Mon,10,Orthopedics,36,16
+2026-10-05,Mon,11,Orthopedics,30,13
+2026-10-05,Mon,13,Orthopedics,18,12
+2026-10-05,Mon,14,Orthopedics,26,14
+2026-10-05,Mon,15,Orthopedics,19,12
+2026-10-05,Mon,16,Orthopedics,23,14
+2026-10-05,Mon,9,Dermatology,19,7
+2026-10-05,Mon,10,Dermatology,17,10
+2026-10-05,Mon,11,Dermatology,22,12
+2026-10-05,Mon,13,Dermatology,13,8
+2026-10-05,Mon,14,Dermatology,12,11
+2026-10-05,Mon,15,Dermatology,16,9
+2026-10-05,Mon,16,Dermatology,13,9
+2026-10-06,Tue,9,Internal Medicine,47,30
+2026-10-06,Tue,10,Internal Medicine,54,29
+2026-10-06,Tue,11,Internal Medicine,47,28
+2026-10-06,Tue,13,Internal Medicine,39,27
+2026-10-06,Tue,14,Internal Medicine,41,25
+2026-10-06,Tue,15,Internal Medicine,35,26
+2026-10-06,Tue,16,Internal Medicine,29,28
+2026-10-06,Tue,9,Surgery,30,16
+2026-10-06,Tue,10,Surgery,24,13
+2026-10-06,Tue,11,Surgery,31,15
+2026-10-06,Tue,13,Surgery,16,16
+2026-10-06,Tue,14,Surgery,23,17
+2026-10-06,Tue,15,Surgery,20,15
+2026-10-06,Tue,16,Surgery,16,13
+2026-10-06,Tue,9,Pediatrics,29,18
+2026-10-06,Tue,10,Pediatrics,31,21
+2026-10-06,Tue,11,Pediatrics,32,17
+2026-10-06,Tue,13,Pediatrics,22,16
+2026-10-06,Tue,14,Pediatrics,28,19
+2026-10-06,Tue,15,Pediatrics,26,20
+2026-10-06,Tue,16,Pediatrics,28,21
+2026-10-06,Tue,9,Orthopedics,19,13
+2026-10-06,Tue,10,Orthopedics,26,15
+2026-10-06,Tue,11,Orthopedics,24,16
+2026-10-06,Tue,13,Orthopedics,16,9
+2026-10-06,Tue,14,Orthopedics,18,15
+2026-10-06,Tue,15,Orthopedics,17,13
+2026-10-06,Tue,16,Orthopedics,16,12
+2026-10-06,Tue,9,Dermatology,12,6
+2026-10-06,Tue,10,Dermatology,16,8
+2026-10-06,Tue,11,Dermatology,18,10
+2026-10-06,Tue,13,Dermatology,10,12
+2026-10-06,Tue,14,Dermatology,10,10
+2026-10-06,Tue,15,Dermatology,9,6
+2026-10-06,Tue,16,Dermatology,9,12
+2026-10-07,Wed,9,Internal Medicine,42,27
+2026-10-07,Wed,10,Internal Medicine,46,27
+2026-10-07,Wed,11,Internal Medicine,48,30
+2026-10-07,Wed,13,Internal Medicine,30,26
+2026-10-07,Wed,14,Internal Medicine,32,27
+2026-10-07,Wed,15,Internal Medicine,37,28
+2026-10-07,Wed,16,Internal Medicine,32,29
+2026-10-07,Wed,9,Surgery,28,17
+2026-10-07,Wed,10,Surgery,30,20
+2026-10-07,Wed,11,Surgery,30,19
+2026-10-07,Wed,13,Surgery,21,14
+2026-10-07,Wed,14,Surgery,21,16
+2026-10-07,Wed,15,Surgery,19,14
+2026-10-07,Wed,16,Surgery,18,14
+2026-10-07,Wed,9,Pediatrics,39,22
+2026-10-07,Wed,10,Pediatrics,29,20
+2026-10-07,Wed,11,Pediatrics,30,16
+2026-10-07,Wed,13,Pediatrics,28,17
+2026-10-07,Wed,14,Pediatrics,26,15
+2026-10-07,Wed,15,Pediatrics,31,23
+2026-10-07,Wed,16,Pediatrics,28,22
+2026-10-07,Wed,9,Orthopedics,26,16
+2026-10-07,Wed,10,Orthopedics,24,12
+2026-10-07,Wed,11,Orthopedics,23,16
+2026-10-07,Wed,13,Orthopedics,18,14
+2026-10-07,Wed,14,Orthopedics,16,13
+2026-10-07,Wed,15,Orthopedics,18,8
+2026-10-07,Wed,16,Orthopedics,18,13
+2026-10-07,Wed,9,Dermatology,13,7
+2026-10-07,Wed,10,Dermatology,18,13
+2026-10-07,Wed,11,Dermatology,16,10
+2026-10-07,Wed,13,Dermatology,12,8
+2026-10-07,Wed,14,Dermatology,9,8
+2026-10-07,Wed,15,Dermatology,10,11
+2026-10-07,Wed,16,Dermatology,12,9
+2026-10-08,Thu,9,Internal Medicine,52,30
+2026-10-08,Thu,10,Internal Medicine,52,31
+2026-10-08,Thu,11,Internal Medicine,50,27
+2026-10-08,Thu,13,Internal Medicine,29,30
+2026-10-08,Thu,14,Internal Medicine,41,25
+2026-10-08,Thu,15,Internal Medicine,28,27
+2026-10-08,Thu,16,Internal Medicine,36,25
+2026-10-08,Thu,9,Surgery,26,18
+2026-10-08,Thu,10,Surgery,27,15
+2026-10-08,Thu,11,Surgery,33,21
+2026-10-08,Thu,13,Surgery,22,16
+2026-10-08,Thu,14,Surgery,18,16
+2026-10-08,Thu,15,Surgery,18,11
+2026-10-08,Thu,16,Surgery,22,16
+2026-10-08,Thu,9,Pediatrics,35,19
+2026-10-08,Thu,10,Pediatrics,34,20
+2026-10-08,Thu,11,Pediatrics,33,20
+2026-10-08,Thu,13,Pediatrics,24,17
+2026-10-08,Thu,14,Pediatrics,28,18
+2026-10-08,Thu,15,Pediatrics,34,19
+2026-10-08,Thu,16,Pediatrics,24,21
+2026-10-08,Thu,9,Orthopedics,23,11
+2026-10-08,Thu,10,Orthopedics,25,16
+2026-10-08,Thu,11,Orthopedics,19,13
+2026-10-08,Thu,13,Orthopedics,15,13
+2026-10-08,Thu,14,Orthopedics,16,12
+2026-10-08,Thu,15,Orthopedics,17,11
+2026-10-08,Thu,16,Orthopedics,15,15
+2026-10-08,Thu,9,Dermatology,15,7
+2026-10-08,Thu,10,Dermatology,15,12
+2026-10-08,Thu,11,Dermatology,13,11
+2026-10-08,Thu,13,Dermatology,11,9
+2026-10-08,Thu,14,Dermatology,9,5
+2026-10-08,Thu,15,Dermatology,12,7
+2026-10-08,Thu,16,Dermatology,12,3
+2026-10-09,Fri,9,Internal Medicine,39,28
+2026-10-09,Fri,10,Internal Medicine,40,27
+2026-10-09,Fri,11,Internal Medicine,56,28
+2026-10-09,Fri,13,Internal Medicine,28,27
+2026-10-09,Fri,14,Internal Medicine,35,23
+2026-10-09,Fri,15,Internal Medicine,28,25
+2026-10-09,Fri,16,Internal Medicine,32,26
+2026-10-09,Fri,9,Surgery,22,19
+2026-10-09,Fri,10,Surgery,26,14
+2026-10-09,Fri,11,Surgery,23,16
+2026-10-09,Fri,13,Surgery,21,17
+2026-10-09,Fri,14,Surgery,24,18
+2026-10-09,Fri,15,Surgery,20,16
+2026-10-09,Fri,16,Surgery,18,16
+2026-10-09,Fri,9,Pediatrics,30,25
+2026-10-09,Fri,10,Pediatrics,35,23
+2026-10-09,Fri,11,Pediatrics,33,20
+2026-10-09,Fri,13,Pediatrics,25,15
+2026-10-09,Fri,14,Pediatrics,26,17
+2026-10-09,Fri,15,Pediatrics,30,22
+2026-10-09,Fri,16,Pediatrics,27,19
+2026-10-09,Fri,9,Orthopedics,21,12
+2026-10-09,Fri,10,Orthopedics,22,13
+2026-10-09,Fri,11,Orthopedics,18,9
+2026-10-09,Fri,13,Orthopedics,13,11
+2026-10-09,Fri,14,Orthopedics,14,13
+2026-10-09,Fri,15,Orthopedics,14,15
+2026-10-09,Fri,16,Orthopedics,19,15
+2026-10-09,Fri,9,Dermatology,15,10
+2026-10-09,Fri,10,Dermatology,16,7
+2026-10-09,Fri,11,Dermatology,14,10
+2026-10-09,Fri,13,Dermatology,11,6
+2026-10-09,Fri,14,Dermatology,13,13
+2026-10-09,Fri,15,Dermatology,13,5
+2026-10-09,Fri,16,Dermatology,10,9
+2026-10-12,Mon,9,Internal Medicine,63,31
+2026-10-12,Mon,10,Internal Medicine,57,27
+2026-10-12,Mon,11,Internal Medicine,58,29
+2026-10-12,Mon,13,Internal Medicine,41,26
+2026-10-12,Mon,14,Internal Medicine,51,28
+2026-10-12,Mon,15,Internal Medicine,55,30
+2026-10-12,Mon,16,Internal Medicine,37,28
+2026-10-12,Mon,9,Surgery,41,17
+2026-10-12,Mon,10,Surgery,38,17
+2026-10-12,Mon,11,Surgery,42,18
+2026-10-12,Mon,13,Surgery,27,17
+2026-10-12,Mon,14,Surgery,32,15
+2026-10-12,Mon,15,Surgery,23,12
+2026-10-12,Mon,16,Surgery,30,18
+2026-10-12,Mon,9,Pediatrics,47,26
+2026-10-12,Mon,10,Pediatrics,46,25
+2026-10-12,Mon,11,Pediatrics,44,23
+2026-10-12,Mon,13,Pediatrics,32,18
+2026-10-12,Mon,14,Pediatrics,32,23
+2026-10-12,Mon,15,Pediatrics,34,18
+2026-10-12,Mon,16,Pediatrics,35,20
+2026-10-12,Mon,9,Orthopedics,29,14
+2026-10-12,Mon,10,Orthopedics,28,12
+2026-10-12,Mon,11,Orthopedics,35,14
+2026-10-12,Mon,13,Orthopedics,18,11
+2026-10-12,Mon,14,Orthopedics,23,15
+2026-10-12,Mon,15,Orthopedics,18,12
+2026-10-12,Mon,16,Orthopedics,26,15
+2026-10-12,Mon,9,Dermatology,20,13
+2026-10-12,Mon,10,Dermatology,22,10
+2026-10-12,Mon,11,Dermatology,22,12
+2026-10-12,Mon,13,Dermatology,13,9
+2026-10-12,Mon,14,Dermatology,13,10
+2026-10-12,Mon,15,Dermatology,12,10
+2026-10-12,Mon,16,Dermatology,13,8
+2026-10-13,Tue,9,Internal Medicine,50,27
+2026-10-13,Tue,10,Internal Medicine,42,29
+2026-10-13,Tue,11,Internal Medicine,52,26
+2026-10-13,Tue,13,Internal Medicine,35,26
+2026-10-13,Tue,14,Internal Medicine,28,26
+2026-10-13,Tue,15,Internal Medicine,41,28
+2026-10-13,Tue,16,Internal Medicine,33,27
+2026-10-13,Tue,9,Surgery,26,17
+2026-10-13,Tue,10,Surgery,26,17
+2026-10-13,Tue,11,Surgery,24,16
+2026-10-13,Tue,13,Surgery,23,15
+2026-10-13,Tue,14,Surgery,22,16
+2026-10-13,Tue,15,Surgery,18,18
+2026-10-13,Tue,16,Surgery,17,12
+2026-10-13,Tue,9,Pediatrics,29,18
+2026-10-13,Tue,10,Pediatrics,39,19
+2026-10-13,Tue,11,Pediatrics,36,22
+2026-10-13,Tue,13,Pediatrics,19,16
+2026-10-13,Tue,14,Pediatrics,33,19
+2026-10-13,Tue,15,Pediatrics,28,21
+2026-10-13,Tue,16,Pediatrics,23,19
+2026-10-13,Tue,9,Orthopedics,25,13
+2026-10-13,Tue,10,Orthopedics,24,13
+2026-10-13,Tue,11,Orthopedics,21,14
+2026-10-13,Tue,13,Orthopedics,18,14
+2026-10-13,Tue,14,Orthopedics,15,10
+2026-10-13,Tue,15,Orthopedics,17,14
+2026-10-13,Tue,16,Orthopedics,15,13
+2026-10-13,Tue,9,Dermatology,17,10
+2026-10-13,Tue,10,Dermatology,14,10
+2026-10-13,Tue,11,Dermatology,12,8
+2026-10-13,Tue,13,Dermatology,12,10
+2026-10-13,Tue,14,Dermatology,12,6
+2026-10-13,Tue,15,Dermatology,11,7
+2026-10-13,Tue,16,Dermatology,12,13
+2026-10-14,Wed,9,Internal Medicine,56,29
+2026-10-14,Wed,10,Internal Medicine,53,27
+2026-10-14,Wed,11,Internal Medicine,51,27
+2026-10-14,Wed,13,Internal Medicine,37,24
+2026-10-14,Wed,14,Internal Medicine,32,24
+2026-10-14,Wed,15,Internal Medicine,38,26
+2026-10-14,Wed,16,Internal Medicine,40,28
+2026-10-14,Wed,9,Surgery,26,14
+2026-10-14,Wed,10,Surgery,28,17
+2026-10-14,Wed,11,Surgery,28,18
+2026-10-14,Wed,13,Surgery,23,14
+2026-10-14,Wed,14,Surgery,19,14
+2026-10-14,Wed,15,Surgery,21,18
+2026-10-14,Wed,16,Surgery,22,16
+2026-10-14,Wed,9,Pediatrics,26,18
+2026-10-14,Wed,10,Pediatrics,27,18
+2026-10-14,Wed,11,Pediatrics,32,21
+2026-10-14,Wed,13,Pediatrics,21,16
+2026-10-14,Wed,14,Pediatrics,32,21
+2026-10-14,Wed,15,Pediatrics,30,26
+2026-10-14,Wed,16,Pediatrics,31,17
+2026-10-14,Wed,9,Orthopedics,21,16
+2026-10-14,Wed,10,Orthopedics,22,12
+2026-10-14,Wed,11,Orthopedics,26,14
+2026-10-14,Wed,13,Orthopedics,13,10
+2026-10-14,Wed,14,Orthopedics,19,13
+2026-10-14,Wed,15,Orthopedics,17,11
+2026-10-14,Wed,16,Orthopedics,14,13
+2026-10-14,Wed,9,Dermatology,16,9
+2026-10-14,Wed,10,Dermatology,16,10
+2026-10-14,Wed,11,Dermatology,17,9
+2026-10-14,Wed,13,Dermatology,12,8
+2026-10-14,Wed,14,Dermatology,12,9
+2026-10-14,Wed,15,Dermatology,12,14
+2026-10-14,Wed,16,Dermatology,10,9
+2026-10-15,Thu,9,Internal Medicine,55,30
+2026-10-15,Thu,10,Internal Medicine,39,24
+2026-10-15,Thu,11,Internal Medicine,41,27
+2026-10-15,Thu,13,Internal Medicine,37,31
+2026-10-15,Thu,14,Internal Medicine,41,25
+2026-10-15,Thu,15,Internal Medicine,39,24
+2026-10-15,Thu,16,Internal Medicine,39,27
+2026-10-15,Thu,9,Surgery,24,19
+2026-10-15,Thu,10,Surgery,25,17
+2026-10-15,Thu,11,Surgery,31,19
+2026-10-15,Thu,13,Surgery,18,14
+2026-10-15,Thu,14,Surgery,22,15
+2026-10-15,Thu,15,Surgery,19,18
+2026-10-15,Thu,16,Surgery,21,16
+2026-10-15,Thu,9,Pediatrics,34,22
+2026-10-15,Thu,10,Pediatrics,30,20
+2026-10-15,Thu,11,Pediatrics,31,20
+2026-10-15,Thu,13,Pediatrics,22,17
+2026-10-15,Thu,14,Pediatrics,26,22
+2026-10-15,Thu,15,Pediatrics,29,20
+2026-10-15,Thu,16,Pediatrics,26,20
+2026-10-15,Thu,9,Orthopedics,23,15
+2026-10-15,Thu,10,Orthopedics,27,17
+2026-10-15,Thu,11,Orthopedics,22,11
+2026-10-15,Thu,13,Orthopedics,15,13
+2026-10-15,Thu,14,Orthopedics,18,14
+2026-10-15,Thu,15,Orthopedics,13,14
+2026-10-15,Thu,16,Orthopedics,19,9
+2026-10-15,Thu,9,Dermatology,13,13
+2026-10-15,Thu,10,Dermatology,15,5
+2026-10-15,Thu,11,Dermatology,12,11
+2026-10-15,Thu,13,Dermatology,12,11
+2026-10-15,Thu,14,Dermatology,12,13
+2026-10-15,Thu,15,Dermatology,10,8
+2026-10-15,Thu,16,Dermatology,12,8
+2026-10-16,Fri,9,Internal Medicine,44,30
+2026-10-16,Fri,10,Internal Medicine,52,34
+2026-10-16,Fri,11,Internal Medicine,40,28
+2026-10-16,Fri,13,Internal Medicine,29,26
+2026-10-16,Fri,14,Internal Medicine,29,23
+2026-10-16,Fri,15,Internal Medicine,30,30
+2026-10-16,Fri,16,Internal Medicine,32,24
+2026-10-16,Fri,9,Surgery,28,17
+2026-10-16,Fri,10,Surgery,30,18
+2026-10-16,Fri,11,Surgery,29,17
+2026-10-16,Fri,13,Surgery,20,17
+2026-10-16,Fri,14,Surgery,23,16
+2026-10-16,Fri,15,Surgery,22,17
+2026-10-16,Fri,16,Surgery,21,17
+2026-10-16,Fri,9,Pediatrics,39,21
+2026-10-16,Fri,10,Pediatrics,29,19
+2026-10-16,Fri,11,Pediatrics,35,21
+2026-10-16,Fri,13,Pediatrics,20,20
+2026-10-16,Fri,14,Pediatrics,31,17
+2026-10-16,Fri,15,Pediatrics,30,18
+2026-10-16,Fri,16,Pediatrics,33,23
+2026-10-16,Fri,9,Orthopedics,19,12
+2026-10-16,Fri,10,Orthopedics,24,13
+2026-10-16,Fri,11,Orthopedics,22,12
+2026-10-16,Fri,13,Orthopedics,19,12
+2026-10-16,Fri,14,Orthopedics,16,10
+2026-10-16,Fri,15,Orthopedics,17,13
+2026-10-16,Fri,16,Orthopedics,17,13
+2026-10-16,Fri,9,Dermatology,14,12
+2026-10-16,Fri,10,Dermatology,15,12
+2026-10-16,Fri,11,Dermatology,15,8
+2026-10-16,Fri,13,Dermatology,11,11
+2026-10-16,Fri,14,Dermatology,12,12
+2026-10-16,Fri,15,Dermatology,12,10
+2026-10-16,Fri,16,Dermatology,9,10
+2026-10-19,Mon,9,Internal Medicine,72,38
+2026-10-19,Mon,10,Internal Medicine,65,29
+2026-10-19,Mon,11,Internal Medicine,56,27
+2026-10-19,Mon,13,Internal Medicine,49,33
+2026-10-19,Mon,14,Internal Medicine,39,28
+2026-10-19,Mon,15,Internal Medicine,55,32
+2026-10-19,Mon,16,Internal Medicine,38,22
+2026-10-19,Mon,9,Surgery,40,18
+2026-10-19,Mon,10,Surgery,40,19
+2026-10-19,Mon,11,Surgery,34,18
+2026-10-19,Mon,13,Surgery,32,15
+2026-10-19,Mon,14,Surgery,24,14
+2026-10-19,Mon,15,Surgery,23,16
+2026-10-19,Mon,16,Surgery,28,14
+2026-10-19,Mon,9,Pediatrics,44,18
+2026-10-19,Mon,10,Pediatrics,52,24
+2026-10-19,Mon,11,Pediatrics,46,24
+2026-10-19,Mon,13,Pediatrics,30,18
+2026-10-19,Mon,14,Pediatrics,34,27
+2026-10-19,Mon,15,Pediatrics,45,26
+2026-10-19,Mon,16,Pediatrics,32,25
+2026-10-19,Mon,9,Orthopedics,28,16
+2026-10-19,Mon,10,Orthopedics,36,21
+2026-10-19,Mon,11,Orthopedics,25,13
+2026-10-19,Mon,13,Orthopedics,22,9
+2026-10-19,Mon,14,Orthopedics,19,12
+2026-10-19,Mon,15,Orthopedics,20,14
+2026-10-19,Mon,16,Orthopedics,18,15
+2026-10-19,Mon,9,Dermatology,24,10
+2026-10-19,Mon,10,Dermatology,22,11
+2026-10-19,Mon,11,Dermatology,21,7
+2026-10-19,Mon,13,Dermatology,17,10
+2026-10-19,Mon,14,Dermatology,15,11
+2026-10-19,Mon,15,Dermatology,12,12
+2026-10-19,Mon,16,Dermatology,15,10
+2026-10-20,Tue,9,Internal Medicine,49,24
+2026-10-20,Tue,10,Internal Medicine,55,34
+2026-10-20,Tue,11,Internal Medicine,54,29
+2026-10-20,Tue,13,Internal Medicine,34,26
+2026-10-20,Tue,14,Internal Medicine,35,25
+2026-10-20,Tue,15,Internal Medicine,39,29
+2026-10-20,Tue,16,Internal Medicine,34,25
+2026-10-20,Tue,9,Surgery,27,18
+2026-10-20,Tue,10,Surgery,30,20
+2026-10-20,Tue,11,Surgery,31,15
+2026-10-20,Tue,13,Surgery,21,16
+2026-10-20,Tue,14,Surgery,22,14
+2026-10-20,Tue,15,Surgery,17,13
+2026-10-20,Tue,16,Surgery,20,16
+2026-10-20,Tue,9,Pediatrics,29,23
+2026-10-20,Tue,10,Pediatrics,26,22
+2026-10-20,Tue,11,Pediatrics,30,26
+2026-10-20,Tue,13,Pediatrics,20,20
+2026-10-20,Tue,14,Pediatrics,24,23
+2026-10-20,Tue,15,Pediatrics,26,20
+2026-10-20,Tue,16,Pediatrics,29,20
+2026-10-20,Tue,9,Orthopedics,20,11
+2026-10-20,Tue,10,Orthopedics,20,11
+2026-10-20,Tue,11,Orthopedics,26,14
+2026-10-20,Tue,13,Orthopedics,17,12
+2026-10-20,Tue,14,Orthopedics,17,10
+2026-10-20,Tue,15,Orthopedics,13,12
+2026-10-20,Tue,16,Orthopedics,17,13
+2026-10-20,Tue,9,Dermatology,14,8
+2026-10-20,Tue,10,Dermatology,13,10
+2026-10-20,Tue,11,Dermatology,13,8
+2026-10-20,Tue,13,Dermatology,12,12
+2026-10-20,Tue,14,Dermatology,10,5
+2026-10-20,Tue,15,Dermatology,12,10
+2026-10-20,Tue,16,Dermatology,12,10
+2026-10-21,Wed,9,Internal Medicine,39,27
+2026-10-21,Wed,10,Internal Medicine,42,28
+2026-10-21,Wed,11,Internal Medicine,53,30
+2026-10-21,Wed,13,Internal Medicine,39,28
+2026-10-21,Wed,14,Internal Medicine,34,28
+2026-10-21,Wed,15,Internal Medicine,40,27
+2026-10-21,Wed,16,Internal Medicine,33,27
+2026-10-21,Wed,9,Surgery,24,13
+2026-10-21,Wed,10,Surgery,28,16
+2026-10-21,Wed,11,Surgery,26,18
+2026-10-21,Wed,13,Surgery,18,16
+2026-10-21,Wed,14,Surgery,21,16
+2026-10-21,Wed,15,Surgery,16,18
+2026-10-21,Wed,16,Surgery,18,17
+2026-10-21,Wed,9,Pediatrics,34,22
+2026-10-21,Wed,10,Pediatrics,37,21
+2026-10-21,Wed,11,Pediatrics,34,20
+2026-10-21,Wed,13,Pediatrics,25,25
+2026-10-21,Wed,14,Pediatrics,33,26
+2026-10-21,Wed,15,Pediatrics,26,21
+2026-10-21,Wed,16,Pediatrics,32,23
+2026-10-21,Wed,9,Orthopedics,26,14
+2026-10-21,Wed,10,Orthopedics,19,10
+2026-10-21,Wed,11,Orthopedics,24,16
+2026-10-21,Wed,13,Orthopedics,15,11
+2026-10-21,Wed,14,Orthopedics,19,12
+2026-10-21,Wed,15,Orthopedics,15,10
+2026-10-21,Wed,16,Orthopedics,16,15
+2026-10-21,Wed,9,Dermatology,17,12
+2026-10-21,Wed,10,Dermatology,15,9
+2026-10-21,Wed,11,Dermatology,14,11
+2026-10-21,Wed,13,Dermatology,12,8
+2026-10-21,Wed,14,Dermatology,11,8
+2026-10-21,Wed,15,Dermatology,10,6
+2026-10-21,Wed,16,Dermatology,9,5
+2026-10-22,Thu,9,Internal Medicine,43,24
+2026-10-22,Thu,10,Internal Medicine,45,27
+2026-10-22,Thu,11,Internal Medicine,53,30
+2026-10-22,Thu,13,Internal Medicine,33,25
+2026-10-22,Thu,14,Internal Medicine,32,26
+2026-10-22,Thu,15,Internal Medicine,32,26
+2026-10-22,Thu,16,Internal Medicine,38,30
+2026-10-22,Thu,9,Surgery,30,17
+2026-10-22,Thu,10,Surgery,23,14
+2026-10-22,Thu,11,Surgery,25,15
+2026-10-22,Thu,13,Surgery,21,14
+2026-10-22,Thu,14,Surgery,17,13
+2026-10-22,Thu,15,Surgery,22,16
+2026-10-22,Thu,16,Surgery,18,14
+2026-10-22,Thu,9,Pediatrics,32,21
+2026-10-22,Thu,10,Pediatrics,33,23
+2026-10-22,Thu,11,Pediatrics,30,23
+2026-10-22,Thu,13,Pediatrics,21,16
+2026-10-22,Thu,14,Pediatrics,33,25
+2026-10-22,Thu,15,Pediatrics,26,21
+2026-10-22,Thu,16,Pediatrics,25,22
+2026-10-22,Thu,9,Orthopedics,21,13
+2026-10-22,Thu,10,Orthopedics,19,13
+2026-10-22,Thu,11,Orthopedics,20,14
+2026-10-22,Thu,13,Orthopedics,16,12
+2026-10-22,Thu,14,Orthopedics,16,15
+2026-10-22,Thu,15,Orthopedics,14,10
+2026-10-22,Thu,16,Orthopedics,16,13
+2026-10-22,Thu,9,Dermatology,13,10
+2026-10-22,Thu,10,Dermatology,16,7
+2026-10-22,Thu,11,Dermatology,17,8
+2026-10-22,Thu,13,Dermatology,9,8
+2026-10-22,Thu,14,Dermatology,10,8
+2026-10-22,Thu,15,Dermatology,10,9
+2026-10-22,Thu,16,Dermatology,10,7
+2026-10-23,Fri,9,Internal Medicine,46,27
+2026-10-23,Fri,10,Internal Medicine,45,30
+2026-10-23,Fri,11,Internal Medicine,44,24
+2026-10-23,Fri,13,Internal Medicine,36,22
+2026-10-23,Fri,14,Internal Medicine,39,28
+2026-10-23,Fri,15,Internal Medicine,35,28
+2026-10-23,Fri,16,Internal Medicine,40,26
+2026-10-23,Fri,9,Surgery,32,16
+2026-10-23,Fri,10,Surgery,25,15
+2026-10-23,Fri,11,Surgery,22,13
+2026-10-23,Fri,13,Surgery,18,16
+2026-10-23,Fri,14,Surgery,17,19
+2026-10-23,Fri,15,Surgery,24,15
+2026-10-23,Fri,16,Surgery,23,15
+2026-10-23,Fri,9,Pediatrics,36,19
+2026-10-23,Fri,10,Pediatrics,35,23
+2026-10-23,Fri,11,Pediatrics,30,24
+2026-10-23,Fri,13,Pediatrics,20,20
+2026-10-23,Fri,14,Pediatrics,25,19
+2026-10-23,Fri,15,Pediatrics,26,20
+2026-10-23,Fri,16,Pediatrics,26,24
+2026-10-23,Fri,9,Orthopedics,19,15
+2026-10-23,Fri,10,Orthopedics,21,10
+2026-10-23,Fri,11,Orthopedics,20,16
+2026-10-23,Fri,13,Orthopedics,14,11
+2026-10-23,Fri,14,Orthopedics,16,10
+2026-10-23,Fri,15,Orthopedics,15,10
+2026-10-23,Fri,16,Orthopedics,17,13
+2026-10-23,Fri,9,Dermatology,16,10
+2026-10-23,Fri,10,Dermatology,13,10
+2026-10-23,Fri,11,Dermatology,16,7
+2026-10-23,Fri,13,Dermatology,9,8
+2026-10-23,Fri,14,Dermatology,10,7
+2026-10-23,Fri,15,Dermatology,12,10
+2026-10-23,Fri,16,Dermatology,12,10
+2026-10-26,Mon,9,Internal Medicine,64,30
+2026-10-26,Mon,10,Internal Medicine,52,27
+2026-10-26,Mon,11,Internal Medicine,58,32
+2026-10-26,Mon,13,Internal Medicine,38,27
+2026-10-26,Mon,14,Internal Medicine,40,28
+2026-10-26,Mon,15,Internal Medicine,55,28
+2026-10-26,Mon,16,Internal Medicine,51,30
+2026-10-26,Mon,9,Surgery,30,18
+2026-10-26,Mon,10,Surgery,41,20
+2026-10-26,Mon,11,Surgery,39,20
+2026-10-26,Mon,13,Surgery,26,14
+2026-10-26,Mon,14,Surgery,26,17
+2026-10-26,Mon,15,Surgery,22,14
+2026-10-26,Mon,16,Surgery,28,19
+2026-10-26,Mon,9,Pediatrics,46,30
+2026-10-26,Mon,10,Pediatrics,51,25
+2026-10-26,Mon,11,Pediatrics,46,25
+2026-10-26,Mon,13,Pediatrics,33,24
+2026-10-26,Mon,14,Pediatrics,44,26
+2026-10-26,Mon,15,Pediatrics,37,22
+2026-10-26,Mon,16,Pediatrics,42,22
+2026-10-26,Mon,9,Orthopedics,34,15
+2026-10-26,Mon,10,Orthopedics,32,12
+2026-10-26,Mon,11,Orthopedics,25,16
+2026-10-26,Mon,13,Orthopedics,21,15
+2026-10-26,Mon,14,Orthopedics,23,16
+2026-10-26,Mon,15,Orthopedics,24,15
+2026-10-26,Mon,16,Orthopedics,21,14
+2026-10-26,Mon,9,Dermatology,18,8
+2026-10-26,Mon,10,Dermatology,21,13
+2026-10-26,Mon,11,Dermatology,20,6
+2026-10-26,Mon,13,Dermatology,16,10
+2026-10-26,Mon,14,Dermatology,16,8
+2026-10-26,Mon,15,Dermatology,14,11
+2026-10-26,Mon,16,Dermatology,13,8
+2026-10-27,Tue,9,Internal Medicine,49,28
+2026-10-27,Tue,10,Internal Medicine,48,28
+2026-10-27,Tue,11,Internal Medicine,45,31
+2026-10-27,Tue,13,Internal Medicine,33,27
+2026-10-27,Tue,14,Internal Medicine,36,24
+2026-10-27,Tue,15,Internal Medicine,39,26
+2026-10-27,Tue,16,Internal Medicine,40,28
+2026-10-27,Tue,9,Surgery,31,19
+2026-10-27,Tue,10,Surgery,26,15
+2026-10-27,Tue,11,Surgery,28,15
+2026-10-27,Tue,13,Surgery,19,15
+2026-10-27,Tue,14,Surgery,20,21
+2026-10-27,Tue,15,Surgery,20,13
+2026-10-27,Tue,16,Surgery,19,13
+2026-10-27,Tue,9,Pediatrics,27,22
+2026-10-27,Tue,10,Pediatrics,34,22
+2026-10-27,Tue,11,Pediatrics,36,25
+2026-10-27,Tue,13,Pediatrics,24,18
+2026-10-27,Tue,14,Pediatrics,23,23
+2026-10-27,Tue,15,Pediatrics,31,24
+2026-10-27,Tue,16,Pediatrics,33,21
+2026-10-27,Tue,9,Orthopedics,26,13
+2026-10-27,Tue,10,Orthopedics,20,13
+2026-10-27,Tue,11,Orthopedics,19,12
+2026-10-27,Tue,13,Orthopedics,13,11
+2026-10-27,Tue,14,Orthopedics,15,11
+2026-10-27,Tue,15,Orthopedics,14,15
+2026-10-27,Tue,16,Orthopedics,17,14
+2026-10-27,Tue,9,Dermatology,14,13
+2026-10-27,Tue,10,Dermatology,13,11
+2026-10-27,Tue,11,Dermatology,15,12
+2026-10-27,Tue,13,Dermatology,9,9
+2026-10-27,Tue,14,Dermatology,12,10
+2026-10-27,Tue,15,Dermatology,11,7
+2026-10-27,Tue,16,Dermatology,9,9
+2026-10-28,Wed,9,Internal Medicine,53,30
+2026-10-28,Wed,10,Internal Medicine,53,30
+2026-10-28,Wed,11,Internal Medicine,41,26
+2026-10-28,Wed,13,Internal Medicine,35,28
+2026-10-28,Wed,14,Internal Medicine,32,25
+2026-10-28,Wed,15,Internal Medicine,29,27
+2026-10-28,Wed,16,Internal Medicine,37,25
+2026-10-28,Wed,9,Surgery,26,13
+2026-10-28,Wed,10,Surgery,22,15
+2026-10-28,Wed,11,Surgery,26,18
+2026-10-28,Wed,13,Surgery,20,16
+2026-10-28,Wed,14,Surgery,18,17
+2026-10-28,Wed,15,Surgery,23,19
+2026-10-28,Wed,16,Surgery,23,19
+2026-10-28,Wed,9,Pediatrics,35,21
+2026-10-28,Wed,10,Pediatrics,33,26
+2026-10-28,Wed,11,Pediatrics,29,21
+2026-10-28,Wed,13,Pediatrics,25,23
+2026-10-28,Wed,14,Pediatrics,24,26
+2026-10-28,Wed,15,Pediatrics,32,22
+2026-10-28,Wed,16,Pediatrics,24,25
+2026-10-28,Wed,9,Orthopedics,24,9
+2026-10-28,Wed,10,Orthopedics,26,13
+2026-10-28,Wed,11,Orthopedics,23,12
+2026-10-28,Wed,13,Orthopedics,16,11
+2026-10-28,Wed,14,Orthopedics,16,10
+2026-10-28,Wed,15,Orthopedics,18,11
+2026-10-28,Wed,16,Orthopedics,18,15
+2026-10-28,Wed,9,Dermatology,15,9
+2026-10-28,Wed,10,Dermatology,15,7
+2026-10-28,Wed,11,Dermatology,17,13
+2026-10-28,Wed,13,Dermatology,10,7
+2026-10-28,Wed,14,Dermatology,11,10
+2026-10-28,Wed,15,Dermatology,12,11
+2026-10-28,Wed,16,Dermatology,13,7
+2026-10-29,Thu,9,Internal Medicine,41,26
+2026-10-29,Thu,10,Internal Medicine,40,26
+2026-10-29,Thu,11,Internal Medicine,43,30
+2026-10-29,Thu,13,Internal Medicine,33,26
+2026-10-29,Thu,14,Internal Medicine,33,30
+2026-10-29,Thu,15,Internal Medicine,30,30
+2026-10-29,Thu,16,Internal Medicine,34,24
+2026-10-29,Thu,9,Surgery,28,18
+2026-10-29,Thu,10,Surgery,26,19
+2026-10-29,Thu,11,Surgery,30,18
+2026-10-29,Thu,13,Surgery,21,16
+2026-10-29,Thu,14,Surgery,18,17
+2026-10-29,Thu,15,Surgery,19,13
+2026-10-29,Thu,16,Surgery,20,18
+2026-10-29,Thu,9,Pediatrics,37,27
+2026-10-29,Thu,10,Pediatrics,37,24
+2026-10-29,Thu,11,Pediatrics,35,27
+2026-10-29,Thu,13,Pediatrics,26,24
+2026-10-29,Thu,14,Pediatrics,25,26
+2026-10-29,Thu,15,Pediatrics,25,21
+2026-10-29,Thu,16,Pediatrics,32,21
+2026-10-29,Thu,9,Orthopedics,23,14
+2026-10-29,Thu,10,Orthopedics,20,13
+2026-10-29,Thu,11,Orthopedics,23,14
+2026-10-29,Thu,13,Orthopedics,15,11
+2026-10-29,Thu,14,Orthopedics,16,12
+2026-10-29,Thu,15,Orthopedics,13,10
+2026-10-29,Thu,16,Orthopedics,16,7
+2026-10-29,Thu,9,Dermatology,12,9
+2026-10-29,Thu,10,Dermatology,14,5
+2026-10-29,Thu,11,Dermatology,13,9
+2026-10-29,Thu,13,Dermatology,10,10
+2026-10-29,Thu,14,Dermatology,11,7
+2026-10-29,Thu,15,Dermatology,9,8
+2026-10-29,Thu,16,Dermatology,11,12
+2026-10-30,Fri,9,Internal Medicine,54,30
+2026-10-30,Fri,10,Internal Medicine,53,26
+2026-10-30,Fri,11,Internal Medicine,39,29
+2026-10-30,Fri,13,Internal Medicine,38,29
+2026-10-30,Fri,14,Internal Medicine,30,23
+2026-10-30,Fri,15,Internal Medicine,35,28
+2026-10-30,Fri,16,Internal Medicine,38,27
+2026-10-30,Fri,9,Surgery,24,15
+2026-10-30,Fri,10,Surgery,28,20
+2026-10-30,Fri,11,Surgery,24,16
+2026-10-30,Fri,13,Surgery,22,15
+2026-10-30,Fri,14,Surgery,20,15
+2026-10-30,Fri,15,Surgery,18,20
+2026-10-30,Fri,16,Surgery,22,15
+2026-10-30,Fri,9,Pediatrics,35,25
+2026-10-30,Fri,10,Pediatrics,34,24
+2026-10-30,Fri,11,Pediatrics,36,26
+2026-10-30,Fri,13,Pediatrics,23,20
+2026-10-30,Fri,14,Pediatrics,29,24
+2026-10-30,Fri,15,Pediatrics,26,19
+2026-10-30,Fri,16,Pediatrics,32,22
+2026-10-30,Fri,9,Orthopedics,26,14
+2026-10-30,Fri,10,Orthopedics,22,14
+2026-10-30,Fri,11,Orthopedics,21,14
+2026-10-30,Fri,13,Orthopedics,15,14
+2026-10-30,Fri,14,Orthopedics,14,10
+2026-10-30,Fri,15,Orthopedics,15,10
+2026-10-30,Fri,16,Orthopedics,17,13
+2026-10-30,Fri,9,Dermatology,17,9
+2026-10-30,Fri,10,Dermatology,15,12
+2026-10-30,Fri,11,Dermatology,15,9
+2026-10-30,Fri,13,Dermatology,11,11
+2026-10-30,Fri,14,Dermatology,11,9
+2026-10-30,Fri,15,Dermatology,11,10
+2026-10-30,Fri,16,Dermatology,12,10

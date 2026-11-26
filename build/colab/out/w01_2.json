@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv')\n# 1. 도시별 매출을 큰 것부터 정렬한다 / 按销售额从大到小排序\ncity_sales = df.groupby('city')['amount'].sum().sort_values(ascending=False)\n# 2. 전체에서 차지하는 비율(%)을 계산한다 / 计算占总体的比例 (%)\nshare = (city_sales / city_sales.sum() * 100).round(1)\nprint(share)\n# 3. 1위만 진한 남색, 나머지는 회색으로 칠할 색 목록 / 只有第一名用深蓝色, 其余用灰色\ncolors = ['#1e3a8a'] + ['#cbd5e1'] * (len(city_sales) - 1)\nplt.figure(figsize=(7, 4.4))\nbars = plt.bar(city_sales.index, city_sales.values, color=colors)\n# 4. 막대 위에 비율을 적는다 / 在柱子上方标注比例\nplt.bar_label(bars, labels=share.astype(str) + '%', padding=3)\n# 5. 제목은 결론 문장으로 쓴다 / 标题写成结论句\nplt.title('Beijing leads with ' + str(share.iloc[0]) + '% of sales')\nplt.ylabel('Sales (CNY)')\nplt.ylim(0, city_sales.max() * 1.15)\n# 6. 출처와 기간을 그림 아래에 적는다 (데이터 3원칙) / 在图下方注明来源和期间 (数据三原则)\nplt.figtext(0.01, -0.04, 'Source: payments.csv (class mock data), ' + df['date'].min() + ' ~ ' + df['date'].max(), color='gray', fontsize=9)\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\ncity\nBeijing     28.3\nShenzhen    20.1\nShanghai    19.7\nHangzhou    17.0\nChengdu     15.0\nName: amount, dtype: float64",
+ "imgs": [
+  "w01_2_1.webp"
+ ]
+}

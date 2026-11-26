@@ -379,6 +379,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style><link rel="alternate" hreflang="ko" href="w04_industry-fintech.html"><link rel="alternate" hreflang="zh-CN" href="w04_industry-fintech.zh.html"><link rel="alternate" hreflang="x-default" href="w04_industry-fintech.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"><style data-i18n-font>body,button,input,select,textarea{font-family:"Noto Sans SC",system-ui,sans-serif}</style><style data-i18n-cjk>*{word-break:normal!important;line-break:strict}</style>
 </head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
@@ -398,9 +420,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>衡量产业的两把尺子 — GICS 与 X-Tech</h2><span class="tag m">概念：产业分类</span><span class="tag a">方法：一家公司，两个标签</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — <b>①产业分类</b> → ②视觉编码 → ③图表选择与陷阱 → ④银行 vs 金融科技与伦理</p>
+
 <div class="docline"><b>博士的情境提问</b> 互联网银行是银行，还是科技公司？如果两组把这家公司归入不同的组，与“行业平均”的比较图表就会不同。</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 要比较公司，先要把它们归入同一组。归组标准不同，平均值和排名就不同。</li><li><b>前一方法的局限</b> — 只看一个官方分类，就会掩盖“赚钱像银行，做事方式像 IT 公司”这类差异。</li><li><b>解法</b> — 两把尺子一起用。<b>GICS</b> 看“靠什么赚钱”，<b>X-Tech</b> 看“怎么做事”。一家公司可以同时拥有两个标签。</li></ol><div class="easy"><b>简单来说</b> 就像一名职员既是“财务部”（正式部门），又是“我们组的 Excel 达人”（外号）。</div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>在学校，学生既是“2年级3班”（正式班级），又是“广播社”（活动）。算班级平均和算广播社平均时，比较对象不同。</p></div><div><h4>在产业中</h4><p>GICS 是 4 级结构 — 板块 11 → 行业组 25 → 行业 74 → 子行业 163。X-Tech 是传统产业 X + 技术（AI·移动·云·开放 API）= 金融科技·食品科技·教育科技·法律科技之类的名称。中国国家统计局的《国民经济行业分类》、韩国统计厅的韩国标准产业分类（KSIC）也起同样的作用。</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在产业中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>在学校，学生既是“2年级3班”（正式班级），又是“广播社”（活动）。算班级平均和算广播社平均时，比较对象不同。</p></div><div><h4>在产业中</h4><p>GICS 是 4 级结构 — 板块 11 → 行业组 25 → 行业 74 → 子行业 163。X-Tech 是传统产业 X + 技术（AI·移动·云·开放 API）= 金融科技·食品科技·教育科技·法律科技之类的名称。中国国家统计局的《国民经济行业分类》、韩国统计厅的韩国标准产业分类（KSIC）也起同样的作用。</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="doc" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">博士</span><p>给下面每种公司类型贴上两个标签吧。只对一个就只对了一半。</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>金融科技是技术，所以肯定是信息技术（IT）板块！</p></div></div><div class="say"><img data-who="fly" data-mood="arms" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>GICS 看的是“靠什么赚钱”。靠利息和手续费赚钱的话，就是金融。</p></div></div><div class="say"><img data-who="x2" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x2">X2</span><p>那“金融科技”这个名字不是 GICS 的，而是 X-Tech 那边的标签啊。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 贴两个标签</p><div id="w4cls"></div></div>
 <div class="explain"><b>拆开来看</b><p>原始资料中的 GICS 结构（板块 11 → 行业组 24 → 行业 69 → 子行业 158）是 2023 年改版前的数字。S&P Dow Jones Indices 与 MSCI 公开的现行结构是 <b>11 · 25 · 74 · 163</b>，本页据此改写。11 个板块不变：能源(10) · 原材料(15) · 工业(20) · 可选消费(25) · 日常消费(30) · 医疗保健(35) · 金融(40) · 信息技术(45) · 通信服务(50) · 公用事业(55) · 房地产(60)。</p></div>
@@ -412,9 +435,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>视觉编码 — 眼睛读长度最准</h2><span class="tag m">概念：视觉编码与准确率排名</span><span class="tag a">方法：同样两个数字用四种方式呈现，猜一猜</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①产业分类 → <b>②视觉编码</b> → ③图表选择与陷阱 → ④银行 vs 金融科技与伦理</p>
+
 <div class="docline"><b>博士的情境提问</b> 算盘宝组把金融科技公司的用户数画成圆的大小（气泡），果蝇组把同样的数字画成柱的长度。观众从哪一边能更准确地读出“几倍”？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 把数字搬到屏幕上的方法有很多 — 位置、长度、角度、面积、深浅、颜色。</li><li><b>前一方法的局限</b> — 好看的方法不等于准确的方法。用面积·颜色表示大小，每个人读出来都不一样。</li><li><b>解法</b> — <b>“有多大”交给位置·长度，“属于哪组”交给颜色·形状</b>。依据是 Bertin（1967）的七种视觉变量和 Cleveland·McGill（1984）的准确率排名。</li></ol><div class="easy"><b>简单来说</b> 搬运数字的手有七只，能准确搬运大小的只有位置和长度两只。</div></div><div class="math"><h4>由觉得数学公式难的助手替你提问</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 为什么把圆的半径扩大两倍，看起来比“两倍”还大？</p></div><p class="school">用学校数学来看：初中 圆面积 πr²，平方</p><p><b>博士</b> 圆的面积与半径乘两次的值成正比。半径 2 倍，面积就是 2×2 = 4 倍。眼睛看的是面积，所以感觉像 4 倍左右。</p><table><thead><tr><th>式子片段</th><th>读法与含义</th></tr></thead><tbody><tr><td>π（派）</td><td>约 3.14。只要是圆，始终是同一个数</td></tr><tr><td>r²</td><td>半径 × 半径 — 读作“r 的平方”</td></tr><tr><td>面积 ∝ r²</td><td>面积与半径的平方成正比</td></tr></tbody></table><div class="try"><b>用数字算一遍</b><br>半径 1 → 面积 3.14 × 1 × 1 = <b>3.14</b><br>半径 2 → 面积 3.14 × 2 × 2 = <b>12.56</b> → 面积是 <b>4倍</b><br>想让值为 2 倍时不被看成 4 倍，半径只需放大 √2 ≈ 1.41 倍</div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 所以看气泡图要先确认“值是对应面积，还是对应半径”。</p></div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>披萨尺寸若以“直径 2 倍”做广告，实际分量是 4 倍。人们先感受到的是面积，而不是直径。</p></div><div><h4>在可视化中</h4><p>准确率顺序（Cleveland·McGill）：① 共同轴上的位置 ② 无共同轴的位置 ③ 长度 ④ 角度·斜率 ⑤ 面积 ⑥ 体积 ⑦ 深浅·饱和度 ⑧ 色相。颜色不是用来表示大小，而是用来说明“属于哪组”。</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在可视化中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>披萨尺寸若以“直径 2 倍”做广告，实际分量是 4 倍。人们先感受到的是面积，而不是直径。</p></div><div><h4>在可视化中</h4><p>准确率顺序（Cleveland·McGill）：① 共同轴上的位置 ② 无共同轴的位置 ③ 长度 ④ 角度·斜率 ⑤ 面积 ⑥ 体积 ⑦ 深浅·饱和度 ⑧ 色相。颜色不是用来表示大小，而是用来说明“属于哪组”。</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="asst" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-asst">助手 Haru</span><p>我用四种方法呈现同样两个值（A 和 B）。请用滑块猜一猜 B 是 A 的百分之几。</p></div></div><div class="say"><img data-who="robo" data-mood="coin" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>圆的大小嘛，一眼就看得出来！</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>四次都做一遍，比比误差。别凭感觉，用数字。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 长度·角度·面积·颜色，哪个更准确</p><div class="chips" id="w4enc"></div>
 <div id="w4ev" class="viz" style="min-height:200px"></div>
@@ -430,12 +454,34 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>图表选择表与两个陷阱 — 饼图，以及平均值</h2><span class="tag m">概念：图表选择与平均值的陷阱</span><span class="tag a">方法：同样的数字用饼图和柱状图，同样的平均值用箱线图</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①产业分类 → ②视觉编码 → <b>③图表选择与陷阱</b> → ④银行 vs 金融科技与伦理</p>
+
 <div class="docline"><b>博士的情境提问</b> 客服中心“平均响应时间 12 分钟”。3 月和 4 月完全一样。4 月客户投诉蜂拥而至，平均值为什么什么都没说？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 报告要简短，所以很容易用一个数字（平均值）或一张图（饼图）收尾。</li><li><b>前一方法的局限</b> — 饼图分不清相近的扇区（19% 和 22%），平均值则掩盖离散（1 分钟就接通的电话和等了 40 分钟的电话）。</li><li><b>解法</b> — 目的是比较就用<b>排序横向柱状图</b>，分布重要就把<b>箱线图·直方图</b>与平均值一起呈现。</li></ol><div class="easy"><b>简单来说</b> 平均身高 170cm 的两个班 — 一个班大家都在 168~172cm，另一个班混着 150cm 和 190cm。平均值相同，却是不同的班。</div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>写着“平均等待 12 分钟”的餐厅告示牌。大多数 2 分钟就能进、偶尔要等 40 分钟的店，和总是 12 分钟的店，是不同的餐厅。</p></div><div><h4>在可视化中</h4><p>图表选择表 — 大小比较：柱状图 · 时间趋势：折线图 · 构成：树状图（或 5 个以下的饼图）· 分布：直方图·箱线图·热力图 · 两变量关系：散点图·气泡图 · 多项目强弱：雷达图 · 流动与分流：桑基图。</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在可视化中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>写着“平均等待 12 分钟”的餐厅告示牌。大多数 2 分钟就能进、偶尔要等 40 分钟的店，和总是 12 分钟的店，是不同的餐厅。</p></div><div><h4>在可视化中</h4><p>图表选择表 — 大小比较：柱状图 · 时间趋势：折线图 · 构成：树状图（或 5 个以下的饼图）· 分布：直方图·箱线图·热力图 · 两变量关系：散点图·气泡图 · 多项目强弱：雷达图 · 流动与分流：桑基图。</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="doc" data-mood="board" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">博士</span><p>左边是饼图陷阱，右边是平均值陷阱。两个都亲手确认一下吧。</p></div></div><div class="say"><img data-who="robo" data-mood="meh" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>平均值一样不就是一样吗？数字都一样嘛。</p></div></div><div class="say"><img data-who="fly" data-mood="magnify" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>按一下箱线图按钮。4 月有等了 30 分钟以上的电话。</p></div></div><div class="say"><img data-who="sia" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">实习生西娅</span><p>在饼图里从 C（19%）和 D（22%）中挑出大的那个，我花了好半天。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 饼图的陷阱，平均值的陷阱</p><div class="grid2"><div><div class="ctrl"><button type="button" class="bt" id="w4pie" aria-pressed="true">用饼图</button><button type="button" class="bt" id="w4barh">用排序横向柱状图</button></div><div id="w4pv" class="viz"></div></div>
 <div><div class="ctrl"><button type="button" class="bt" id="w4avg" aria-pressed="true">只看平均值</button><button type="button" class="bt" id="w4bx">用箱线图</button></div><div id="w4mv" class="viz"></div><div class="insight" id="w4mo" aria-live="polite"></div></div></div></div>
+<div class="colab" id="cb-w04_1"><p class="cb-head">查看实际画面 — 平均值陷阱 — 各渠道的平均值与中位数</p><div class="cb-prompt"><span class="cb-lbl">① 发给 Qwen 的提示词</span><p>[角色] 你是金融科技公司的数据分析师。<br>[数据] payments.csv — 列：date（日期）、hour（时）、city（城市）、channel（app·web·offline）、items（商品数）、amount（支付金额，元）、is_new_user（新用户 1·老用户 0）。800 行。<br>[请求] 用表格显示各渠道支付金额的平均值和中位数，并把两个值并排画成柱状图。计算时去掉缺失值。<br>[条件] 在 Colab 中用 files.upload() 直接加载文件的结构。图表标题、坐标轴标题、图例用英文，注释用韩文和中文写得非常详细。禁止缩进，禁止函数（def），禁止 for 循环。</p></div><div class="cb-cell"><span class="cb-lbl">② AI 给出的 Python 代码 <small>（示例答案）</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+# 1. 파일을 읽고 결제액 빈 값은 뺀다 / 读取文件并去掉支付金额的缺失值
+df = pd.read_csv(&#x27;payments.csv&#x27;).dropna(subset=[&#x27;amount&#x27;])
+# 2. 채널별 평균과 중앙값을 함께 계산한다 / 同时计算各渠道的平均值和中位数
+stat = df.groupby(&#x27;channel&#x27;)[&#x27;amount&#x27;].agg([&#x27;mean&#x27;, &#x27;median&#x27;, &#x27;count&#x27;]).round(1)</pre><details class="cb-more"><summary>查看全部代码（还有 8 行）</summary><pre class="cb-code" data-i18n-skip>print(stat)
+# 3. 평균과 중앙값을 나란히 막대로 그린다 / 把平均值和中位数并排画成柱状图
+ax = stat[[&#x27;mean&#x27;, &#x27;median&#x27;]].plot(kind=&#x27;bar&#x27;, figsize=(7, 4), color=[&#x27;#b45309&#x27;, &#x27;#1e3a8a&#x27;], rot=0)
+ax.set_title(&#x27;In every channel the mean is above the median&#x27;)
+ax.set_xlabel(&#x27;Channel&#x27;)
+ax.set_ylabel(&#x27;Payment amount (CNY)&#x27;)
+ax.legend([&#x27;Mean&#x27;, &#x27;Median&#x27;])
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ 在 Colab 中运行的结果</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+           mean  median  count
+channel                       
+app      1149.2   993.9    502
+offline   984.2   800.6    151
+web      1253.3  1166.3    115</pre><img src="../assets/img/colab/w04_1_1.webp" width="689" height="441" alt="运行结果图表 — 平均值陷阱 — 各渠道的平均值与中位数" loading="lazy"></div><p class="cb-note">所有渠道的平均值都大于中位数。这是因为几笔大额支付把平均值拉高了。<span>AI 的回答每次都会略有不同。上面的代码是按照提示词规则（图表文字用英文、韩中注释、不缩进·不用函数·不用 for 循环）给出的示例答案，结果是用课堂数据实际运行这段代码得到的。</span></p></div>
 <div class="explain"><b>拆开来看</b><p>饼图示例（A 17% · B 25% · C 19% · D 22% · E 17%）照搬原始资料。平均值陷阱中两个月各 10 条响应时间是说明用示例，两个月合计都是 120 分钟，平均 12 分钟。4 月有 3 通电话等待了 30 分钟以上（30·38·40 分钟）。箱线图用<b>五个数字</b>（最小值·第一四分位数·中位数·第三四分位数·最大值）展示形状，比单一平均值更诚实。</p></div>
 <div class="ai-check"><h4>AI 结果判断角</h4><p>请 AI“比较一下 3 月和 4 月的客户响应”，它回答“两个月平均响应时间都是 12 分钟，服务质量没有变化”。<b>哪里不对？</b>平均值相同这一事实没错，但“没有变化”这个结论依据不足。重新提问的句子：“把两个月的响应时间画成箱线图，并一起告诉我等待 30 分钟以上的件数。”</p></div>
 <div class="docline"><b>博士的一句话解读</b> 平均值只是一个代表值。不把<b>形状</b>（离散与尾部）一起展示，平均值就会遮住最重要的人（等了很久的客户）。</div>
@@ -446,9 +492,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>银行 vs 金融科技 — 仪表板 5 原则与伦理 8 问</h2><span class="tag m">概念：按产业的仪表板原则</span><span class="tag a">现场：两组的界面并排</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①产业分类 → ②视觉编码 → ③图表选择与陷阱 → <b>④银行 vs 金融科技与伦理</b></p>
+
 <div class="docline"><b>博士的情境提问</b> 果蝇组汇报银行网点界面，算盘宝组汇报金融科技应用界面。同样是“金融”，首屏最上方的数字却不同。为什么？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 能放进仪表板的数字有几十个，界面却只有一个。</li><li><b>前一方法的局限</b> — 全放进去，结论就被淹没；不考虑产业背景地挑选，不相干的数字就会跑到最上面。</li><li><b>解法</b> — <b>仪表板 5 原则</b>：① 一个界面，一个结论（只读标题也能得到答案）② 从左上到右下的阅读顺序 ③ 强调用颜色，其余用灰色 ④ 数字带单位·期间·出处 ⑤ 留白也是工具。再在数据旁加一句供人阅读的话。</li></ol><div class="easy"><b>简单来说</b> 组合商品（银行：存款·贷款·外汇·资产管理由一家公司提供）和单品（金融科技：把汇款这一件事做到极快）的货架不同。</div></div></div>
-<div class="pair"><div><h4>在银行界面中</h4><p>以<b>稳定与监管</b>为中心。收入来源：存贷利差·手续费·销售代理。代表图表：渠道地图、网点仪表板、资产组合。</p></div><div><h4>在金融科技界面中</h4><p>以<b>速度与转化</b>为中心。收入来源：支付手续费·合作·广告·存贷利差。代表图表：用户旅程比较、桑基流向、推送效果。两个世界正在相互趋同 — 银行在做应用，金融科技在拿牌照。</p></div></div>
+<details class="more"><summary>延伸阅读 — 在银行界面上 · 在金融科技界面上</summary><div class="pair"><div><h4>在银行界面中</h4><p>以<b>稳定与监管</b>为中心。收入来源：存贷利差·手续费·销售代理。代表图表：渠道地图、网点仪表板、资产组合。</p></div><div><h4>在金融科技界面中</h4><p>以<b>速度与转化</b>为中心。收入来源：支付手续费·合作·广告·存贷利差。代表图表：用户旅程比较、桑基流向、推送效果。两个世界正在相互趋同 — 银行在做应用，金融科技在拿牌照。</p></div></div></details>
 <div class="tbl"><table><thead><tr><th>产业</th><th>核心 KPI 1</th><th>核心 KPI 2</th><th>常用可视化</th></tr></thead><tbody>
 <tr><td>金融</td><td>资产 · 存贷利差</td><td>应用 MAU</td><td>折线趋势、客户旅程、桑基图、雷达图</td></tr>
 <tr><td>制造</td><td>开工率</td><td>不良率</td><td>按产线柱状图、时间序列、分布热力图</td></tr>
@@ -461,6 +508,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="panel"><p class="ptitle">动手试一试 — 汇报前伦理 8 问检查</p><div id="w4eth"></div><div class="insight" id="w4etho" aria-live="polite"></div>
 <h3>第4周实操代码（Colab）</h3><p style="font-size:15px">这是课上用的 Colab 实操 #1~#5。是亲手制作第 3 章中树状图·雷达图·桑基图·业务结构图等可视化的代码。先用提示词让 AI 给出代码，再和下面的代码比较，找出差异。</p>
 <div class="chips"><a class="bt" href="https://colab.research.google.com/drive/1yLeg4s1MjjiZS0enSRKgTgY1StZR1i1E?usp=sharing" target="_blank" rel="noopener">实操 #1 ↗</a><a class="bt" href="https://colab.research.google.com/drive/17fTWb1jsU3HyS_Ye0sqv4lE4fqtLFmYY?usp=sharing" target="_blank" rel="noopener">实操 #2 ↗</a><a class="bt" href="https://colab.research.google.com/drive/1LYyHkqjojKCS4ryOHYrxoY7pc5g2iyeA?usp=sharing" target="_blank" rel="noopener">实操 #3 ↗</a><a class="bt" href="https://colab.research.google.com/drive/1XLdtzkREePflMkoXPpuditlcaueaCZeo?usp=sharing" target="_blank" rel="noopener">实操 #4 ↗</a><a class="bt" href="https://colab.research.google.com/drive/1B8SaTQcat3IQlsRYb7Ma1-dwEAqHCz0V?usp=sharing" target="_blank" rel="noopener">实操 #5 ↗</a></div></div>
+<div class="colab" id="cb-w04_2"><p class="cb-head">查看实际画面 — 用箱线图连分布一起看</p><div class="cb-prompt"><span class="cb-lbl">① 发给 Qwen 的提示词</span><p>[角色] 你是金融科技公司的数据分析师。<br>[数据] 就是刚才用的 payments.csv。<br>[请求] 把各渠道的支付金额画成箱线图。五数概括（最小值·Q1·中位数·Q3·最大值）也用表格输出。<br>[条件] 在 Colab 中用 files.upload() 直接加载文件的结构。图表标题、坐标轴标题、图例用英文，注释用韩文和中文写得非常详细。禁止缩进，禁止函数（def），禁止 for 循环。</p></div><div class="cb-cell"><span class="cb-lbl">② AI 给出的 Python 代码 <small>（示例答案）</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;).dropna(subset=[&#x27;amount&#x27;])
+# 1. 다섯 숫자 요약: 최솟값·Q1·중앙값·Q3·최댓값 / 五数概括: 最小值、Q1、中位数、Q3、最大值
+five = df.groupby(&#x27;channel&#x27;)[&#x27;amount&#x27;].quantile([0, 0.25, 0.5, 0.75, 1]).unstack().round(1)
+five.columns = [&#x27;min&#x27;, &#x27;Q1&#x27;, &#x27;median&#x27;, &#x27;Q3&#x27;, &#x27;max&#x27;]</pre><details class="cb-more"><summary>查看全部代码（还有 9 行）</summary><pre class="cb-code" data-i18n-skip>print(five)
+# 2. 채널별 상자그림을 그린다 / 按渠道画箱线图
+ax = df.boxplot(column=&#x27;amount&#x27;, by=&#x27;channel&#x27;, figsize=(7, 4.4), grid=False)
+# 3. 제목과 축 이름을 다듬는다 (pandas가 붙이는 위 제목은 지운다) / 润色标题和坐标轴 (去掉 pandas 自动加的总标题)
+plt.suptitle(&#x27;&#x27;)
+ax.set_title(&#x27;Web has the highest median, and every channel has a long upper tail&#x27;)
+ax.set_xlabel(&#x27;Channel&#x27;)
+ax.set_ylabel(&#x27;Payment amount (CNY)&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ 在 Colab 中运行的结果</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+           min     Q1  median      Q3     max
+channel                                      
+app      146.7  681.7   993.9  1469.9  4738.8
+offline  220.9  618.6   800.6  1217.9  4103.4
+web      258.3  820.4  1166.3  1598.5  4892.7</pre><img src="../assets/img/colab/w04_2_1.webp" width="712" height="465" alt="运行结果图表 — 用箱线图连分布一起看" loading="lazy"></div><p class="cb-note">箱子中间的线是中位数，箱子是中间的 50%，点是异常值候选。只用一根柱子看不到的离散程度在这里看得到。<span>AI 的回答每次都会略有不同。上面的代码是按照提示词规则（图表文字用英文、韩中注释、不缩进·不用函数·不用 for 循环）给出的示例答案，结果是用课堂数据实际运行这段代码得到的。</span></p></div>
 <div class="explain"><b>拆开来看</b><p><b>四种误导性图表</b>（即使没有恶意也会出现）：① 截断的 Y 轴 — 把小差异放大 ② 错误的通道 — 横竖同时放大，面积按乘积变大 ③ 错误的基准 — 堆叠图即使各部分不变也显得在增长 ④ 没有比较对象 — 不同时放上基准线·平均值·去年同期，答案就会被夸大。大多数都能靠坐标轴·单位·比较线这类<b>小诚实</b>来防止。</p><p>第4周作业（原始资料）：选一个金融科技以外的 X-Tech 领域（食品科技·法律科技·教育科技·房产科技·健康科技），与传统产业比较的小报告 — 图解 1 个、信息图 1 个、图表 1 个以上，并记录提示词原文和自己修改的部分。</p></div>
 <div class="docline"><b>博士的一句话解读</b> 伦理 8 问不是喜好，而是<b>约定</b>。每周用同一标准检查同一界面。</div>
 <p class="limit"><b>本阶段的局限 —</b> 到第4周，理论和产业背景都集齐了。5~7层（营销/零售·Plotly·讲故事）正在准备中，下一个开放的楼层是 8 层 — 期中项目。</p>

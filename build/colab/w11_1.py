@@ -1,0 +1,27 @@
+from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv('traffic_hourly.csv')
+order = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+# 1. 시간대별 평균 통행량 (P3 첫 차트) / 各时段平均通行量 (P3 第一张图)
+hourly = df.groupby('hour')['volume'].mean()
+# 2. 요일 × 시간 평균 통행량 표 (P4 히트맵) / 星期 × 小时 的平均通行量表 (P4 热力图)
+table = df.pivot_table(index='weekday', columns='hour', values='volume', aggfunc='mean').reindex(order)
+best = table.stack().idxmax()
+print('peak hour (all days) =', hourly.idxmax(), '| darkest cell =', best[0], int(best[1]), 'h,', round(table.stack().max()), 'vehicles')
+fig, ax = plt.subplots(1, 2, figsize=(13, 4), gridspec_kw={'width_ratios': [1, 1.5]})
+ax[0].plot(hourly.index, hourly.values, color='#0b7a86', marker='o', markersize=3)
+ax[0].annotate('Peak', xy=(hourly.idxmax(), hourly.max()), xytext=(hourly.idxmax() - 6, hourly.max()), arrowprops=dict(arrowstyle='->', color='#b45309'), color='#b45309')
+ax[0].set_ylim(0, hourly.max() * 1.15)
+ax[0].set_title('Evening ' + str(hourly.idxmax()) + 'h is the busiest hour')
+ax[0].set_xlabel('Hour')
+ax[0].set_ylabel('Average volume (vehicles)')
+im = ax[1].imshow(table.values, cmap='GnBu', aspect='auto')
+fig.colorbar(im, ax=ax[1], label='Average volume (vehicles)')
+ax[1].set_xticks(range(0, 24, 2))
+ax[1].set_yticks(range(7))
+ax[1].set_yticklabels(order)
+ax[1].set_xlabel('Hour')
+ax[1].set_title(best[0] + ' ' + str(best[1]) + 'h is the darkest cell')
+plt.show()

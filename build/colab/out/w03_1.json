@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv')\n# 1. 열마다 빈 값(NaN)이 몇 개인지 센다 / 统计每一列有多少缺失值 (NaN)\nprint(df.isna().sum())\n# 2. 세 가지 처리 방법으로 amount를 만든다 / 用三种方法处理 amount\nfill_zero = df['amount'].fillna(0)\nfill_median = df['amount'].fillna(df['amount'].median())\ndrop_rows = df['amount'].dropna()\n# 3. 방법별 평균과 건수를 표로 만든다 / 把每种方法的平均值和笔数做成表\nresult = pd.DataFrame({'method': ['Fill with 0', 'Fill with median', 'Drop missing rows'], 'mean': [fill_zero.mean(), fill_median.mean(), drop_rows.mean()], 'rows': [len(fill_zero), len(fill_median), len(drop_rows)]}).round(2)\nprint(result)\n# 4. 평균을 막대로 비교한다 (Y축은 0부터) / 用柱状图比较平均值 (Y 轴从 0 开始)\nplt.figure(figsize=(7, 4))\nbars = plt.bar(result['method'], result['mean'], color=['#b45309', '#0b7a86', '#1e3a8a'])\nplt.bar_label(bars, labels=result['mean'].astype(str), padding=3)\nplt.ylim(0, result['mean'].max() * 1.15)\nplt.title('Filling missing amounts with 0 pulls the mean down')\nplt.ylabel('Mean payment (CNY)')\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\ndate            0\nhour            0\ncity            0\nchannel         0\nitems           0\namount         32\nis_new_user     0\ndtype: int64\n              method     mean  rows\n0        Fill with 0  1087.05   800\n1   Fill with median  1125.46   800\n2  Drop missing rows  1132.34   768",
+ "imgs": [
+  "w03_1_1.webp"
+ ]
+}
