@@ -379,6 +379,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style><link rel="alternate" hreflang="ko" href="w08_midterm-assignment.html"><link rel="alternate" hreflang="zh-CN" href="w08_midterm-assignment.zh.html"><link rel="alternate" hreflang="x-default" href="w08_midterm-assignment.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"><style data-i18n-font>body,button,input,select,textarea{font-family:"Noto Sans SC",system-ui,sans-serif}</style><style data-i18n-cjk>*{word-break:normal!important;line-break:strict}</style>
 </head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
@@ -396,9 +418,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>Q1 — 找案例之前先定标准（Moa 的咨询）</h2><span class="tag m">概念：好图表 5 原则与坏图表 5 陷阱</span><span class="tag a">方法：标准 → 请 AI 提供候选 → 亲自确认 → 答案</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — <b>①Q1 标准</b> → ②Q2 工具 → ③Q3 实操 → ④Q4·Q5 选择与诊断</p>
+
 <div class="docline"><b>博士的情境提问</b> Moa 请 AI“告诉我好的可视化案例”，结果来了五个链接，其中两个打不开。她应该先做什么？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 让人挑好·坏案例时，很容易按“好看 / 不好看”来挑。</li><li><b>前一方法的局限</b> — 没有标准地挑选，就说不清为什么好（概念 30 分），还可能把 AI 编造的假地址原样照搬。</li><li><b>解法</b> — 先以<b>好图表 5 原则</b>和<b>坏图表 5 陷阱（T1~T5）</b>为标准，只向 AI 要候选，然后亲自打开链接确认。</li></ol><div class="easy"><b>简单来说</b> 就像医生在问“哪里不舒服？”之前手里已经有诊断表，看图表之前我们也手握诊断表。</div></div></div>
-<div class="pair"><div><h4>好图表 5 原则</h4><p>① 准确的轴（柱状从0开始，刻度均匀）② 适合数据的图表 ③ 没有赘余（一个信息）④ 清晰的标签（单位·图例·出处）⑤ 能导向行动（一句“所以要做什么”）。</p></div><div><h4>坏图表 5 陷阱</h4><p>T1 Y 轴截断 · T2 不合适的图表（合计不为 100% 的饼图等）· T3 双轴·刻度操纵 · T4 把相关武断地当作因果 · T5 装饰过度（3D·阴影·彩虹色）。</p></div></div>
+<details class="more"><summary>延伸阅读 — 好图表 5 原则 · 坏图表 5 陷阱</summary><div class="pair"><div><h4>好图表 5 原则</h4><p>① 准确的轴（柱状从0开始，刻度均匀）② 适合数据的图表 ③ 没有赘余（一个信息）④ 清晰的标签（单位·图例·出处）⑤ 能导向行动（一句“所以要做什么”）。</p></div><div><h4>坏图表 5 陷阱</h4><p>T1 Y 轴截断 · T2 不合适的图表（合计不为 100% 的饼图等）· T3 双轴·刻度操纵 · T4 把相关武断地当作因果 · T5 装饰过度（3D·阴影·彩虹色）。</p></div></div></details>
 <p><b>适合找案例的地方</b>：韩国统计厅·e-国家指标的新闻稿、韩国银行经济统计、中国国家统计局英文网站（<a href="https://www.stats.gov.cn/english/" target="_blank" rel="noopener">stats.gov.cn/english ↗</a>）、企业年报、国际经济媒体的图表报道。出处越明确，引用也越容易。课上一起介绍的<a href="https://www.youtube.com/watch?v=zHyk6rfHGao" target="_blank" rel="noopener">可视化参考视频 ↗</a>在挑选案例时也可以参考。</p>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="moa" data-mood="report" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">实习生茉雅</span><p>我们来练习给陷阱起名字。下面五个场景分别是 T 几，选一选吧。</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>3D 柱状图看起来很高级，不算好案例吗？</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>那是 T5。因为透视的远近感，比例看起来会不一样。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 给 T1~T5 起名字</p><div id="w8t"></div></div>
@@ -412,9 +435,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>Q2 — 一张表胜过长代码（X1 的咨询面谈）</h2><span class="tag m">概念：Python 可视化库</span><span class="tag a">方法：把安装 · 性质 · 特点 · 适用场景整理成一张表</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①Q1 标准 → <b>②Q2 工具</b> → ③Q3 执行 → ④Q4·Q5 选择与诊断</p>
+
 <div class="docline"><b>博士的情境提问</b> X1 把四个库的说明各写了一大段。可是“什么场景用什么工具”却一眼看不出来。该怎么改？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 只罗列库，就漏掉了“那到底什么时候用什么”。</li><li><b>前一方法的局限</b> — 原始资料把单纯罗列视为扣分项。必须让选择标准可见。</li><li><b>解法</b> — 把<b>安装命令 · 性质 · 特点 · 适用场景</b>整理成一张表，按“成果要放在哪里”来选工具。</li></ol><div class="easy"><b>简单来说</b> 与其罗列锤子、螺丝刀、锯子，不如写“钉钉子用锤子，拧螺丝用螺丝刀”。</div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>照片是发到社交媒体、装进相框挂起来，还是做成视频，用的应用都不同。同一张照片，也是由放置的地方决定工具。</p></div><div><h4>在可视化中</h4><p>要做的事 → 工具：报告·论文静态图表 → Matplotlib + Seaborn / 快速检查 → pandas·Altair / 网页·仪表板 → Plotly / 统计关系（回归·分布）→ Seaborn / 地图 → Plotly·folium。</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在可视化中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>照片是发到社交媒体、装进相框挂起来，还是做成视频，用的应用都不同。同一张照片，也是由放置的地方决定工具。</p></div><div><h4>在可视化中</h4><p>要做的事 → 工具：报告·论文静态图表 → Matplotlib + Seaborn / 快速检查 → pandas·Altair / 网页·仪表板 → Plotly / 统计关系（回归·分布）→ Seaborn / 地图 → Plotly·folium。</p></div></div></details>
 <div class="tbl"><table><thead><tr><th>库</th><th>安装</th><th>性质</th><th>特点</th><th>适用场景</th></tr></thead><tbody>
 <tr><td>Matplotlib</td><td><code>pip install matplotlib</code></td><td>基础工具</td><td>静态图表、精细调整、其他工具的底层。但代码较长</td><td>报告 · 论文 · 印刷品</td></tr>
 <tr><td>Seaborn</td><td><code>pip install seaborn</code></td><td>统计可视化</td><td>在 Matplotlib 之上用简短代码画分布·相关·回归。与表格（DataFrame）很搭</td><td>统计关系 · 探索</td></tr>
@@ -430,30 +454,76 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>Q3 — 亲手运行三张图表（Haru 的咨询面谈）</h2><span class="tag m">概念：代码运行与检查</span><span class="tag a">方法：数据 · 图表类型 · 设计条件 · 检查要求 4要素</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①Q1 标准 → ②Q2 工具 → <b>③Q3 执行</b> → ④Q4·Q5 选择与诊断</p>
+
 <div class="docline"><b>博士的情境提问</b> Haru 把 AI 给的代码贴进了答卷，但没有运行过。评分者一运行，韩文就显示成 □□□。会丢多少分？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — AI 写的代码看起来像模像样，很容易不运行就相信。</li><li><b>前一方法的局限</b> — 评分看的是“真的能运行吗，输出合理吗”。没有运行截图，代码30分就失去了依据。</li><li><b>解法</b> — 按提示词<b>4要素</b>（数据用数字 · 准确的图表类型 · 设计条件 · 检查要求）获取代码，亲手运行并截图，理解每行的韩语注释后，在答卷中写出 What → So What → Now What 三句话。</li></ol><div class="easy"><b>简单来说</b> 只抄下菜谱和亲手煮一煮尝尝味道是不一样的。评分者会尝味道。</div></div><div class="math"><h4>由觉得数学公式难的助手替你提问</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> “首尔和京畿占全部的57%”这个数字是怎么来的？</p></div><p class="school">用学校数学来看：小学百分数，初中比率</p><p><b>博士</b> 部分除以整体再乘以100就是百分比（%）。先把两个地区加起来，再除以整体。</p><table><thead><tr><th>式子片段</th><th>读法与含义</th></tr></thead><tbody><tr><td>部分 ÷ 整体</td><td>占整体的几成（0~1）</td></tr><tr><td>× 100</td><td>换算成百分比（%）</td></tr><tr><td>(后 − 前) ÷ 前</td><td>增长率 — 1~6月销售额增长了多少</td></tr></tbody></table><div class="try"><b>用数字算一次</b><br>各区域销售额合计 320 + 240 + 180 + 150 + 90 = <b>980亿</b><br>(320 + 240) ÷ 980 × 100 = 560 ÷ 980 × 100 ≈ <b>57.1%</b><br>1月 1,200 → 6月 2,100 增长率：(2,100 − 1,200) ÷ 1,200 × 100 = <b>75%</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 只看柱子只能说到“首尔大”，做一次除法就能得出“一半以上在首都圈”的结论呢。</p></div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>比起“我很会做菜”这句话，一张菜的照片才是证据。运行截图就是代码的证据。</p></div><div><h4>在答卷中</h4><p>每张图表：提示词（3~6行）→ 运行截图 → 逐行注释 → What（看到了什么）· So What（所以意味着什么）· Now What（接下来做什么）三句话。</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在答卷中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>比起“我很会做菜”这句话，一张菜的照片才是证据。运行截图就是代码的证据。</p></div><div><h4>在答卷中</h4><p>每张图表：提示词（3~6行）→ 运行截图 → 逐行注释 → What（看到了什么）· So What（所以意味着什么）· Now What（接下来做什么）三句话。</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="asst" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-asst">助手 Haru</span><p>三张图表画在下面了。我来看看改了数字，结论句子会不会也跟着变。</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>散点图的数据让 AI 编也可以吧？</p></div></div><div class="say"><img data-who="fly" data-mood="clip" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>原始资料也允许这样。不过要求一定标明“示例用虚拟数据”。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — Q3 的三张图表与三句话</p><div class="chips" id="w8c3"><button type="button" class="bt" data-k="line" aria-pressed="true">Chart 01 折线</button><button type="button" class="bt" data-k="bar">Chart 02 柱状</button><button type="button" class="bt" data-k="sc">Chart 03 散点图</button></div>
 <div id="w8cv" class="viz"></div><div class="insight" id="w8co" aria-live="polite"></div></div>
+<div class="colab" id="cb-w08_1"><p class="cb-head">查看实际画面 — Q3 运行 ① — 每日销售额折线图</p><div class="cb-prompt"><span class="cb-lbl">① 发给 Qwen 的提示词</span><p>[角色] 你是帮助完成期中作业的助教。<br>[数据] payments.csv — 列：date（日期）、hour（时）、city（城市）、channel（app·web·offline）、items（商品数）、amount（支付金额，元）、is_new_user（新用户 1·老用户 0）。800 行。<br>[请求] 把每日销售额合计画成折线图，并在最高的那天加上注释。平均值线也用虚线画出来。<br>[条件] 在 Colab 中用 files.upload() 直接加载文件的结构。图表标题、坐标轴标题、图例用英文，注释用韩文和中文写得非常详细。禁止缩进，禁止函数（def），禁止 for 循环。</p></div><div class="cb-cell"><span class="cb-lbl">② AI 给出的 Python 代码 <small>（示例答案）</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 날짜 글자를 날짜 형식으로 바꾼다 / 把日期文字转换成日期格式
+df[&#x27;date&#x27;] = pd.to_datetime(df[&#x27;date&#x27;])
+# 2. 날짜별 매출 합계 / 每天的销售额合计</pre><details class="cb-more"><summary>查看全部代码（还有 14 行）</summary><pre class="cb-code" data-i18n-skip>daily = df.groupby(&#x27;date&#x27;)[&#x27;amount&#x27;].sum()
+top_day = daily.idxmax()
+print(&#x27;days =&#x27;, len(daily), &#x27;| mean =&#x27;, round(daily.mean(), 1), &#x27;| max =&#x27;, top_day.date(), round(daily.max(), 1))
+plt.figure(figsize=(9, 4))
+plt.plot(daily.index, daily.values, color=&#x27;#0b7a86&#x27;, marker=&#x27;o&#x27;, markersize=3)
+# 3. 평균선은 회색 점선 / 平均线用灰色虚线
+plt.axhline(daily.mean(), color=&#x27;gray&#x27;, linestyle=&#x27;--&#x27;, label=&#x27;Daily mean&#x27;)
+# 4. 가장 높은 날 한 곳에만 주석을 단다 / 只在最高的那一天加注释
+plt.annotate(&#x27;Peak &#x27; + str(top_day.date()), xy=(top_day, daily.max()), xytext=(top_day, daily.max() * 1.08), ha=&#x27;center&#x27;, arrowprops=dict(arrowstyle=&#x27;-&gt;&#x27;, color=&#x27;#b45309&#x27;), color=&#x27;#b45309&#x27;)
+plt.ylim(0, daily.max() * 1.2)
+plt.title(&#x27;Sales peaked on March 27&#x27;)
+plt.ylabel(&#x27;Sales (CNY)&#x27;)
+plt.legend()
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ 在 Colab 中运行的结果</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+days = 28 | mean = 31058.6 | max = 2026-03-27 46462.8</pre><img src="../assets/img/colab/w08_1_1.webp" width="882" height="416" alt="运行结果图表 — Q3 运行 ① — 每日销售额折线图" loading="lazy"></div><p class="cb-note">最高的一天是 3 月 27 日（46,462.8 元），平均值是 31,058.6 元。注释只有一处，所以视线马上就会落到那里。<span>AI 的回答每次都会略有不同。上面的代码是按照提示词规则（图表文字用英文、韩中注释、不缩进·不用函数·不用 for 循环）给出的示例答案，结果是用课堂数据实际运行这段代码得到的。</span></p></div>
 <div class="explain"><b>拆开来看</b><p>原始资料的示例数据（全部虚拟）：1~6月销售额（万韩元）1,200 · 1,450 · 1,700 · 1,500 · 1,850 · 2,100 / 各区域销售额（亿韩元）首尔 320 · 京畿 240 · 釜山 180 · 大邱 150 · 光州 90 / 学习时间与分数 16人（虚拟，正相关）。第2周的提示词4要素（角色·数据·目标·输出格式）和这次作业的4要素（数据·图表类型·设计条件·检查要求）名称略有不同，但思路相同 — <b>减少猜测的余地。</b></p></div>
 <p class="calm">三张图表的代码一次全出来，可能会有压力。一张一张来，按运行 → 确认结果 → 下一张的顺序就够了。</p>
 <div class="ai-check"><h4>AI 结果判断角</h4><p>AI 对 Chart 01 的解读写的是“销售额每月稳定增长”。亲自看表会发现3月 1,700 → 4月 1,500，下降过一次。五次月度变化中有四次增长。准确的句子：“从1月的 1,200 增长到6月的 2,100，增长了75%，4月下降一次后又恢复。”AI 的概括有<b>抹掉例外</b>的倾向。</p></div>
 <div class="docline"><b>博士的一句话解读</b> “代码再整洁，没有运行结果就会丢掉30%。”截图和出处是得分的依据。</div>
 <p class="limit"><b>这一步的局限 —</b> 三张图表都运行了。最后两题是“什么场景用什么图表”（Q4）和“修正错误图表”（Q5）。</p>
-<details class="codebox"><summary>用原始资料附录的 Chart 01 代码来看（不懂也没关系）</summary><table><thead><tr><th>一行代码</th><th>一行含义</th></tr></thead><tbody><tr><td>import matplotlib.pyplot as plt</td><td>以 plt 这个名字导入绘图工具</td></tr><tr><td>plt.rc(&#x27;font&#x27;, family=&#x27;Malgun Gothic&#x27;)</td><td>设置字体，避免韩文乱码成 □□□（Colab 中用 NanumGothic）</td></tr><tr><td>months = [&#x27;1月&#x27;,&#x27;2月&#x27;,&#x27;3月&#x27;,&#x27;4月&#x27;,&#x27;5月&#x27;,&#x27;6月&#x27;]</td><td>X 轴用的月份名称列表</td></tr><tr><td>sales = [1200,1450,1700,1500,1850,2100]</td><td>各月销售额（万韩元）列表</td></tr><tr><td>ax.plot(months, sales, color=&#x27;#1E3A8A&#x27;, marker=&#x27;o&#x27;)</td><td>用靛蓝色线条和圆点标记画折线</td></tr><tr><td>ax.set_ylim(0, 2400)</td><td>把 Y 轴设为 0 到 2,400</td></tr><tr><td>plt.savefig(&#x27;chart_01_line.png&#x27;, dpi=150)</td><td>把图保存为文件 — 用于答卷截图</td></tr></tbody></table></details>
 <div class="quiz" data-quiz="lv3"></div>
 </div></section>
 <section class="level" id="lv4">
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>Q4·Q5 — 按问题的形式选择，分三步诊断（Sia 的咨询面谈）</h2><span class="tag m">概念：按场景选图表与错误图表诊断</span><span class="tag a">方法：哪里错了 → 读者的误解 → 改法</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①Q1 标准 → ②Q2 工具 → ③Q3 执行 → <b>④Q4·Q5 选择与诊断</b></p>
+
 <div class="docline"><b>博士的情境提问</b> 作业纸上的图表 A 把三家公司的销售额从 Y 轴 100 开始画。C 公司的柱子看起来比 A 公司高六倍左右。实际差了百分之几？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 第4题看起来像是要背答案，第5题只觉得“怪怪的”，却很难说清楚。</li><li><b>前一方法的局限</b> — 凭感觉写，会同时丢掉概念30分和分析30分。尤其第5题如果“怎么改”是空的就会扣分。</li><li><b>解法</b> — 第4题按问题的形式（是时间·比较·分布·还是关系）来选，并写到“为什么不是其他图表”。第5题每张图表一段，按<b>三步</b>（哪里错了 · 读者会怎么误解 · 怎么改）来写。</li></ol><div class="easy"><b>简单来说</b> 故障报修单：哪里坏了 → 因此出现什么问题 → 怎么修。填满三行就行。</div></div><div class="math"><h4>由觉得数学公式难的助手替你提问</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 图表 A 中的“看起来的倍率”和“实际差距”怎么算？</p></div><p class="school">用学校数学来看：初中比率与百分数</p><p><b>博士</b> 就是第2周做过的那种计算。柱子长度是“值 − 轴起点”，实际差距是“(大值 − 小值) ÷ 小值”。</p><table><thead><tr><th>式子片段</th><th>读法与含义</th></tr></thead><tbody><tr><td>(106 − 100) ÷ (101 − 100)</td><td>从轴 100 开始画的柱子长度比 — 看起来的倍率</td></tr><tr><td>106 ÷ 101</td><td>实际倍率</td></tr><tr><td>(106 − 101) ÷ 101 × 100</td><td>实际差距（%）</td></tr></tbody></table><div class="try"><b>用数字算一次</b><br>看起来的倍率：6 ÷ 1 = <b>6倍</b><br>实际倍率：106 ÷ 101 ≈ <b>1.05倍</b><br>实际差距：5 ÷ 101 × 100 ≈ <b>约5%</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 把5%的差距弄得看起来像6倍呢。还加上了红色强调色。</p></div></div></div>
-<div class="pair"><div><h4>Q4 四种场景</h4><p>① 10年间气温变化 → 折线（连续的时间流）② 5个品牌市场份额 → 排序柱状（用长度准确表现相近的大小；合计100%也可以用饼图，但相近的扇区难以区分）③ 班级学生身高分布 → 直方图（+箱线图）④ 两个变量的关系 → 散点图 + 趋势线。</p></div><div><h4>Q5 四张图</h4><p>A：Y 轴从 100 开始 → T1 · B：多选题却用饼图，合计128% → T2 · C：把 2000·2010·2020·2021·2022·2023 等间距排列 → T3 · D：“冰淇淋导致游泳事故！”+ 右轴从 50 开始 → T4 + T3。</p></div></div>
+<details class="more"><summary>延伸阅读 — Q4 四种情况 · Q5 四张图</summary><div class="pair"><div><h4>Q4 四种场景</h4><p>① 10年间气温变化 → 折线（连续的时间流）② 5个品牌市场份额 → 排序柱状（用长度准确表现相近的大小；合计100%也可以用饼图，但相近的扇区难以区分）③ 班级学生身高分布 → 直方图（+箱线图）④ 两个变量的关系 → 散点图 + 趋势线。</p></div><div><h4>Q5 四张图</h4><p>A：Y 轴从 100 开始 → T1 · B：多选题却用饼图，合计128% → T2 · C：把 2000·2010·2020·2021·2022·2023 等间距排列 → T3 · D：“冰淇淋导致游泳事故！”+ 右轴从 50 开始 → T4 + T3。</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="sia" data-mood="explain" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">实习生西娅</span><p>我们把四张图一张张打开，按“修正”按钮看看。三步诊断句也会一起出现。</p></div></div><div class="say"><img data-who="robo" data-mood="wow" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>D 真的一起涨啊！吃冰淇淋不是很危险吗？</p></div></div><div class="say"><img data-who="fly" data-mood="magnify" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>是夏天的炎热把两个都推高了。隐藏变量。一起变动不等于是原因。</p></div></div><div class="say"><img data-who="x2" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x2">X2</span><p>C 前面是10年间隔，后面却是1年间隔。斜率在说谎。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 修正错误图表 A~D</p><div class="chips" id="w8q5"><button type="button" class="bt" data-k="A" aria-pressed="true">图表 A</button><button type="button" class="bt" data-k="B">图表 B</button><button type="button" class="bt" data-k="C">图表 C</button><button type="button" class="bt" data-k="D">图表 D</button><button type="button" class="bt primary" id="w8fix">修正 ↔ 还原</button></div>
 <div id="w8qv" class="viz"></div><div id="w8qv2" class="viz" hidden></div><div class="insight" id="w8qo" aria-live="polite"></div></div>
+<div class="colab" id="cb-w08_2"><p class="cb-head">查看实际画面 — Q3 运行 ② — 星期 × 时间热力图</p><div class="cb-prompt"><span class="cb-lbl">① 发给 Qwen 的提示词</span><p>[角色] 你是帮助完成期中作业的助教。<br>[数据] 就是刚才用的 payments.csv。<br>[请求] 把星期（周一~周日）和时段叠在一起，画出支付笔数热力图。输出数量最多的格子（星期·时间）。<br>[条件] 在 Colab 中用 files.upload() 直接加载文件的结构。图表标题、坐标轴标题、图例用英文，注释用韩文和中文写得非常详细。禁止缩进，禁止函数（def），禁止 for 循环。</p></div><div class="cb-cell"><span class="cb-lbl">② AI 给出的 Python 代码 <small>（示例答案）</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 날짜에서 요일 이름을 뽑는다 / 从日期中提取星期名称
+df[&#x27;weekday&#x27;] = pd.to_datetime(df[&#x27;date&#x27;]).dt.day_name().str[:3]
+order = [&#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;, &#x27;Sun&#x27;]</pre><details class="cb-more"><summary>查看全部代码（还有 13 行）</summary><pre class="cb-code" data-i18n-skip># 2. 요일 × 시간 결제 건수 표 (없는 조합은 0) / 星期 × 小时 的支付笔数表 (没有的组合为 0)
+table = pd.crosstab(df[&#x27;weekday&#x27;], df[&#x27;hour&#x27;]).reindex(order).fillna(0)
+# 3. 가장 많은 셀을 찾는다 / 找出笔数最多的格子
+best = table.stack().idxmax()
+print(&#x27;busiest cell =&#x27;, best[0], int(best[1]), &#x27;h -&gt;&#x27;, int(table.stack().max()), &#x27;payments&#x27;)
+plt.figure(figsize=(10, 3.8))
+plt.imshow(table.values, cmap=&#x27;GnBu&#x27;, aspect=&#x27;auto&#x27;)
+plt.colorbar(label=&#x27;Number of payments&#x27;)
+plt.xticks(range(len(table.columns)), table.columns)
+plt.yticks(range(len(order)), order)
+plt.xlabel(&#x27;Hour&#x27;)
+plt.title(&#x27;Friday noon is the busiest time&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ 在 Colab 中运行的结果</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+busiest cell = Fri 12 h -&gt; 16 payments</pre><img src="../assets/img/colab/w08_2_1.webp" width="857" height="424" alt="运行结果图表 — Q3 运行 ② — 星期 × 时间热力图" loading="lazy"></div><p class="cb-note">最繁忙的格子是周五 12 点（16 笔）。因为这是两个因素（星期和时间）叠加的问题，所以选择了热力图。<span>AI 的回答每次都会略有不同。上面的代码是按照提示词规则（图表文字用英文、韩中注释、不缩进·不用函数·不用 for 循环）给出的示例答案，结果是用课堂数据实际运行这段代码得到的。</span></p></div>
 <div class="explain"><b>拆开来看</b><p>图表 C·D 的数值是从作业纸图中目测读出的估计值（C：2000年 5 → 2023年 75，D：冰淇淋销售额 20 → 100，游泳事故 50 → 59）。原始资料的诊断句：B 是“同时写出受访人数 n 和人均平均选择数，小项目合并为其他”，C 是“时间序列 X 轴始终用数值型，没有数据的时期标为缺失区间”，D 是“标题保持中立（每月冰淇淋销售额与游泳事故件数），两个轴都从0开始或分成两个面板，同时给出气温数据”。加分项：用 Python 重新画出修正后的图表并附上。</p></div>
 <div class="docline"><b>博士的一句话解读</b> 诊断三行就够。<b>哪里错了 · 读者的误解 · 改法。</b>第三行空着就不是诊断，而是感想。</div>
 <p class="limit"><b>这一步的局限 —</b> 作业完成了。下一层（9层）我们一起回顾这份作业，看看同样的原则在营销·零售·金融现场如何被不同地运用。</p>

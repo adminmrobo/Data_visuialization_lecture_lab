@@ -379,6 +379,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style><link rel="alternate" hreflang="ko" href="w11_smartcity-logistics.html"><link rel="alternate" hreflang="zh-CN" href="w11_smartcity-logistics.zh.html"><link rel="alternate" hreflang="x-default" href="w11_smartcity-logistics.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"><style data-i18n-font>body,button,input,select,textarea{font-family:"Noto Sans SC",system-ui,sans-serif}</style><style data-i18n-cjk>*{word-break:normal!important;line-break:strict}</style>
 </head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
@@ -395,9 +417,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>何时·何地·多少 — 问题决定图表</h2><span class="tag m">概念：从时间·地点·大小来读</span><span class="tag a">方法：核心动词 → 图表</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">当前在地图上的位置 — <b>①三个问句</b> → ②四要素与追问 → ③实操 A 交通量 → ④实操 B 配送延误</p>
+
 <div class="docline"><b>博士的情境提问</b> 控制室屏幕上弹出提示：“周五晚上6点，江南路段通行量比平时大幅增加。”你能从这一句话里找出何时·何地·多少吗？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 城市·物流数据列很多（日期·星期·时间·路段·地区·数量·时长·原因），不知道从哪里看起。</li><li><b>原有方法的局限</b> — 随便挑一列来画，就会成为没有问题的图表。没有问题的图表什么也决定不了。</li><li><b>解决办法</b> — 先填好<b>何时 · 何地 · 多少</b>三个问题，再用问题的核心动词（变化了吗 · 哪个最多 · 交叉时）来选图表。</li></ol><div class="easy"><b>简单来说</b> 每天测量体温和心率，就能及早发现异常信号。城市也一样，测量“何时·何地·多少”，就能及早发现拥堵的地方。</div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>“周五晚上6点（何时），江南路段（何地）的通行量比平时大幅（多少）增加。”这和天气App里的“下午3点，我们小区，降水概率70%”是同一个模样。</p></div><div><h4>在交通控制中心，</h4><p>趋势用折线，比较用柱状，两者交叠用热力图。热力图是数字越大、颜色涂得越深的表格。把星期（行）× 时段（列）摆出来，看到深色条带就说明有规律 — 周一早上颜色浅，只有上班路上忙；周五晚上颜色深，下班和外出叠在一起。</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在监控室里</summary><div class="pair"><div><h4>用日常来比喻</h4><p>“周五晚上6点（何时），江南路段（何地）的通行量比平时大幅（多少）增加。”这和天气App里的“下午3点，我们小区，降水概率70%”是同一个模样。</p></div><div><h4>在交通控制中心，</h4><p>趋势用折线，比较用柱状，两者交叠用热力图。热力图是数字越大、颜色涂得越深的表格。把星期（行）× 时段（列）摆出来，看到深色条带就说明有规律 — 周一早上颜色浅，只有上班路上忙；周五晚上颜色深，下班和外出叠在一起。</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="sia" data-mood="smile" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">实习生西娅</span><p>这是原始资料里的三道练习题。看动词来选图表吧。</p></div></div><div class="say"><img data-who="robo" data-mood="coin" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>全都用热力图！颜色多花哨啊！</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>“变了吗”是趋势。只有一条线的时间趋势，先用折线。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 这个问题适合哪种图表</p><div id="w11pick"></div></div>
 <div class="docline"><b>博士的一句话解读</b> 数据用三句话来读。<b>何时 · 何地 · 多少。</b>这三样就是回答问题的图表骨架。</div>
@@ -408,9 +431,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>四要素与五次追问 — 不一次搞定</h2><span class="tag m">概念：提示词链</span><span class="tag a">方法：P1 了解 → P2 提问 → P3 第一张图 → P4 打磨 → P5 解读</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">当前在地图上的位置 — ①三句话 → <b>②四要素与追问</b> → ③实习 A 交通量 → ④实习 B 配送延误</p>
+
 <div class="docline"><b>博士的情境提问</b> 算盘宝组一次性发出了：“用交通量数据画按时段的折线图，改标题，加单位，给最高点加注释，再做个热力图，颜色用青绿色，还要解读。”结果出来了什么？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 一次让 AI 做很多事，看起来能省时间。</li><li><b>前一方法的局限</b> — 原始资料的观察：一次发出七个请求，只有一半被反映。也很难找出漏了哪些。</li><li><b>解法</b> — 用<b>四要素</b>（角色 · 数据 · 请求 · 条件）一次只请求<b>一件事</b>，追问五次。在同一个对话窗口里接着写，AI 会记住前面的角色和数据。</li></ol><div class="easy"><b>简单来说</b> 像在餐馆点菜：谁（客人）· 看什么（菜单）· 点什么（宫保鸡丁）· 怎么做（少放辣）。尝一口之后再说一次“再咸一点”。</div></div></div>
-<div class="pair"><div><h4>四要素</h4><p>[角色] 你是城市交通数据分析师。[数据] 上传的文件是 分时段_交通量.csv。[请求] 用通俗的话说明这张表里有哪些列。[条件] 整理成表格，用中文回答。</p></div><div><h4>五次追问</h4><p>P1 “这张表里有什么？” → P2 “用它能看出什么？（提出3个问题）” → P3 “把它画成图（折线图，一个 HTML 文件）” → P4 “改得更好看（两次）” → P5 “这张图说明了什么？（三句话）”</p></div></div>
+<details class="more"><summary>延伸阅读 — 四个要素 · 五次追问</summary><div class="pair"><div><h4>四要素</h4><p>[角色] 你是城市交通数据分析师。[数据] 上传的文件是 分时段_交通量.csv。[请求] 用通俗的话说明这张表里有哪些列。[条件] 整理成表格，用中文回答。</p></div><div><h4>五次追问</h4><p>P1 “这张表里有什么？” → P2 “用它能看出什么？（提出3个问题）” → P3 “把它画成图（折线图，一个 HTML 文件）” → P4 “改得更好看（两次）” → P5 “这张图说明了什么？（三句话）”</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="sia" data-mood="explain" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">实习生西娅</span><p>用下面的按钮从 P1 到 P5 一步步推进吧。AI 的回答示例也会一起显示。</p></div></div><div class="say"><img data-who="robo" data-mood="meh" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>发五次多麻烦啊。</p></div></div><div class="say"><img data-who="fly" data-mood="arms" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>一次发七个，再去找漏掉的三个，那才更麻烦。</p></div></div><div class="say"><img data-who="doc" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">博士</span><p>而且一开始不画图表。了解数据才是第一步。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 提示词链 P1 → P5</p><div class="ctrl"><button type="button" class="bt" id="w11prev">← 上一步</button><button type="button" class="bt primary" id="w11next">下一个提示词 →</button><span id="w11step" style="font-size:14px;color:#5b6874"></span></div>
 <div class="grid2"><div class="prompt" id="w11p"></div><div><div class="insight" id="w11r"></div><div id="w11rv" class="viz" hidden></div></div></div></div>
@@ -424,12 +448,41 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>实习 A 智慧城市 — 从折线图到星期 × 时段热力图</h2><span class="tag m">概念：时间交叉热力图</span><span class="tag a">方法：P3 折线 → P4-1 标题·单位·注释 → P4-2 热力图</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">当前在地图上的位置 — ①三句话 → ②四要素与追问 → <b>③实习 A 交通量</b> → ④实习 B 配送延误</p>
+
 <div class="docline"><b>博士的情境提问</b> P3 拿到的第一张图：按时段的平均通行量折线图。晚上6点最高。可是周一和周五混在一起了。星期之间的差异要在哪里看？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 一条线能显示“一天中的什么时候”，但每个星期不同的规律会混进平均值里消失。</li><li><b>前一方法的局限</b> — 每个星期画一条线，七条线会缠在一起（第2周 — 折线最多4条）。</li><li><b>解法</b> — 两样东西（星期和时段）交叠时用<b>热力图</b>。纵向是星期，横向是时段，单元格颜色是平均通行量。再加上回答问题的标题、单位，以及在颜色最深的单元格上的一条注释。</li></ol><div class="easy"><b>简单来说</b> 在日历上用彩色铅笔涂出拥挤的日子，一个月里哪天哪个时段忙就一目了然。</div></div></div>
-<div class="pair"><div><h4>P4-1 打磨</h4><p>“把刚才做的图表这样改一下。1. 把标题改成回答问题的句子（例：晚上6点最拥挤）2. 纵轴写上‘通行量（辆）’ 3. 给最高点加注释。其余保持不变。”</p></div><div><h4>P4-2 热力图</h4><p>“这次我想同时看星期和时段。改成热力图：纵向是星期，横向是时段，单元格颜色是平均通行量。值越大青绿色越深，在颜色最深的单元格加注释，标题用回答问题的句子。”</p></div></div>
+<details class="more"><summary>延伸阅读 — P4-1 润色 · P4-2 热力图</summary><div class="pair"><div><h4>P4-1 打磨</h4><p>“把刚才做的图表这样改一下。1. 把标题改成回答问题的句子（例：晚上6点最拥挤）2. 纵轴写上‘通行量（辆）’ 3. 给最高点加注释。其余保持不变。”</p></div><div><h4>P4-2 热力图</h4><p>“这次我想同时看星期和时段。改成热力图：纵向是星期，横向是时段，单元格颜色是平均通行量。值越大青绿色越深，在颜色最深的单元格加注释，标题用回答问题的句子。”</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="x1" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x1">X1</span><p>我会按 折线 → 打磨后的折线 → 热力图 的顺序展示。请找出三处变化。</p></div></div><div class="say"><img data-who="robo" data-mood="chart" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>热力图每个格子颜色都不一样，真好看！可到底要看哪儿？</p></div></div><div class="say"><img data-who="fly" data-mood="magnify" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>所以注释只需要放在一个地方。颜色最深的那一格。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 打磨前后</p><div class="chips" id="w11a"><button type="button" class="bt" data-k="p3" aria-pressed="true">P3 第一张折线图</button><button type="button" class="bt" data-k="p41">P4-1 标题·单位·注释</button><button type="button" class="bt" data-k="p42">P4-2 星期 × 时段热力图</button></div>
 <div id="w11av" class="viz"></div><div class="insight" id="w11ao" aria-live="polite"></div></div>
+<div class="colab" id="cb-w11_1"><p class="cb-head">查看实际画面 — P3 → P4 — 从折线图到星期 × 时间热力图</p><div class="cb-prompt"><span class="cb-lbl">① 发给 Qwen 的提示词</span><p>[角色] 你是城市交通数据分析师。<br>[数据] traffic_hourly.csv — 列：date、weekday（Mon~Sun）、hour（0~23）、segment（测量路段）、volume（通行量，辆）。约 2,000 行。<br>[请求] 左边画各时段平均通行量的折线图，右边画星期 × 时间平均通行量的热力图。标题写成回答问题的句子，并输出颜色最深的格子。<br>[条件] 在 Colab 中用 files.upload() 直接加载文件的结构。图表标题、坐标轴标题、图例用英文，注释用韩文和中文写得非常详细。禁止缩进，禁止函数（def），禁止 for 循环。</p></div><div class="cb-cell"><span class="cb-lbl">② AI 给出的 Python 代码 <small>（示例答案）</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;traffic_hourly.csv&#x27;)
+order = [&#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;, &#x27;Sun&#x27;]
+# 1. 시간대별 평균 통행량 (P3 첫 차트) / 各时段平均通行量 (P3 第一张图)
+hourly = df.groupby(&#x27;hour&#x27;)[&#x27;volume&#x27;].mean()</pre><details class="cb-more"><summary>查看全部代码（还有 19 行）</summary><pre class="cb-code" data-i18n-skip># 2. 요일 × 시간 평균 통행량 표 (P4 히트맵) / 星期 × 小时 的平均通行量表 (P4 热力图)
+table = df.pivot_table(index=&#x27;weekday&#x27;, columns=&#x27;hour&#x27;, values=&#x27;volume&#x27;, aggfunc=&#x27;mean&#x27;).reindex(order)
+best = table.stack().idxmax()
+print(&#x27;peak hour (all days) =&#x27;, hourly.idxmax(), &#x27;| darkest cell =&#x27;, best[0], int(best[1]), &#x27;h,&#x27;, round(table.stack().max()), &#x27;vehicles&#x27;)
+fig, ax = plt.subplots(1, 2, figsize=(13, 4), gridspec_kw={&#x27;width_ratios&#x27;: [1, 1.5]})
+ax[0].plot(hourly.index, hourly.values, color=&#x27;#0b7a86&#x27;, marker=&#x27;o&#x27;, markersize=3)
+ax[0].annotate(&#x27;Peak&#x27;, xy=(hourly.idxmax(), hourly.max()), xytext=(hourly.idxmax() - 6, hourly.max()), arrowprops=dict(arrowstyle=&#x27;-&gt;&#x27;, color=&#x27;#b45309&#x27;), color=&#x27;#b45309&#x27;)
+ax[0].set_ylim(0, hourly.max() * 1.15)
+ax[0].set_title(&#x27;Evening &#x27; + str(hourly.idxmax()) + &#x27;h is the busiest hour&#x27;)
+ax[0].set_xlabel(&#x27;Hour&#x27;)
+ax[0].set_ylabel(&#x27;Average volume (vehicles)&#x27;)
+im = ax[1].imshow(table.values, cmap=&#x27;GnBu&#x27;, aspect=&#x27;auto&#x27;)
+fig.colorbar(im, ax=ax[1], label=&#x27;Average volume (vehicles)&#x27;)
+ax[1].set_xticks(range(0, 24, 2))
+ax[1].set_yticks(range(7))
+ax[1].set_yticklabels(order)
+ax[1].set_xlabel(&#x27;Hour&#x27;)
+ax[1].set_title(best[0] + &#x27; &#x27; + str(best[1]) + &#x27;h is the darkest cell&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ 在 Colab 中运行的结果</span><pre class="cb-txt" data-i18n-skip>traffic_hourly.csv(text/csv) - 64364 bytes, last modified: 2026. 11. 26. - 100% done
+Saving traffic_hourly.csv to traffic_hourly.csv
+peak hour (all days) = 18 | darkest cell = Fri 18 h, 822 vehicles</pre><img src="../assets/img/colab/w11_1_1.webp" width="1185" height="441" alt="运行结果图表 — P3 → P4 — 从折线图到星期 × 时间热力图" loading="lazy"></div><p class="cb-note">只用一条线时混在平均值里的星期差异，在热力图中显现为工作日早晚两条带和周五傍晚的深色带。<span>AI 的回答每次都会略有不同。上面的代码是按照提示词规则（图表文字用英文、韩中注释、不缩进·不用函数·不用 for 循环）给出的示例答案，结果是用课堂数据实际运行这段代码得到的。</span></p></div>
 <div class="explain"><b>拆开来看</b><p>P5 解读示例（原始资料）：① 工作日晚间时段的格子最深（看到了什么）② 可能是因为下班高峰集中（注明是<b>推测</b>）③ 值得调整这个时段的信号灯周期（该做什么）。图表只显示“发生了什么”，“为什么”是推测。提示词里也要加上“为什么会那样，请注明是推测”。</p></div>
 <div class="docline"><b>博士的一句话解读</b> “只是多接了两次提示词，图表就变成了回答问题的图。” — ① 标题在回答 ② 加上了单位 ③ 看得出星期差异。</div>
 <p class="limit"><b>这一阶段的局限 —</b> 实习 A 看的是“何时”。实习 B 看“为什么” — 配送延误的原因中先处理哪一个。</p>
@@ -439,12 +492,45 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>实习 B 物流 — 从延误原因柱状图到帕累托图</h2><span class="tag m">概念：帕累托图</span><span class="tag a">方法：“只看延误的” → 从大到小 → 累计占比线</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">当前在地图上的位置 — ①三句话 → ②四要素与追问 → ③实习 A 交通量 → <b>④实习 B 配送延误</b></p>
+
 <div class="docline"><b>博士的情境提问</b> Moa 拿到的第一张柱状图里，“准时到达”是最高的柱子，延误原因则乱七八糟。哪里出错了？怎么改才能看出“从哪里改起”？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 配送记录里准时配送和延误配送混在一起，原因也有好几种。</li><li><b>前一方法的局限</b> — 去掉“只看延误的”这个条件，准时配送也会混进来，出现不相干的柱子。不排序的话，很难找到最大的原因。</li><li><b>解法</b> — <b>帕累托图</b> — ① 只挑“延误的” ② 按原因把件数从大到小排在左边 ③ 上面叠加累计占比线 ④ 看前面几个占了全部的大部分。</li></ol><div class="easy"><b>简单来说</b> 打扫房间：只要搬走最大的两三件东西，房间就宽敞多了。帕累托图告诉你“最大的东西”是什么。</div></div><div class="math"><h4>由觉得数学公式难的助手替你提问</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 累计占比怎么算？</p></div><p class="school">用学校数学来看：小学百分数、初中数列求和（从前往后依次相加）</p><p><b>博士</b> 从大的原因开始依次相加，记下到目前为止加起来的部分占全部的百分之几。最后一定是100%。</p><table><thead><tr><th>式子片段</th><th>读法与含义</th></tr></thead><tbody><tr><td>从大到小排序</td><td>把原因按件数从多到少排好</td></tr><tr><td>从前往后相加</td><td>第1个，第1+2个，第1+2+3个 …</td></tr><tr><td>÷ 全部 × 100</td><td>累计占比（%）— 看越过80%线的位置</td></tr></tbody></table><div class="try"><b>用数字试一次</b><br>五个原因 40 · 25 · 15 · 12 · 8件（合计100）<br>累计：40 → 65 → 80 → 92 → 100 → <b>40% · 65% · 80% · 92% · 100%</b><br>前三个原因占延误的<b>80%</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 只看柱子只能看出“第一个很大”，叠上累计线就能看出“只改三个就是80%”了。</p></div></div></div>
-<div class="pair"><div><h4>用日常来比喻</h4><p>考试错题本：把错题按单元数一数，从多到少排好，两三个单元就占了大部分错题。就从那些单元开始复习。</p></div><div><h4>在物流中，</h4><p>常见的三种错误（原始资料）：① 太笼统 — “画个图表” → 随便什么图表 ② 一次太多 — 七个请求只反映一半 ③ 漏掉条件 — 柱子里混进了准时配送。改过的提示词：“只挑出延误的，按原因画出件数柱状图。”</p></div></div>
+<details class="more"><summary>延伸阅读 — 用日常来比喻 · 在物流中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>考试错题本：把错题按单元数一数，从多到少排好，两三个单元就占了大部分错题。就从那些单元开始复习。</p></div><div><h4>在物流中，</h4><p>常见的三种错误（原始资料）：① 太笼统 — “画个图表” → 随便什么图表 ② 一次太多 — 七个请求只反映一半 ③ 漏掉条件 — 柱子里混进了准时配送。改过的提示词：“只挑出延误的，按原因画出件数柱状图。”</p></div></div></details>
 <div class="steptalk"><span class="lbl">动手试一试之前 — 实验室对话</span><div class="say"><img data-who="moa" data-mood="report" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">实习生茉雅</span><p>用1,000条配送记录重新画柱状图吧。先去掉“只看延误的”这个条件。</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">算盘宝</span><p>准时到达最多！我们物流最棒！</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">果蝇研究员</span><p>问题是“为什么会延误”。准时到达不在问题范围内。先把条件加上。</p></div></div><div class="say"><img data-who="x2" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x2">X2</span><p>排好序再叠上累计线，就能看到越过80%线的位置。</p></div></div></div>
 <div class="panel"><p class="ptitle">动手试一试 — 把柱状图变成帕累托图</p><div class="ctrl"><label><input type="checkbox" id="w11only"> “只看延误的”条件</label><label><input type="checkbox" id="w11sort"> 从大到小排序</label><label><input type="checkbox" id="w11cum"> 累计占比线</label></div>
 <div id="w11bv" class="viz"></div><div class="insight" id="w11bo" aria-live="polite"></div></div>
+<div class="colab" id="cb-w11_2"><p class="cb-head">查看实际画面 — 只看延误的订单 — 帕累托图</p><div class="cb-prompt"><span class="cb-lbl">① 发给 Qwen 的提示词</span><p>[角色] 你是物流数据分析师。<br>[数据] delivery_log.csv — 列：order_id、date、region、delivery_min（配送时间，分钟）、delayed（延误 1·准时 0）、delay_cause（延误原因）。1,000 行。<br>[请求] 只挑出延误的订单，把各原因的笔数按从大到小画成柱状图，并把累计占比线叠加在右侧坐标轴上。也画出 80% 基准线，并输出累计占比表。<br>[条件] 在 Colab 中用 files.upload() 直接加载文件的结构。图表标题、坐标轴标题、图例用英文，注释用韩文和中文写得非常详细。禁止缩进，禁止函数（def），禁止 for 循环。</p></div><div class="cb-cell"><span class="cb-lbl">② AI 给出的 Python 代码 <small>（示例答案）</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;delivery_log.csv&#x27;)
+# 1. 지연된 건만 고른다 (이 조건이 빠지면 정시 배송까지 섞인다) / 只选延误的订单 (漏掉这个条件就会混进准时配送)
+late = df[df[&#x27;delayed&#x27;] == 1]
+print(&#x27;all orders =&#x27;, len(df), &#x27;| delayed =&#x27;, len(late))</pre><details class="cb-more"><summary>查看全部代码（还有 16 行）</summary><pre class="cb-code" data-i18n-skip># 2. 원인별 건수를 큰 것부터 정렬한다 / 按原因统计笔数并从大到小排序
+cnt = late[&#x27;delay_cause&#x27;].value_counts()
+# 3. 누적 비율(%) = 앞에서부터 더한 몫 / 累计占比 (%) = 从前往后累加的份额
+cum = (cnt.cumsum() / cnt.sum() * 100).round(1)
+print(pd.DataFrame({&#x27;count&#x27;: cnt, &#x27;cumulative %&#x27;: cum}))
+fig, ax = plt.subplots(figsize=(9, 4.4))
+ax.bar(cnt.index, cnt.values, color=&#x27;#0b7a86&#x27;)
+ax.set_ylabel(&#x27;Delayed orders&#x27;)
+# 4. 오른쪽 축에 누적 비율 선과 80% 기준선을 겹친다 / 在右侧坐标轴叠加累计占比线和 80% 基准线
+ax2 = ax.twinx()
+ax2.plot(cnt.index, cum.values, color=&#x27;#b45309&#x27;, marker=&#x27;o&#x27;)
+ax2.axhline(80, color=&#x27;gray&#x27;, linestyle=&#x27;--&#x27;)
+ax2.set_ylim(0, 105)
+ax2.set_ylabel(&#x27;Cumulative share (%)&#x27;)
+ax.set_title(&#x27;Top 3 causes make up about 80% of delays&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ 在 Colab 中运行的结果</span><pre class="cb-txt" data-i18n-skip>delivery_log.csv(text/csv) - 32585 bytes, last modified: 2026. 11. 26. - 100% done
+Saving delivery_log.csv to delivery_log.csv
+all orders = 1000 | delayed = 290
+                 count  cumulative %
+delay_cause                         
+Traffic jam        109          37.6
+Wrong address       68          61.0
+Volume surge        52          79.0
+Bad weather         34          90.7
+Vehicle failure     27         100.0</pre><img src="../assets/img/colab/w11_2_1.webp" width="910" height="450" alt="运行结果图表 — 只看延误的订单 — 帕累托图" loading="lazy"></div><p class="cb-note">请确认“只看延误的订单”这个条件在第一行就被遵守了。前三个原因约占延误的 80%。<span>AI 的回答每次都会略有不同。上面的代码是按照提示词规则（图表文字用英文、韩中注释、不缩进·不用函数·不用 for 循环）给出的示例答案，结果是用课堂数据实际运行这段代码得到的。</span></p></div>
 <div class="explain"><b>拆开来看</b><p><b>尝鲜 — 气泡地图</b>：对于“集中在哪里”这样的问题，适合用气泡地图：在每个地点放一个圆，值越大圆画得越大。地图部件多，所以不用 Qwen，而是用 <b>Google AI Studio</b> 来做（第12周）。提示词：“[角色] 你是物流数据分析师。[数据] 列有据点、纬度、经度、货运量。[请求] 做一个用圆的大小显示各据点货运量的气泡地图，一个 HTML 文件。[条件] 给最大的据点加注释。” — 按第4周学的，检查圆是否按<b>面积</b>与值成比例来画。</p><p><b>作业</b>（原始资料）：从实习 A 或 B 的数据中选一个新问题，用 P1~P5 完成图表，提交完成的图表1张 · 使用的提示词5条 · 三句话解读。好图表的标准：标题在回答 · 坐标轴和单位 · 颜色不超过3种 · 注释一处 · 出处和期间。</p></div>
 <p class="calm">累计占比只要从前往后相加就行。可以用计算器，卡住了就再看看数学框里 40 · 65 · 80 的例子。</p>
 <div class="ai-check"><h4>AI 结果判断角</h4><p>AI 画了帕累托图，并解读说“解决前两个原因，延误会减少60%”。<b>哪里不对？</b>图表显示的是“目前延误件数的60%属于两个原因”这一观察。“解决”了原因就会减少那么多，是预测，而解决方法和成本并不在图表里。改过的句子：“前两个原因约占延误的60%。先从这两个原因开始研究改进。”</p></div>
