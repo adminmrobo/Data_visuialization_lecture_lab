@@ -417,7 +417,7 @@ details.more .pair{margin-top:10px}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>简洁性 — 图表垃圾：把盘子上的装饰撤掉</h2><span class="tag m">概念：图表垃圾与数据墨水比</span><span class="tag a">方法：逐个关掉装饰</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — <b>①简洁性</b> → ②准确性 → ③目的性与五类 → ④首次实操</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_02_a.webp" width="1920" height="1080" alt="算盘宝炫耀一张满是亮片装饰和立体阴影的图表，果蝇用扫帚把装饰扫掉的像素图" loading="lazy"><figcaption>图表垃圾 — 收走盘子上的装饰，菜才看得见。</figcaption></figure>
 <div class="docline"><b>博士的情境提问</b> 算盘宝组的图表上有立体效果、渐变背景、风景照片、密密麻麻的竖向网格，还有两个意思相同的图例。在会议上把这张图表展示 3 秒，大家会记住什么？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 一说要把图表做得“适合报告、好看一点”，立体效果和颜色就会越来越多。</li><li><b>以往方法的局限</b> — 装饰是与数据无关的墨水。立体效果会因为透视感，连比例都看起来不一样。</li><li><b>解决办法</b> — 提高<b>数据墨水比</b>——只留下表示数据的墨水，其余全部擦掉。</li></ol><div class="easy"><b>简单来说</b> 对想看菜品的客人来说，盘子边缘的花纹没有必要。只要把菜（数据）干净地呈现出来就行。</div></div><div class="math"><h4>由觉得数学公式难的助手替你提问</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 说是数据墨水“比”，那墨水要怎么量呢？</p></div><p class="school">对应学校数学：小学分数、初中比例</p><p><b>博士</b> 与其说是精确测量的公式，不如说是“全部墨水中用在数据上的份额”这样一种思考框架。写成分数是这样的。</p><table><thead><tr><th>式子片段</th><th>读法与含义</th></tr></thead><tbody><tr><td>用在数据上的墨水</td><td>像柱、线、点这样表示数字的部分</td></tr><tr><td>÷ 全部墨水</td><td>包括装饰、网格、背景在内的所有图形</td></tr><tr><td>= 比例 (0~1)</td><td>越接近 1，图表里越是只剩数据</td></tr></tbody></table><div class="try"><b>用数字算一遍</b><br>柱子墨水 50、装饰墨水 50 时，50 ÷ (50+50) = <b>0.5</b><br>擦掉 40 的装饰后，50 ÷ (50+10) ≈ <b>0.83</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>Haru</b> 数据一点都没动，比例却上去了。擦掉的只是装饰而已。</p></div></div></div>
 <details class="more"><summary>延伸阅读 — 用日常来比喻 · 在可视化中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>餐厅的盘子：菜品周围的花、酱汁装饰、老照片，对选菜都没有帮助。</p></div><div><h4>在可视化中</h4><p>图表垃圾的五副面孔：① 立体效果 ② 渐变·阴影 ③ 无关的照片 ④ 密集的装饰网格 ⑤ 意思相同的重复图例。擦掉它们，数据依然不变。</p></div></div></details>
@@ -484,7 +484,7 @@ wrong-chart ratio = 8.43</pre><img src="../assets/img/colab/w02_1_1.webp" width=
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>目的性 — 提问中的词语决定图表</h2><span class="tag m">概念：按目的选择图表</span><span class="tag a">方法：提问 → 类别 → 图表</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①简洁性 → ②准确性 → <b>③目的性与五类</b> → ④首次实操</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_02_b.webp" width="1920" height="1080" alt="Haru 拿着问题卡站在五个岔路路标前，选择走哪条路的像素图" loading="lazy"><figcaption>问题里的关键词（比较·趋势·构成·关系·分布）决定通往哪种图表的路。</figcaption></figure>
 <div class="docline"><b>博士的情境提问</b> Sia 收到了五个问题：“哪个城市最多？”“随日期如何变化？”“各渠道占比是多少？”“商品数多，金额也大吗？”“金额集中在哪里？”她能选出五张图表吗？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 只说“画个图”，AI 和人都会随便选一种图表。</li><li><b>以往方法的局限</b> — 图表种类超过 50 种，靠背形状是选不出来的。</li><li><b>解决办法</b> — 做图表之前先定两件事：① 给谁看 ② 想说什么。然后根据提问中的词语从<b>五类</b>中选一类。</li></ol><div class="easy"><b>简单来说</b> 听到“哪个·更·排名”就用柱状图，“何时·变化”用折线图，“构成·比例”用环形图，“一起·影响”用散点图，“哪里·集中”用直方图。</div></div></div>
 <details class="more"><summary>延伸阅读 — 用日常来比喻 · 在可视化中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>就像问路时，问“在哪儿？”就给看地图，问“要多久？”就给看时刻表。提问中的词语决定要展示什么。</p></div><div><h4>在可视化中</h4><p>比较 → 柱状图 · 趋势 → 折线图 · 构成 → 饼图/环形图（合计 100%，不超过 5 项）· 关系 → 散点图 · 分布 → 直方图（分组比较用箱线图）。</p></div></div></details>

@@ -417,7 +417,7 @@ details.more .pair{margin-top:10px}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>언제·어디서·얼마나 — 질문이 차트를 정한다</h2><span class="tag m">개념: 시간·장소·크기로 읽기</span><span class="tag a">방법: 핵심 동사 → 차트</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — <b>①세 문장</b> → ②네 요소와 이어 묻기 → ③실습 A 교통량 → ④실습 B 배송 지연</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_11_a.webp" width="1920" height="1080" alt="도시 지도 위에 시계, 위치 핀, 저울 아이콘이 떠 있고 시아가 세 가지를 하나씩 가리키는 픽셀 그림" loading="lazy"><figcaption>모든 기록은 언제 · 어디서 · 얼마나로 읽는다.</figcaption></figure>
 <div class="docline"><b>박사의 상황 질문</b> 관제실 화면에 “금요일 저녁 6시, 강남 구간 통행량이 평소보다 크게 늘었다”라는 알림이 떴습니다. 이 한 문장에서 언제·어디서·얼마나를 찾을 수 있나요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 도시·물류 데이터는 열이 많고(날짜·요일·시간·구간·지역·수량·시간·원인) 무엇부터 볼지 막막합니다.</li><li><b>앞 방법의 한계</b> — 아무 열이나 골라 그리면 질문 없는 차트가 됩니다. 질문 없는 차트는 아무것도 결정하지 못합니다.</li><li><b>해법</b> — 먼저 <b>언제 · 어디서 · 얼마나</b> 세 질문을 채우고, 질문의 핵심 동사(변했나 · 가장 많은가 · 겹치면)로 차트를 고릅니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 매일 체온·심박을 재면 이상 신호를 일찍 잡습니다. 도시도 “언제·어디서·얼마나”를 재면 막히는 곳을 일찍 잡습니다.</div></div></div>
 <details class="more"><summary>더 읽기 — 일상으로 치면 · 관제실에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>“금요일 저녁 6시(언제)에 강남 구간(어디서)의 통행량이 평소보다 크게(얼마나) 늘었다.” 날씨 앱의 “오후 3시, 우리 동네, 강수 확률 70%”와 같은 모양입니다.</p></div><div><h4>관제실에서는</h4><p>흐름은 선, 비교는 막대, 두 가지가 겹치면 히트맵. 히트맵은 숫자가 클수록 진한 색으로 칠한 표입니다. 요일(행) × 시간대(열)를 놓고 진한 띠가 보이면 패턴이 있는 겁니다 — 월요일 아침은 연하고 출근길만 바쁨, 금요일 저녁은 진하고 퇴근과 외출이 겹침.</p></div></div></details>
@@ -431,7 +431,7 @@ details.more .pair{margin-top:10px}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>네 요소와 다섯 번 이어 묻기 — 한 번에 끝내지 않는다</h2><span class="tag m">개념: 프롬프트 사슬</span><span class="tag a">방법: P1 알아보기 → P2 질문 → P3 첫 차트 → P4 다듬기 → P5 해석</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①세 문장 → <b>②네 요소와 이어 묻기</b> → ③실습 A 교통량 → ④실습 B 배송 지연</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_11_b.webp" width="1920" height="1080" alt="초파리가 쪽지를 한 장씩 차례로 건네고, 주판봇이 쪽지 일곱 장을 한꺼번에 던져 흩어지는 대비 장면 픽셀 그림" loading="lazy"><figcaption>한 번에 일곱 개보다, 한 번에 하나씩 다섯 번.</figcaption></figure>
 <div class="docline"><b>박사의 상황 질문</b> 주판봇 조는 “교통량 데이터로 시간대별 선 그래프를 그리고, 제목 바꾸고, 단위 넣고, 최고점 주석 달고, 히트맵도 만들고, 색은 청록, 해석도 해 줘”를 한 번에 보냈습니다. 무엇이 나왔을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — AI에게 한 번에 많이 시키면 시간이 절약될 것 같습니다.</li><li><b>앞 방법의 한계</b> — 원자료의 관찰: 요청 일곱 개를 한꺼번에 보내면 절반만 반영됩니다. 무엇이 빠졌는지도 찾기 어렵습니다.</li><li><b>해법</b> — <b>네 요소</b>(역할 · 데이터 · 요청 · 조건)로 한 번에 <b>하나만</b> 요청하고, 다섯 번 이어 묻습니다. 같은 대화창에서 이어 쓰면 AI가 앞의 역할과 데이터를 기억합니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 식당 주문: 누가(손님) · 무엇을 보고(메뉴판) · 무엇을(김치찌개) · 어떻게(덜 맵게). 그리고 먹어 보고 “조금 더 짜게”라고 한 번 더.</div></div></div>
 <details class="more"><summary>더 읽기 — 네 요소 · 다섯 번 이어 묻기</summary><div class="pair"><div><h4>네 요소</h4><p>[역할] 너는 도시 교통 데이터 분석가야. [데이터] 올린 파일은 시간대별_교통량.csv야. [요청] 이 표에 어떤 열이 있는지 쉬운 말로 설명해 줘. [조건] 표로 정리하고, 한국어로 답해 줘.</p></div><div><h4>다섯 번 이어 묻기</h4><p>P1 “이 표에 뭐가 들어 있어?” → P2 “이걸로 뭘 알 수 있어?(질문 3개 제안)” → P3 “그걸 그림으로(선 그래프, HTML 한 파일)” → P4 “더 보기 좋게 고쳐 줘(두 번)” → P5 “이 그림이 뭘 말해?(세 문장)”</p></div></div></details>

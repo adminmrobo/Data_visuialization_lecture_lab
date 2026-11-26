@@ -418,7 +418,7 @@ details.more .pair{margin-top:10px}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>五种脏数据 — Sia 的汇报</h2><span class="tag m">概念：数据预处理</span><span class="tag a">方法：找出 → 修正 → 确认</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — <b>①五种脏数据</b> → ②缺失值处理 → ③重复·异常值与 AI 检查 → ④工具与高级图表</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_03_a.webp" width="1920" height="1080" alt="Sia 把有破洞、有污渍、两张重叠的数据卡片摆在桌上做汇报的像素图" loading="lazy"><figcaption>五种脏数据 — 缺失值、重复、格式、写法、异常值。</figcaption></figure>
 <div class="docline"><b>博士的情境提问</b> 虚构的大学周边饮品数据里，品牌混着写成 Mixue·MIXUE·mixue·미쉐（韩文写法）·蜜雪冰城。画出各品牌订单数的柱状图，第 1 名会是哪家店？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 在人眼里是同一家店，计算机却只要有一个字不同就算成另一家店。</li><li><b>以往方法的局限</b> — 直接画的话，一家店的订单会被拆成五根柱子，真正的第 1 名会掉到中间名次。“4,500원”这样的文字也没法求平均值。</li><li><b>解决办法</b> — 画图之前把五个方面（写法·格式·缺失值·重复·异常值）<b>找出 → 修正 → 确认</b>。</li></ol><div class="easy"><b>简单来说</b> 就像做菜前洗菜、择菜一样，画图表前先整理数据。不洗就下锅，味道就变了。</div></div></div>
 <details class="more"><summary>延伸阅读 — 用日常来比喻 · 在数据中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>把同一个朋友存成“小雅”“雅雅”“王雅”“WY”“雅”，通讯录 App 就会算成五个朋友。和谁联系最频繁的排名就乱了。</p></div><div><h4>数据中</h4><p>把品牌写法统一为 6 个名称（CHAGEE · Mixue · HEYTEA · Auntea Jenny · Mega Coffee · Compose Coffee），价格则把“4,500원”“4.5k”都改成数字 4500。</p></div></div></details>
@@ -489,7 +489,7 @@ dtype: int64
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>重复与异常值，以及 AI 检查三规则 — Moa 的汇报</h2><span class="tag m">概念：验证 AI 的预处理</span><span class="tag a">方法：守住行数 1,000 → 970</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">地图上的当前位置 — ①五种脏数据 → ②缺失值处理 → <b>③重复·异常值与 AI 检查</b> → ④工具与高级图表</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_03_b.webp" width="1920" height="1080" alt="Moa 接过 AI 机器人的答卷，对照有三个勾选项的检查表的像素图" loading="lazy"><figcaption>AI 修改过的数据，也要用三条规则再检查一遍。</figcaption></figure>
 <div class="docline"><b>博士的情境提问</b> 让 AI“把奇怪的数据整理一下”，1,000 行回来变成了 700 行。正确答案是 970 行。消失的 270 行里装的是什么？</div>
 <div class="wm"><div class="why"><h4>为什么用这个方法</h4><ol class="pb"><li><b>问题情境</b> — 重复订单会虚增销售额，甜度 999·价格 0 元这样的值会毁掉平均值。</li><li><b>以往方法的局限</b> — 把“整理一下”交给 AI，它会编造看似合理的值（Made-up values），或者把看起来有问题的行一次全删掉。逐行看似乎没错，整体却错了（Missed patterns）。</li><li><b>解决办法</b> — <b>AI 检查三规则</b>：① 不要改好的数据，只要<b>代码</b> ② 比较处理前后的<b>行数</b> ③ 异常值在删除前先<b>标记</b>。</li></ol><div class="easy"><b>简单来说</b> 支付按钮按了两次，就取消其中一次。不会把整张卡停掉。</div></div></div>
 <details class="more"><summary>延伸阅读 — 用日常来比喻 · 在数据中</summary><div class="pair"><div><h4>用日常来比喻</h4><p>请人整理收据，本该只去掉 30 张重复收据，结果连皱巴巴的、字迹模糊的也一起扔了，共 300 张。用剩下的收据记账，支出就会出错。</p></div><div><h4>数据中</h4><p>正确答案 970 行 = 只删除 30 条重复。AI 的 700 行 = 连价格格式错误 200 行 + 缺失值 60 行 + 异常值 35 行也一起删了（原始资料解说）。甜度 999·价格 0 元是笔误，所以<b>只清空值、保留行</b>；排队 300 分钟以上是开张那周的真实事件，所以<b>不删除，而是标记 is_event = 1</b>。</p></div></div></details>

@@ -418,7 +418,7 @@ details.more .pair{margin-top:10px}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>다섯 가지 더러운 데이터 — 시아의 발표</h2><span class="tag m">개념: 데이터 전처리</span><span class="tag a">방법: 찾기 → 고치기 → 확인하기</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — <b>①다섯 가지 더러움</b> → ②빈 값 처리 → ③중복·이상치와 AI 검사 → ④도구와 고급 차트</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_03_a.webp" width="1920" height="1080" alt="시아가 구멍 나고 얼룩지고 두 장씩 겹친 데이터 카드들을 책상에 늘어놓고 발표하는 픽셀 그림" loading="lazy"><figcaption>다섯 가지 더러운 데이터 — 빈 값, 중복, 형식, 표기, 이상값.</figcaption></figure>
 <div class="docline"><b>박사의 상황 질문</b> 가상 대학가 음료 데이터에 브랜드가 Mixue·MIXUE·mixue·미쉐·蜜雪冰城로 섞여 있습니다. 브랜드별 주문 수 막대를 그리면, 1위는 어느 가게가 될까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 사람 눈에는 같은 가게인데, 컴퓨터는 글자가 하나라도 다르면 다른 가게로 셉니다.</li><li><b>앞 방법의 한계</b> — 그대로 그리면 한 가게의 주문이 다섯 막대로 쪼개져, 실제 1위가 중간 순위로 내려갑니다. “4,500원” 같은 글자는 평균을 낼 수도 없습니다.</li><li><b>해법</b> — 그리기 전에 다섯 가지(표기·형식·빈 값·중복·이상치)를 <b>찾고 → 고치고 → 확인</b>합니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 요리 전에 재료를 씻고 다듬듯, 차트 전에 데이터를 다듬습니다. 안 씻고 끓이면 맛이 달라집니다.</div></div></div>
 <details class="more"><summary>더 읽기 — 일상으로 치면 · 데이터에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>같은 친구를 “지수”, “지수야”, “김지수”, “JS”, “수”로 저장해 두면, 연락처 앱은 친구 다섯 명으로 셉니다. 누구와 가장 자주 연락했는지 순위가 틀어집니다.</p></div><div><h4>데이터에서는</h4><p>브랜드 표기를 6개 이름(CHAGEE · Mixue · HEYTEA · Auntea Jenny · Mega Coffee · Compose Coffee)으로 통일하고, 가격은 “4,500원”·“4.5k”를 모두 숫자 4500으로 바꿉니다.</p></div></div></details>
@@ -489,7 +489,7 @@ dtype: int64
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>중복과 이상치, 그리고 AI 검사 3규칙 — 모아의 발표</h2><span class="tag m">개념: AI 전처리 검증</span><span class="tag a">방법: 행 수 1,000 → 970을 지키기</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①다섯 가지 더러움 → ②빈 값 처리 → <b>③중복·이상치와 AI 검사</b> → ④도구와 고급 차트</p>
-
+<figure class="ill"><img src="../assets/img/scene/scene_03_b.webp" width="1920" height="1080" alt="모아가 AI 로봇의 답안지를 받아 체크 표시 세 개짜리 점검표와 대조하는 픽셀 그림" loading="lazy"><figcaption>AI가 고친 데이터도 세 가지 규칙으로 다시 검사한다.</figcaption></figure>
 <div class="docline"><b>박사의 상황 질문</b> AI에게 “이상한 데이터 정리해 줘”라고 맡겼더니 1,000행이 700행이 되어 돌아왔습니다. 정답은 970행입니다. 사라진 270행에는 무엇이 들어 있었을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 중복 주문은 매출을 부풀리고, 당도 999·가격 0원 같은 값은 평균을 망칩니다.</li><li><b>앞 방법의 한계</b> — AI에게 “정리해 줘”라고 맡기면 그럴듯한 값을 지어내거나(Made-up values), 문제처럼 보이는 행을 한꺼번에 지웁니다. 한 줄씩 보면 맞아 보여도 전체는 틀립니다(Missed patterns).</li><li><b>해법</b> — <b>AI 검사 3규칙</b>: ① 고친 데이터 말고 <b>코드</b>만 받는다 ② 처리 전후 <b>행 수</b>를 비교한다 ③ 이상치는 지우기 전에 <b>표시</b>한다.</li></ol><div class="easy"><b>쉽게 말하면</b> 결제 버튼을 두 번 누르면 한 번은 취소합니다. 카드를 통째로 정지하지 않습니다.</div></div></div>
 <details class="more"><summary>더 읽기 — 일상으로 치면 · 데이터에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>영수증 정리를 맡겼더니 중복 영수증 30장만 빼야 할 것을, 구겨진 것·글씨 흐린 것까지 300장을 버렸습니다. 남은 영수증으로 가계부를 쓰면 지출이 틀립니다.</p></div><div><h4>데이터에서는</h4><p>정답 970행 = 중복 30건만 삭제. AI의 700행 = 가격 형식 오류 200행 + 빈 값 60행 + 이상치 35행까지 함께 지움(원자료 해설). 당도 999·가격 0원은 오타라 <b>값만 비우고 행은 남기고</b>, 대기 300분 이상은 개점 주의 실제 사건이라 <b>지우지 않고 is_event = 1로 표시</b>합니다.</p></div></div></details>
