@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv').dropna(subset=['amount'])\n# 1. 다섯 숫자 요약: 최솟값·Q1·중앙값·Q3·최댓값 / 五数概括: 最小值、Q1、中位数、Q3、最大值\nfive = df.groupby('channel')['amount'].quantile([0, 0.25, 0.5, 0.75, 1]).unstack().round(1)\nfive.columns = ['min', 'Q1', 'median', 'Q3', 'max']\nprint(five)\n# 2. 채널별 상자그림을 그린다 / 按渠道画箱线图\nax = df.boxplot(column='amount', by='channel', figsize=(7, 4.4), grid=False)\n# 3. 제목과 축 이름을 다듬는다 (pandas가 붙이는 위 제목은 지운다) / 润色标题和坐标轴 (去掉 pandas 自动加的总标题)\nplt.suptitle('')\nax.set_title('Web has the highest median, and every channel has a long upper tail')\nax.set_xlabel('Channel')\nax.set_ylabel('Payment amount (CNY)')\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\n           min     Q1  median      Q3     max\nchannel                                      \napp      146.7  681.7   993.9  1469.9  4738.8\noffline  220.9  618.6   800.6  1217.9  4103.4\nweb      258.3  820.4  1166.3  1598.5  4892.7",
+ "imgs": [
+  "w04_2_1.webp"
+ ]
+}

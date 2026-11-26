@@ -244,17 +244,49 @@ def why_math(s):
     return ''.join(out)
 
 
+def ill_html(s):
+    k = s.get('ill')
+    if not k:
+        return ''
+    name, alt, cap = k
+    f = os.path.join(ROOT, 'assets', 'img', 'scene', name + '.webp')
+    if not os.path.exists(f):
+        return ''
+    from PIL import Image
+    w, h = Image.open(f).size
+    return '<figure class="ill"><img src="../assets/img/scene/%s.webp" width="%d" height="%d" alt="%s" loading="lazy"><figcaption>%s</figcaption></figure>' % (name, w, h, E(alt), cap)
+
+
+def colab_html(c):
+    from PIL import Image
+    lines = c['code'].split('\n')
+    head, rest = '\n'.join(lines[:8]), '\n'.join(lines[8:])
+    imgs = ''.join('<img src="../assets/img/colab/%s" width="%d" height="%d" alt="%s" loading="lazy">' % (
+        f, *Image.open(os.path.join(ROOT, 'assets', 'img', 'colab', f)).size, E('실행 결과 차트 — ' + c['title'])) for f in c['imgs'])
+    more = ('<details class="cb-more"><summary>코드 전체 보기 (%d줄 더)</summary><pre class="cb-code" data-i18n-skip>%s</pre></details>' % (len(lines) - 8, E(rest))) if rest else ''
+    return ('<div class="colab" id="cb-%s"><p class="cb-head">실제 화면으로 보기 — %s</p>'
+            '<div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>%s</p></div>'
+            '<div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>%s</pre>%s</div>'
+            '<div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>%s</pre>%s</div>'
+            '<p class="cb-note">%s <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>') % (
+        c['key'], c['title'], E(c['prompt']).replace('\n', '<br>'), E(head), more, E(c['stdout']), imgs, c['note'])
+
+
 def step_html(P, i, s):
     h = ['<section class="level" id="%s">' % s['id'], '<div class="wrap">']
     h.append('<div class="lvhead"><span class="hex">%d</span><div><h2>%s</h2><span class="tag m">개념: %s</span><span class="tag a">%s</span></div></div>' % (i + 1, s['title'], s['concept'], s['tag']))
     if s.get('where'):
         h.append('<p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — %s</p>' % s['where'])
+    h.append(ill_html(s))
     if s.get('situation'):
         h.append('<div class="docline"><b>박사의 상황 질문</b> %s</div>' % s['situation'])
     h.append(why_math(s))
     if s.get('pair'):
         (lt, lb), (rt, rb) = s['pair']
-        h.append('<div class="pair"><div><h4>%s</h4><p>%s</p></div><div><h4>%s</h4><p>%s</p></div></div>' % (lt, lb, rt, rb))
+        pr = '<div class="pair"><div><h4>%s</h4><p>%s</p></div><div><h4>%s</h4><p>%s</p></div></div>' % (lt, lb, rt, rb)
+        if s.get('ill') or s.get('colab'):
+            pr = '<details class="more"><summary>더 읽기 — %s · %s</summary>%s</details>' % (lt, rt, pr)
+        h.append(pr)
     if s.get('body'):
         h.append(s['body'])
     if s.get('talk'):
@@ -265,6 +297,8 @@ def step_html(P, i, s):
         f = s['flow']
         h.append('<div class="panel"><p class="ptitle">행동으로 보기 — %s</p><canvas class="cv flow" id="%s" style="height:%dpx" role="img" aria-label="%s"></canvas><p class="cvcap">%s</p></div>' % (
             f['title'], f['id'], f.get('h', 230), E(f['alt']), f['cap']))
+    for c in s.get('colab', []):
+        h.append(colab_html(c))
     if s.get('explain'):
         h.append('<div class="explain"><b>풀어서 보면</b>%s</div>' % s['explain'])
     if s.get('calm'):
@@ -278,7 +312,7 @@ def step_html(P, i, s):
         h.append('<div class="docline"><b>박사의 해석 한 줄</b> %s</div>' % s['docline'])
     if s.get('limit'):
         h.append('<p class="limit"><b>이 단계의 한계 —</b> %s</p>' % s['limit'])
-    if s.get('code'):
+    if s.get('code') and not s.get('colab'):
         rows = ''.join('<tr><td>%s</td><td>%s</td></tr>' % (E(c), m) for c, m in s['code'])
         h.append('<details class="codebox"><summary>%s (몰라도 됩니다)</summary><table><thead><tr><th>코드 한 줄</th><th>뜻 한 줄</th></tr></thead><tbody>%s</tbody></table></details>' % (
             s.get('code_title', '교안의 파이썬 코드로 보면'), rows))
@@ -452,6 +486,9 @@ def index_html(pages, slots, IDX):
 def main():
     import importlib.util
     _sp = importlib.util.spec_from_file_location('persona_fixes', os.path.join(HERE, 'persona_fixes.py')); PF = importlib.util.module_from_spec(_sp); _sp.loader.exec_module(PF)
+    sys.path.insert(0, os.path.join(HERE, 'colab')); sys.path.insert(0, HERE)
+    from manifest import CELLS as CB
+    from illustrations import ILL
     specs = sorted(glob.glob(os.path.join(HERE, 'pages', 'w*.py')))
     pages = []
     for f in specs:
@@ -463,6 +500,13 @@ def main():
         _txt = re.sub(r'[{}\[\]",:]', ' ', _txt)
         P['_read'] = max(10, int(round(len(_txt.split()) / 180.0 / 5.0)) * 5)
         for st in P['steps']:
+            for key, cc in CB.items():
+                if key.startswith('w' + P['num'] + '_') and cc['step'] == st['id']:
+                    o = json.load(open(os.path.join(HERE, 'colab', 'out', key + '.json'), encoding='utf-8'))
+                    st.setdefault('colab', []).append(dict(cc, key=key, **o))
+            for sid, name, alt, cap, _pr in ILL.get(P['num'], []):
+                if sid == st['id']:
+                    st['ill'] = (name, alt, cap)
             c = PF.CALM.get(P['num'], {}).get(st['id'])
             if c and not st.get('calm'):
                 st['calm'] = c

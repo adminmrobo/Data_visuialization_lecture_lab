@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('payments.csv').dropna(subset=['amount'])\n# 1. 신규(1)·기존(0)을 영어 이름으로 바꾼다 / 把新用户 (1)、老用户 (0) 换成英文名称\ndf['customer'] = df['is_new_user'].map({1: 'New', 0: 'Returning'})\n# 2. 고객 유형별 결제액 중앙값 / 各客户类型的支付金额中位数\nmed = df.groupby('customer')['amount'].median().round(1)\nplt.figure(figsize=(6, 4))\nbars = plt.bar(med.index, med.values, color=['#cbd5e1', '#1e3a8a'])\nplt.bar_label(bars, padding=3)\nplt.ylim(0, med.max() * 1.2)\nplt.title('Returning customers pay more per order')\nplt.ylabel('Median payment (CNY)')\n# 3. 차트 아래에 세 문장을 출력한다 / 在图表下面输出三句话\nprint('What    : median payment is', med['New'], 'for new and', med['Returning'], 'for returning customers.')\nprint('So What : a new customer pays about', round(med['New'] / med['Returning'] * 100), '% of a returning customer.')\nprint('Now What: test a second-visit coupon for new customers and compare next month.')\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\nWhat    : median payment is 765.0 for new and 1048.5 for returning customers.\nSo What : a new customer pays about 73 % of a returning customer.\nNow What: test a second-visit coupon for new customers and compare next month.",
+ "imgs": [
+  "w09_1_1.webp"
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\n# 1. 파일을 읽고 결제액 빈 값은 뺀다 / 读取文件并去掉支付金额的缺失值\ndf = pd.read_csv('payments.csv').dropna(subset=['amount'])\n# 2. 채널별 평균과 중앙값을 함께 계산한다 / 同时计算各渠道的平均值和中位数\nstat = df.groupby('channel')['amount'].agg(['mean', 'median', 'count']).round(1)\nprint(stat)\n# 3. 평균과 중앙값을 나란히 막대로 그린다 / 把平均值和中位数并排画成柱状图\nax = stat[['mean', 'median']].plot(kind='bar', figsize=(7, 4), color=['#b45309', '#1e3a8a'], rot=0)\nax.set_title('In every channel the mean is above the median')\nax.set_xlabel('Channel')\nax.set_ylabel('Payment amount (CNY)')\nax.legend(['Mean', 'Median'])\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\n           mean  median  count\nchannel                       \napp      1149.2   993.9    502\noffline   984.2   800.6    151\nweb      1253.3  1166.3    115",
+ "imgs": [
+  "w04_1_1.webp"
+ ]
+}

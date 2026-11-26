@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\n# 1. 파일을 읽고 amount 빈 값이 있는 행은 뺀다 / 读取文件并去掉 amount 缺失的行\ndf = pd.read_csv('payments.csv').dropna(subset=['amount'])\n# 2. Seaborn이 히스토그램을 그린다 / 用 Seaborn 画直方图\nplt.figure(figsize=(8, 4.2))\nsns.histplot(df['amount'], bins=30, color='#0b7a86')\n# 3. Matplotlib으로 평균선(빨강 점선)과 중앙값선(파랑 실선)을 더한다 / 用 Matplotlib 加平均线 (红色虚线) 和中位数线 (蓝色实线)\nplt.axvline(df['amount'].mean(), color='#b91c1c', linestyle='--', label='Mean ' + str(round(df['amount'].mean(), 1)))\nplt.axvline(df['amount'].median(), color='#1e3a8a', label='Median ' + str(round(df['amount'].median(), 1)))\n# 4. 제목·축 이름·범례로 다듬는다 / 用标题、坐标轴名称和图例来润色\nplt.title('Long right tail: mean is higher than median')\nplt.xlabel('Payment amount (CNY)')\nplt.ylabel('Number of payments')\nplt.legend()\nprint(df['amount'].describe().round(1))\nplt.show()",
+ "stdout": "payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done\nSaving payments.csv to payments.csv\ncount     768.0\nmean     1132.3\nstd       665.4\nmin       146.7\n25%       679.5\n50%       960.3\n75%      1440.9\nmax      4892.7\nName: amount, dtype: float64",
+ "imgs": [
+  "w03_2_1.webp"
+ ]
+}

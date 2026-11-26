@@ -1,0 +1,7 @@
+{
+ "code": "from google.colab import files\nimport pandas as pd\nimport matplotlib.pyplot as plt\nuploaded = files.upload()\ndf = pd.read_csv('clinic_visits.csv')\n# 1. 진료과별 주간 평균 환자 수 = 전체 합계 ÷ 주 수 / 各科室每周平均患者数 = 总数 ÷ 周数\nweeks = pd.to_datetime(df['date']).dt.isocalendar().week.nunique()\ndept = (df.groupby('department')['patients'].sum() / weeks).sort_values()\nprint('weeks =', weeks)\nprint(dept.round(1))\nplt.figure(figsize=(8, 4))\ncolors = ['#cbd5e1'] * (len(dept) - 1) + ['#1e3a8a']\nbars = plt.barh(dept.index, dept.values, color=colors)\nplt.bar_label(bars, labels=dept.round(0).astype(int).astype(str), padding=3)\nplt.xlim(0, dept.max() * 1.15)\nplt.title('Internal Medicine sees the most patients each week')\nplt.xlabel('Patients per week')\nplt.show()",
+ "stdout": "clinic_visits.csv(text/csv) - 25198 bytes, last modified: 2026. 11. 26. - 100% done\nSaving clinic_visits.csv to clinic_visits.csv\nweeks = 4\ndepartment\nDermatology           469.5\nOrthopedics           701.5\nSurgery               862.0\nPediatrics           1107.8\nInternal Medicine    1490.5\nName: patients, dtype: float64",
+ "imgs": [
+  "w12_1_1.webp"
+ ]
+}

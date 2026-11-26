@@ -342,6 +342,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style></head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
 <nav class="top" aria-label="이 페이지 차례"><a class="brand" href="../index.html"><span class="hex">DV</span>데이터 시각화 디자인 연구실</a><div class="links"><a href="#top">처음</a><a href="#crew">등장인물</a><a href="#why">왜</a><a href="#lv1">1 Q1 기준</a><a href="#lv2">2 Q2 도구</a><a href="#lv3">3 Q3 실행</a><a href="#lv4">4 Q4·Q5</a><a href="#duel">대결</a><a href="#summary">정리</a><a href="#kg">색인</a><a href="#export">꾸러미</a></div></nav>
@@ -358,9 +380,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>Q1 — 사례를 찾기 전에 기준부터 세운다 (모아의 상담)</h2><span class="tag m">개념: 좋은 차트 5원칙과 나쁜 차트 5함정</span><span class="tag a">방법: 기준 → AI에게 후보 요청 → 직접 확인 → 답안</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — <b>①Q1 기준</b> → ②Q2 도구 → ③Q3 실행 → ④Q4·Q5 고르기와 진단</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 모아가 AI에게 “좋은 시각화 사례 알려 줘”라고 했더니, 링크 다섯 개가 왔는데 두 개는 열리지 않았습니다. 무엇부터 했어야 할까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 좋은·나쁜 사례를 고르라고 하면 “예쁜 것 / 안 예쁜 것”으로 고르기 쉽습니다.</li><li><b>앞 방법의 한계</b> — 기준 없이 고르면 왜 좋은지 설명하지 못하고(개념 30점), AI가 만든 가짜 주소를 그대로 옮기기도 합니다.</li><li><b>해법</b> — 먼저 <b>좋은 차트 5원칙</b>과 <b>나쁜 차트 5함정(T1~T5)</b>을 기준으로 세우고, AI에게는 후보만 받은 뒤 링크를 직접 열어 확인합니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 의사가 “어디가 아파요?”를 묻기 전에 진단표를 갖고 있듯, 차트를 보기 전에 진단표를 갖고 있습니다.</div></div></div>
-<div class="pair"><div><h4>좋은 차트 5원칙</h4><p>① 정확한 축(막대는 0부터, 눈금 고르게) ② 데이터에 맞는 차트 ③ 군더더기 없음(메시지 하나) ④ 명확한 라벨(단위·범례·출처) ⑤ 행동으로 이어짐(“그래서 무엇을 할지” 한 줄).</p></div><div><h4>나쁜 차트 5함정</h4><p>T1 Y축 절단 · T2 맞지 않는 차트(합이 100%가 아닌 파이 등) · T3 이중축·눈금 조작 · T4 상관을 인과로 단정 · T5 장식 과잉(3D·그림자·무지개색).</p></div></div>
+<details class="more"><summary>더 읽기 — 좋은 차트 5원칙 · 나쁜 차트 5함정</summary><div class="pair"><div><h4>좋은 차트 5원칙</h4><p>① 정확한 축(막대는 0부터, 눈금 고르게) ② 데이터에 맞는 차트 ③ 군더더기 없음(메시지 하나) ④ 명확한 라벨(단위·범례·출처) ⑤ 행동으로 이어짐(“그래서 무엇을 할지” 한 줄).</p></div><div><h4>나쁜 차트 5함정</h4><p>T1 Y축 절단 · T2 맞지 않는 차트(합이 100%가 아닌 파이 등) · T3 이중축·눈금 조작 · T4 상관을 인과로 단정 · T5 장식 과잉(3D·그림자·무지개색).</p></div></div></details>
 <p><b>사례를 찾기 좋은 곳</b>: 통계청·e-나라지표 보도자료, 한국은행 경제통계, 중국 국가통계국 영문 사이트(<a href="https://www.stats.gov.cn/english/" target="_blank" rel="noopener">stats.gov.cn/english ↗</a>), 기업 연차보고서, 국제 경제지의 그래픽 기사. 출처가 분명한 곳일수록 인용도 쉽습니다. 강의에서 함께 소개한 <a href="https://www.youtube.com/watch?v=zHyk6rfHGao" target="_blank" rel="noopener">시각화 참고 영상 ↗</a>도 사례를 고를 때 참고할 수 있습니다.</p>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="moa" data-mood="report" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">인턴 모아</span><p>함정 이름을 붙이는 연습을 해 볼게요. 아래 다섯 장면이 T 몇 번인지 골라 볼게요.</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>3D 막대는 고급스러워 보이니까 좋은 사례 아니야?</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>T5야. 거리감 때문에 비율이 달라 보여.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — T1~T5 이름 붙이기</p><div id="w8t"></div></div>
@@ -374,9 +397,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>Q2 — 긴 코드보다 표 한 장 (X1의 상담)</h2><span class="tag m">개념: 파이썬 시각화 라이브러리</span><span class="tag a">방법: 설치 · 성격 · 특징 · 어울리는 상황을 한 표로</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①Q1 기준 → <b>②Q2 도구</b> → ③Q3 실행 → ④Q4·Q5 고르기와 진단</p>
+
 <div class="docline"><b>박사의 상황 질문</b> X1이 라이브러리 네 개의 설명을 한 문단씩 길게 썼습니다. 그런데 “어떤 상황에 어떤 도구”가 한눈에 보이지 않습니다. 어떻게 바꿀까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 라이브러리를 나열만 하면 “그래서 언제 무엇을 쓰나”가 빠집니다.</li><li><b>앞 방법의 한계</b> — 원자료는 단순 나열을 감점 요인으로 봅니다. 선택 기준이 보여야 합니다.</li><li><b>해법</b> — <b>설치 명령 · 성격 · 특징 · 잘 맞는 상황</b>을 한 표로 정리하고, “결과물이 어디에 실리는가”로 도구를 고릅니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 망치·드라이버·톱을 나열하는 대신 “못 박을 때 망치, 나사 돌릴 때 드라이버”라고 적는 것입니다.</div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>사진을 SNS에 올릴지, 액자로 걸지, 영상으로 만들지에 따라 쓰는 앱이 다릅니다. 같은 사진도 실리는 곳이 도구를 정합니다.</p></div><div><h4>시각화에서는</h4><p>하려는 일 → 도구: 보고서·논문 정적 차트 → Matplotlib + Seaborn / 빠른 점검 → pandas·Altair / 웹·대시보드 → Plotly / 통계 관계(회귀·분포) → Seaborn / 지도 → Plotly·folium.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 시각화에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>사진을 SNS에 올릴지, 액자로 걸지, 영상으로 만들지에 따라 쓰는 앱이 다릅니다. 같은 사진도 실리는 곳이 도구를 정합니다.</p></div><div><h4>시각화에서는</h4><p>하려는 일 → 도구: 보고서·논문 정적 차트 → Matplotlib + Seaborn / 빠른 점검 → pandas·Altair / 웹·대시보드 → Plotly / 통계 관계(회귀·분포) → Seaborn / 지도 → Plotly·folium.</p></div></div></details>
 <div class="tbl"><table><thead><tr><th>라이브러리</th><th>설치</th><th>성격</th><th>특징</th><th>잘 맞는 상황</th></tr></thead><tbody>
 <tr><td>Matplotlib</td><td><code>pip install matplotlib</code></td><td>기본 도구</td><td>정적 차트, 세밀한 조정, 다른 도구의 바탕. 대신 코드가 길다</td><td>보고서 · 논문 · 인쇄물</td></tr>
 <tr><td>Seaborn</td><td><code>pip install seaborn</code></td><td>통계 시각화</td><td>Matplotlib 위에서 분포·상관·회귀를 짧은 코드로. 표(DataFrame)와 잘 맞음</td><td>통계 관계 · 탐색</td></tr>
@@ -392,30 +416,76 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>Q3 — 세 차트를 직접 실행한다 (하루의 상담)</h2><span class="tag m">개념: 코드 실행과 검수</span><span class="tag a">방법: 데이터 · 차트 종류 · 디자인 조건 · 검수 요청 4요소</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①Q1 기준 → ②Q2 도구 → <b>③Q3 실행</b> → ④Q4·Q5 고르기와 진단</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 하루가 AI에게 받은 코드를 답안에 붙였습니다. 실행은 안 해 봤습니다. 채점자가 이 코드를 돌리면 한글이 □□□로 나옵니다. 몇 점이 날아갈까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — AI가 쓴 코드는 그럴듯해 보여서 실행 없이 믿기 쉽습니다.</li><li><b>앞 방법의 한계</b> — 채점은 “실제로 돌아가는가, 출력이 합리적인가”를 봅니다. 실행 캡처가 없으면 코드 30점의 근거가 사라집니다.</li><li><b>해법</b> — 프롬프트 <b>4요소</b>(데이터를 숫자로 · 차트 종류 정확히 · 디자인 조건 · 검수 요청)로 받고, 직접 실행해 캡처하고, 줄마다 한국어 주석을 이해한 뒤 What → So What → Now What 세 문장을 답안에 씁니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 레시피를 받아 적기만 하는 것과 직접 끓여서 맛을 보는 것은 다릅니다. 채점자는 맛을 봅니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> “서울과 경기가 전체의 57%”는 어떻게 나온 숫자예요?</p></div><p class="school">학교 수학으로 보면: 초등 백분율, 중학교 비율</p><p><b>박사</b> 부분을 전체로 나누고 100을 곱하면 백분율(%)이에요. 두 지역을 먼저 더한 다음 전체로 나눕니다.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>부분 ÷ 전체</td><td>전체 중 몇 몫인지 (0~1)</td></tr><tr><td>× 100</td><td>백분율(%)로 바꾼다</td></tr><tr><td>(나중 − 처음) ÷ 처음</td><td>증가율 — 1~6월 매출이 얼마나 늘었나</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>권역 매출 합계 320 + 240 + 180 + 150 + 90 = <b>980억</b><br>(320 + 240) ÷ 980 × 100 = 560 ÷ 980 × 100 ≈ <b>57.1%</b><br>1월 1,200 → 6월 2,100 증가율: (2,100 − 1,200) ÷ 1,200 × 100 = <b>75%</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 막대만 보면 “서울이 크다”까지인데, 나눗셈 한 번으로 “절반 넘게 수도권”이라는 결론이 나오네요.</p></div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>“요리 잘해요”라는 말보다 요리 사진 한 장이 증거입니다. 실행 캡처가 코드의 증거입니다.</p></div><div><h4>답안에서는</h4><p>차트마다: 프롬프트(3~6줄) → 실행 캡처 → 줄마다 주석 → What(무엇이 보이나) · So What(그래서 무슨 뜻) · Now What(다음에 무엇을) 세 문장.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 답안에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>“요리 잘해요”라는 말보다 요리 사진 한 장이 증거입니다. 실행 캡처가 코드의 증거입니다.</p></div><div><h4>답안에서는</h4><p>차트마다: 프롬프트(3~6줄) → 실행 캡처 → 줄마다 주석 → What(무엇이 보이나) · So What(그래서 무슨 뜻) · Now What(다음에 무엇을) 세 문장.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="asst" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-asst">조수 하루</span><p>세 차트를 아래에 그려 놓았어요. 숫자를 바꾸면 결론 문장도 바뀌는지 볼게요.</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>산점도 데이터는 AI가 지어내도 되지?</p></div></div><div class="say"><img data-who="fly" data-mood="clip" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>원자료도 그건 허용해. 대신 “예제용 가상 데이터”라고 꼭 표시하래.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — Q3의 세 차트와 세 문장</p><div class="chips" id="w8c3"><button type="button" class="bt" data-k="line" aria-pressed="true">Chart 01 꺾은선</button><button type="button" class="bt" data-k="bar">Chart 02 막대</button><button type="button" class="bt" data-k="sc">Chart 03 산점도</button></div>
 <div id="w8cv" class="viz"></div><div class="insight" id="w8co" aria-live="polite"></div></div>
+<div class="colab" id="cb-w08_1"><p class="cb-head">실제 화면으로 보기 — Q3 실행 ① — 날짜별 매출 선 그래프</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 중간 과제를 돕는 조교야.<br>[데이터] payments.csv — 열: date(날짜), hour(시), city(도시), channel(app·web·offline), items(품목 수), amount(결제액, 위안), is_new_user(신규 1·기존 0). 800행.<br>[요청] 날짜별 매출 합계를 선 그래프로 그리고, 가장 높은 날에 주석을 달아 줘. 평균선도 점선으로 그려 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 날짜 글자를 날짜 형식으로 바꾼다 / 把日期文字转换成日期格式
+df[&#x27;date&#x27;] = pd.to_datetime(df[&#x27;date&#x27;])
+# 2. 날짜별 매출 합계 / 每天的销售额合计</pre><details class="cb-more"><summary>코드 전체 보기 (14줄 더)</summary><pre class="cb-code" data-i18n-skip>daily = df.groupby(&#x27;date&#x27;)[&#x27;amount&#x27;].sum()
+top_day = daily.idxmax()
+print(&#x27;days =&#x27;, len(daily), &#x27;| mean =&#x27;, round(daily.mean(), 1), &#x27;| max =&#x27;, top_day.date(), round(daily.max(), 1))
+plt.figure(figsize=(9, 4))
+plt.plot(daily.index, daily.values, color=&#x27;#0b7a86&#x27;, marker=&#x27;o&#x27;, markersize=3)
+# 3. 평균선은 회색 점선 / 平均线用灰色虚线
+plt.axhline(daily.mean(), color=&#x27;gray&#x27;, linestyle=&#x27;--&#x27;, label=&#x27;Daily mean&#x27;)
+# 4. 가장 높은 날 한 곳에만 주석을 단다 / 只在最高的那一天加注释
+plt.annotate(&#x27;Peak &#x27; + str(top_day.date()), xy=(top_day, daily.max()), xytext=(top_day, daily.max() * 1.08), ha=&#x27;center&#x27;, arrowprops=dict(arrowstyle=&#x27;-&gt;&#x27;, color=&#x27;#b45309&#x27;), color=&#x27;#b45309&#x27;)
+plt.ylim(0, daily.max() * 1.2)
+plt.title(&#x27;Sales peaked on March 27&#x27;)
+plt.ylabel(&#x27;Sales (CNY)&#x27;)
+plt.legend()
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+days = 28 | mean = 31058.6 | max = 2026-03-27 46462.8</pre><img src="../assets/img/colab/w08_1_1.webp" width="882" height="416" alt="실행 결과 차트 — Q3 실행 ① — 날짜별 매출 선 그래프" loading="lazy"></div><p class="cb-note">가장 높은 날은 3월 27일(46,462.8위안)이고 평균은 31,058.6위안입니다. 주석이 한 곳에만 있어서 눈이 바로 갑니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>원자료의 예시 데이터(모두 가상): 1~6월 매출(만 원) 1,200 · 1,450 · 1,700 · 1,500 · 1,850 · 2,100 / 권역 매출(억 원) 서울 320 · 경기 240 · 부산 180 · 대구 150 · 광주 90 / 공부 시간과 점수 16명(가상, 양의 관계). 2주차의 프롬프트 4요소(역할·데이터·목표·출력 형식)와 이번 과제의 4요소(데이터·차트 종류·디자인 조건·검수 요청)는 이름이 조금 다르지만 같은 생각입니다 — <b>추측할 여지를 줄인다.</b></p></div>
 <p class="calm">세 차트의 코드가 한꺼번에 나와서 부담스러울 수 있어요. 한 차트씩, 실행 → 결과 확인 → 다음 차트 순서면 충분합니다.</p>
 <div class="ai-check"><h4>AI 결과 판단 코너</h4><p>AI가 Chart 01 해석으로 “매출이 매달 꾸준히 증가했다”고 썼습니다. 표를 직접 보면 3월 1,700 → 4월 1,500으로 한 번 줄었습니다. 다섯 번의 월간 변화 중 네 번 증가입니다. 정확한 문장: “1월 1,200에서 6월 2,100으로 75% 늘었고, 4월에 한 번 줄었다가 회복했다.” AI의 요약은 <b>예외를 지우는</b> 경향이 있습니다.</p></div>
 <div class="docline"><b>박사의 해석 한 줄</b> “코드가 깔끔해도 실행 결과가 없으면 30%가 날아간다.” 캡처와 출처가 점수의 근거입니다.</div>
 <p class="limit"><b>이 단계의 한계 —</b> 세 차트를 실행했습니다. 마지막 두 문항은 “어떤 상황에 어떤 차트”(Q4)와 “잘못된 차트 고치기”(Q5)입니다.</p>
-<details class="codebox"><summary>원자료 부록의 Chart 01 코드로 보면 (몰라도 됩니다)</summary><table><thead><tr><th>코드 한 줄</th><th>뜻 한 줄</th></tr></thead><tbody><tr><td>import matplotlib.pyplot as plt</td><td>그림 도구를 plt라는 이름으로 불러온다</td></tr><tr><td>plt.rc(&#x27;font&#x27;, family=&#x27;Malgun Gothic&#x27;)</td><td>한글이 □□□로 깨지지 않게 글꼴을 정한다 (Colab에서는 나눔고딕)</td></tr><tr><td>months = [&#x27;1월&#x27;,&#x27;2월&#x27;,&#x27;3월&#x27;,&#x27;4월&#x27;,&#x27;5월&#x27;,&#x27;6월&#x27;]</td><td>X축에 쓸 달 이름 목록</td></tr><tr><td>sales = [1200,1450,1700,1500,1850,2100]</td><td>달별 매출(만 원) 목록</td></tr><tr><td>ax.plot(months, sales, color=&#x27;#1E3A8A&#x27;, marker=&#x27;o&#x27;)</td><td>인디고색 선과 동그라미 표시로 꺾은선을 그린다</td></tr><tr><td>ax.set_ylim(0, 2400)</td><td>Y축을 0부터 2,400까지로 정한다</td></tr><tr><td>plt.savefig(&#x27;chart_01_line.png&#x27;, dpi=150)</td><td>그림을 파일로 저장한다 — 답안 캡처용</td></tr></tbody></table></details>
 <div class="quiz" data-quiz="lv3"></div>
 </div></section>
 <section class="level" id="lv4">
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>Q4·Q5 — 질문의 형태로 고르고, 3단계로 진단한다 (시아의 상담)</h2><span class="tag m">개념: 상황별 차트 선택과 오류 차트 진단</span><span class="tag a">방법: 무엇이 잘못 → 독자의 오해 → 고치는 법</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①Q1 기준 → ②Q2 도구 → ③Q3 실행 → <b>④Q4·Q5 고르기와 진단</b></p>
+
 <div class="docline"><b>박사의 상황 질문</b> 과제지의 그래프 A는 세 회사 매출을 Y축 100부터 그렸습니다. C사 막대가 A사의 여섯 배쯤 높아 보입니다. 실제로는 몇 % 차이일까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 4번은 정답을 외우게 하는 것처럼 보이고, 5번은 “이상하다”는 느낌만 들고 말로 하기 어렵습니다.</li><li><b>앞 방법의 한계</b> — 느낌으로 쓰면 개념 30점과 분석 30점을 동시에 잃습니다. 특히 5번에서 “어떻게 고치나”가 비면 감점입니다.</li><li><b>해법</b> — 4번은 질문의 형태(시간인가·비교인가·분포인가·관계인가)로 고르고 “왜 다른 차트가 아닌가”까지 씁니다. 5번은 차트마다 한 문단, <b>3단계</b>(무엇이 잘못 · 독자는 어떻게 오해 · 어떻게 고치나)로 씁니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 고장 신고서: 어디가 고장 났고 → 그래서 어떤 문제가 생기고 → 어떻게 고치면 되는지. 세 줄만 채우면 됩니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 그래프 A에서 “보이는 배율”과 “실제 차이”는 어떻게 계산해요?</p></div><p class="school">학교 수학으로 보면: 중학교 비율과 백분율</p><p><b>박사</b> 2주차에서 했던 그 계산이에요. 막대 길이는 “값 − 축 시작점”, 실제 차이는 “(큰 값 − 작은 값) ÷ 작은 값”입니다.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>(106 − 100) ÷ (101 − 100)</td><td>축 100부터 그린 막대의 길이 비 — 보이는 배율</td></tr><tr><td>106 ÷ 101</td><td>실제 배율</td></tr><tr><td>(106 − 101) ÷ 101 × 100</td><td>실제 차이(%)</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>보이는 배율: 6 ÷ 1 = <b>6배</b><br>실제 배율: 106 ÷ 101 ≈ <b>1.05배</b><br>실제 차이: 5 ÷ 101 × 100 ≈ <b>약 5%</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 5% 차이를 6배로 보이게 만든 거네요. 빨간 강조색까지 더해서요.</p></div></div></div>
-<div class="pair"><div><h4>Q4 네 상황</h4><p>① 10년간 기온 변화 → 꺾은선(연속된 시간 흐름) ② 5개 브랜드 점유율 → 정렬 막대(비슷한 크기를 길이로 정확히, 합 100%면 파이도 가능하지만 비슷한 조각은 구분이 어렵다) ③ 반 학생 키 분포 → 히스토그램(+상자그림) ④ 두 변수 관계 → 산점도 + 추세선.</p></div><div><h4>Q5 네 그래프</h4><p>A: Y축 100부터 → T1 · B: 복수 응답인데 파이, 합 128% → T2 · C: 2000·2010·2020·2021·2022·2023을 같은 간격으로 → T3 · D: “아이스크림이 수영 사고를 일으킨다!” + 오른쪽 축 50부터 → T4 + T3.</p></div></div>
+<details class="more"><summary>더 읽기 — Q4 네 상황 · Q5 네 그래프</summary><div class="pair"><div><h4>Q4 네 상황</h4><p>① 10년간 기온 변화 → 꺾은선(연속된 시간 흐름) ② 5개 브랜드 점유율 → 정렬 막대(비슷한 크기를 길이로 정확히, 합 100%면 파이도 가능하지만 비슷한 조각은 구분이 어렵다) ③ 반 학생 키 분포 → 히스토그램(+상자그림) ④ 두 변수 관계 → 산점도 + 추세선.</p></div><div><h4>Q5 네 그래프</h4><p>A: Y축 100부터 → T1 · B: 복수 응답인데 파이, 합 128% → T2 · C: 2000·2010·2020·2021·2022·2023을 같은 간격으로 → T3 · D: “아이스크림이 수영 사고를 일으킨다!” + 오른쪽 축 50부터 → T4 + T3.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="sia" data-mood="explain" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">인턴 시아</span><p>네 그래프를 하나씩 열어 “고치기” 버튼을 눌러 보겠습니다. 3단계 문장도 함께 나옵니다.</p></div></div><div class="say"><img data-who="robo" data-mood="wow" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>D는 진짜 같이 오르잖아! 아이스크림 먹으면 위험한 거 아니야?</p></div></div><div class="say"><img data-who="fly" data-mood="magnify" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>여름 더위가 둘 다 올려. 숨은 변수야. 함께 움직인다고 원인은 아니야.</p></div></div><div class="say"><img data-who="x2" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x2">X2</span><p>C는 앞쪽이 10년 간격인데 뒤쪽은 1년 간격이네요. 기울기가 거짓말을 해요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 오류 그래프 A~D 고치기</p><div class="chips" id="w8q5"><button type="button" class="bt" data-k="A" aria-pressed="true">그래프 A</button><button type="button" class="bt" data-k="B">그래프 B</button><button type="button" class="bt" data-k="C">그래프 C</button><button type="button" class="bt" data-k="D">그래프 D</button><button type="button" class="bt primary" id="w8fix">고치기 ↔ 원래대로</button></div>
 <div id="w8qv" class="viz"></div><div id="w8qv2" class="viz" hidden></div><div class="insight" id="w8qo" aria-live="polite"></div></div>
+<div class="colab" id="cb-w08_2"><p class="cb-head">실제 화면으로 보기 — Q3 실행 ② — 요일 × 시간 히트맵</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 중간 과제를 돕는 조교야.<br>[데이터] 방금 쓴 payments.csv야.<br>[요청] 요일(월~일)과 시간대를 겹쳐서 결제 건수 히트맵을 그려 줘. 가장 많은 셀(요일·시간)을 출력해 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;payments.csv&#x27;)
+# 1. 날짜에서 요일 이름을 뽑는다 / 从日期中提取星期名称
+df[&#x27;weekday&#x27;] = pd.to_datetime(df[&#x27;date&#x27;]).dt.day_name().str[:3]
+order = [&#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;, &#x27;Sun&#x27;]</pre><details class="cb-more"><summary>코드 전체 보기 (13줄 더)</summary><pre class="cb-code" data-i18n-skip># 2. 요일 × 시간 결제 건수 표 (없는 조합은 0) / 星期 × 小时 的支付笔数表 (没有的组合为 0)
+table = pd.crosstab(df[&#x27;weekday&#x27;], df[&#x27;hour&#x27;]).reindex(order).fillna(0)
+# 3. 가장 많은 셀을 찾는다 / 找出笔数最多的格子
+best = table.stack().idxmax()
+print(&#x27;busiest cell =&#x27;, best[0], int(best[1]), &#x27;h -&gt;&#x27;, int(table.stack().max()), &#x27;payments&#x27;)
+plt.figure(figsize=(10, 3.8))
+plt.imshow(table.values, cmap=&#x27;GnBu&#x27;, aspect=&#x27;auto&#x27;)
+plt.colorbar(label=&#x27;Number of payments&#x27;)
+plt.xticks(range(len(table.columns)), table.columns)
+plt.yticks(range(len(order)), order)
+plt.xlabel(&#x27;Hour&#x27;)
+plt.title(&#x27;Friday noon is the busiest time&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>payments.csv(text/csv) - 30749 bytes, last modified: 2026. 11. 26. - 100% done
+Saving payments.csv to payments.csv
+busiest cell = Fri 12 h -&gt; 16 payments</pre><img src="../assets/img/colab/w08_2_1.webp" width="857" height="424" alt="실행 결과 차트 — Q3 실행 ② — 요일 × 시간 히트맵" loading="lazy"></div><p class="cb-note">가장 붐비는 셀은 금요일 12시(16건)입니다. 두 가지(요일과 시간)가 겹치는 질문이라 히트맵을 골랐습니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>그래프 C·D의 값은 과제지 그림에서 눈으로 읽은 어림값입니다(C: 2000년 5 → 2023년 75, D: 아이스크림 매출 20 → 100, 수영 사고 50 → 59). 원자료의 진단 문장: B는 “응답자 수 n과 1인당 평균 선택 개수를 함께 적고, 작은 항목은 기타로 묶는다”, C는 “시계열 X축은 항상 숫자형, 데이터가 없는 기간은 결측 구간으로 표시”, D는 “제목을 중립적으로(월별 아이스크림 매출과 수영 사고 건수), 두 축 모두 0부터 또는 두 패널로, 기온 데이터를 함께”. 보너스: 고친 그래프를 파이썬으로 다시 그려 첨부합니다.</p></div>
 <div class="docline"><b>박사의 해석 한 줄</b> 진단은 세 줄이면 됩니다. <b>무엇이 잘못 · 독자의 오해 · 고치는 법.</b> 세 번째 줄이 비면 진단이 아니라 감상입니다.</div>
 <p class="limit"><b>이 단계의 한계 —</b> 과제를 끝냈습니다. 다음 층(9층)에서는 이 과제를 함께 돌아보고, 같은 원칙이 마케팅·리테일·금융 현장에서 어떻게 다르게 쓰이는지 봅니다.</p>

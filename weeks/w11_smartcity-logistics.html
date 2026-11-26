@@ -342,6 +342,28 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 .insight:empty{display:none}
 .panel .kpis b{font-size:20px}
 .prompt{overflow-wrap:anywhere}.grid2>*{min-width:0}
+/* 본문 일러스트와 Colab 화면 */
+figure.ill{margin:14px 0 18px;text-align:center}
+figure.ill img{width:100%;max-width:760px;height:auto;border-radius:12px;image-rendering:pixelated;border:1px solid #e2e8f0}
+figure.ill figcaption{font-size:14px;color:#5b6874;margin-top:6px}
+details.more{margin:12px 0;border:1px dashed #cbd5e1;border-radius:10px;padding:8px 14px;background:#fbfcfe}
+details.more summary{cursor:pointer;font-weight:700;color:#1e3a8a;font-size:15px}
+details.more .pair{margin-top:10px}
+.colab{margin:22px 0;border:1.5px solid #d6dde6;border-radius:14px;overflow:hidden;background:#fff}
+.colab .cb-head{margin:0;padding:10px 16px;background:#f3f6fa;font-weight:800;color:#1e3a8a;border-bottom:1px solid #e2e8f0}
+.colab .cb-lbl{display:block;font-size:13px;font-weight:700;color:#5b6874;margin-bottom:6px}
+.colab .cb-prompt{padding:12px 16px;border-bottom:1px solid #eef1f5}
+.colab .cb-prompt p{margin:0;background:#eef6ff;border-radius:12px 12px 12px 2px;padding:10px 14px;line-height:1.7;font-size:15px;max-width:640px}
+.colab .cb-cell{padding:12px 16px;border-bottom:1px solid #eef1f5;background:#fafbfc}
+.colab pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.colab .cb-code{background:#f7f7f7;border-left:3px solid #f9ab00;padding:10px 12px;border-radius:6px;color:#202124}
+.colab details.cb-more{margin-top:6px}.colab details.cb-more summary{cursor:pointer;font-size:14px;color:#0b7a86;font-weight:700}
+.colab .cb-out{padding:12px 16px}
+.colab .cb-txt{background:#fff;color:#202124;padding:6px 2px;max-height:260px;overflow:auto}
+.colab .cb-out img{display:block;width:100%;max-width:820px;height:auto;margin:8px auto 0}
+.colab .cb-note{margin:0;padding:10px 16px;background:#f9fafb;border-top:1px solid #eef1f5;font-size:14px;line-height:1.7}
+.colab .cb-note span{display:block;color:#6b7785;font-size:12.5px;margin-top:4px}
+.colab p.cb-head,.colab p.cb-note{max-width:none}
 </style></head>
 <body><div id="prog"></div><div id="tip" role="tooltip"></div>
 <nav class="top" aria-label="이 페이지 차례"><a class="brand" href="../index.html"><span class="hex">DV</span>데이터 시각화 디자인 연구실</a><div class="links"><a href="#top">처음</a><a href="#crew">등장인물</a><a href="#why">왜</a><a href="#lv1">1 세 문장</a><a href="#lv2">2 이어 묻기</a><a href="#lv3">3 실습 A</a><a href="#lv4">4 실습 B</a><a href="#duel">대결</a><a href="#summary">정리</a><a href="#kg">색인</a><a href="#export">꾸러미</a></div></nav>
@@ -357,9 +379,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">1</span><div><h2>언제·어디서·얼마나 — 질문이 차트를 정한다</h2><span class="tag m">개념: 시간·장소·크기로 읽기</span><span class="tag a">방법: 핵심 동사 → 차트</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — <b>①세 문장</b> → ②네 요소와 이어 묻기 → ③실습 A 교통량 → ④실습 B 배송 지연</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 관제실 화면에 “금요일 저녁 6시, 강남 구간 통행량이 평소보다 크게 늘었다”라는 알림이 떴습니다. 이 한 문장에서 언제·어디서·얼마나를 찾을 수 있나요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 도시·물류 데이터는 열이 많고(날짜·요일·시간·구간·지역·수량·시간·원인) 무엇부터 볼지 막막합니다.</li><li><b>앞 방법의 한계</b> — 아무 열이나 골라 그리면 질문 없는 차트가 됩니다. 질문 없는 차트는 아무것도 결정하지 못합니다.</li><li><b>해법</b> — 먼저 <b>언제 · 어디서 · 얼마나</b> 세 질문을 채우고, 질문의 핵심 동사(변했나 · 가장 많은가 · 겹치면)로 차트를 고릅니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 매일 체온·심박을 재면 이상 신호를 일찍 잡습니다. 도시도 “언제·어디서·얼마나”를 재면 막히는 곳을 일찍 잡습니다.</div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>“금요일 저녁 6시(언제)에 강남 구간(어디서)의 통행량이 평소보다 크게(얼마나) 늘었다.” 날씨 앱의 “오후 3시, 우리 동네, 강수 확률 70%”와 같은 모양입니다.</p></div><div><h4>관제실에서는</h4><p>흐름은 선, 비교는 막대, 두 가지가 겹치면 히트맵. 히트맵은 숫자가 클수록 진한 색으로 칠한 표입니다. 요일(행) × 시간대(열)를 놓고 진한 띠가 보이면 패턴이 있는 겁니다 — 월요일 아침은 연하고 출근길만 바쁨, 금요일 저녁은 진하고 퇴근과 외출이 겹침.</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 관제실에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>“금요일 저녁 6시(언제)에 강남 구간(어디서)의 통행량이 평소보다 크게(얼마나) 늘었다.” 날씨 앱의 “오후 3시, 우리 동네, 강수 확률 70%”와 같은 모양입니다.</p></div><div><h4>관제실에서는</h4><p>흐름은 선, 비교는 막대, 두 가지가 겹치면 히트맵. 히트맵은 숫자가 클수록 진한 색으로 칠한 표입니다. 요일(행) × 시간대(열)를 놓고 진한 띠가 보이면 패턴이 있는 겁니다 — 월요일 아침은 연하고 출근길만 바쁨, 금요일 저녁은 진하고 퇴근과 외출이 겹침.</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="sia" data-mood="smile" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">인턴 시아</span><p>원자료의 연습 문제 세 개예요. 동사를 보고 차트를 골라 보세요.</p></div></div><div class="say"><img data-who="robo" data-mood="coin" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>전부 히트맵! 색이 화려하니까!</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>“변했나”는 흐름이야. 한 줄짜리 시간 흐름엔 선이 먼저야.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 이 질문에는 어떤 차트가 맞을까</p><div id="w11pick"></div></div>
 <div class="docline"><b>박사의 해석 한 줄</b> 데이터는 세 문장으로 읽습니다. <b>언제 · 어디서 · 얼마나.</b> 이 세 가지가 질문에 답하는 차트의 뼈대입니다.</div>
@@ -370,9 +393,10 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">2</span><div><h2>네 요소와 다섯 번 이어 묻기 — 한 번에 끝내지 않는다</h2><span class="tag m">개념: 프롬프트 사슬</span><span class="tag a">방법: P1 알아보기 → P2 질문 → P3 첫 차트 → P4 다듬기 → P5 해석</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①세 문장 → <b>②네 요소와 이어 묻기</b> → ③실습 A 교통량 → ④실습 B 배송 지연</p>
+
 <div class="docline"><b>박사의 상황 질문</b> 주판봇 조는 “교통량 데이터로 시간대별 선 그래프를 그리고, 제목 바꾸고, 단위 넣고, 최고점 주석 달고, 히트맵도 만들고, 색은 청록, 해석도 해 줘”를 한 번에 보냈습니다. 무엇이 나왔을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — AI에게 한 번에 많이 시키면 시간이 절약될 것 같습니다.</li><li><b>앞 방법의 한계</b> — 원자료의 관찰: 요청 일곱 개를 한꺼번에 보내면 절반만 반영됩니다. 무엇이 빠졌는지도 찾기 어렵습니다.</li><li><b>해법</b> — <b>네 요소</b>(역할 · 데이터 · 요청 · 조건)로 한 번에 <b>하나만</b> 요청하고, 다섯 번 이어 묻습니다. 같은 대화창에서 이어 쓰면 AI가 앞의 역할과 데이터를 기억합니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 식당 주문: 누가(손님) · 무엇을 보고(메뉴판) · 무엇을(김치찌개) · 어떻게(덜 맵게). 그리고 먹어 보고 “조금 더 짜게”라고 한 번 더.</div></div></div>
-<div class="pair"><div><h4>네 요소</h4><p>[역할] 너는 도시 교통 데이터 분석가야. [데이터] 올린 파일은 시간대별_교통량.csv야. [요청] 이 표에 어떤 열이 있는지 쉬운 말로 설명해 줘. [조건] 표로 정리하고, 한국어로 답해 줘.</p></div><div><h4>다섯 번 이어 묻기</h4><p>P1 “이 표에 뭐가 들어 있어?” → P2 “이걸로 뭘 알 수 있어?(질문 3개 제안)” → P3 “그걸 그림으로(선 그래프, HTML 한 파일)” → P4 “더 보기 좋게 고쳐 줘(두 번)” → P5 “이 그림이 뭘 말해?(세 문장)”</p></div></div>
+<details class="more"><summary>더 읽기 — 네 요소 · 다섯 번 이어 묻기</summary><div class="pair"><div><h4>네 요소</h4><p>[역할] 너는 도시 교통 데이터 분석가야. [데이터] 올린 파일은 시간대별_교통량.csv야. [요청] 이 표에 어떤 열이 있는지 쉬운 말로 설명해 줘. [조건] 표로 정리하고, 한국어로 답해 줘.</p></div><div><h4>다섯 번 이어 묻기</h4><p>P1 “이 표에 뭐가 들어 있어?” → P2 “이걸로 뭘 알 수 있어?(질문 3개 제안)” → P3 “그걸 그림으로(선 그래프, HTML 한 파일)” → P4 “더 보기 좋게 고쳐 줘(두 번)” → P5 “이 그림이 뭘 말해?(세 문장)”</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="sia" data-mood="explain" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-sia">인턴 시아</span><p>아래 단추로 P1부터 P5까지 한 단계씩 진행해 볼게요. AI의 답 예시도 함께 나와요.</p></div></div><div class="say"><img data-who="robo" data-mood="meh" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>다섯 번이나 보내면 귀찮잖아.</p></div></div><div class="say"><img data-who="fly" data-mood="arms" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>일곱 개 한 번에 보내고 세 개 빠진 걸 찾는 게 더 귀찮아.</p></div></div><div class="say"><img data-who="doc" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-doc">박사</span><p>그리고 처음부터 차트를 그리지 않습니다. 데이터를 아는 것이 첫걸음이에요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 프롬프트 사슬 P1 → P5</p><div class="ctrl"><button type="button" class="bt" id="w11prev">← 이전</button><button type="button" class="bt primary" id="w11next">다음 프롬프트 →</button><span id="w11step" style="font-size:14px;color:#5b6874"></span></div>
 <div class="grid2"><div class="prompt" id="w11p"></div><div><div class="insight" id="w11r"></div><div id="w11rv" class="viz" hidden></div></div></div></div>
@@ -386,12 +410,41 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">3</span><div><h2>실습 A 스마트시티 — 선 그래프에서 요일 × 시간 히트맵으로</h2><span class="tag m">개념: 시간 교차 히트맵</span><span class="tag a">방법: P3 선 → P4-1 제목·단위·주석 → P4-2 히트맵</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①세 문장 → ②네 요소와 이어 묻기 → <b>③실습 A 교통량</b> → ④실습 B 배송 지연</p>
+
 <div class="docline"><b>박사의 상황 질문</b> P3에서 받은 첫 차트: 시간대별 평균 통행량 선 그래프. 저녁 6시가 가장 높습니다. 그런데 월요일과 금요일이 섞여 있습니다. 요일 차이는 어디서 볼 수 있을까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 선 하나는 “하루 중 언제”는 보여 주지만, 요일마다 다른 패턴은 평균에 섞여 사라집니다.</li><li><b>앞 방법의 한계</b> — 요일마다 선을 그으면 일곱 개 선이 엉킵니다(2주차 — 선은 4개까지).</li><li><b>해법</b> — 두 가지(요일과 시간)가 겹치면 <b>히트맵</b>. 세로 요일, 가로 시간, 셀의 색은 평균 통행량. 그리고 제목이 답하는 문장, 단위, 가장 진한 셀에 주석 하나.</li></ol><div class="easy"><b>쉽게 말하면</b> 달력에 붐비는 날을 색연필로 칠하면, 한 달에 어느 요일 어느 시간이 바쁜지 한눈에 보입니다.</div></div></div>
-<div class="pair"><div><h4>P4-1 다듬기</h4><p>“방금 만든 차트를 이렇게 고쳐 줘. 1. 제목을 질문에 답하는 문장으로(예: 저녁 6시가 가장 붐빈다) 2. 세로축에 ‘통행량(대)’ 3. 가장 높은 점에 주석. 나머지는 그대로.”</p></div><div><h4>P4-2 히트맵</h4><p>“이번에는 요일과 시간을 함께 보고 싶어. 세로는 요일, 가로는 시간, 셀 색은 평균 통행량인 히트맵으로 바꿔 줘. 값이 클수록 진한 청록, 가장 진한 셀에 주석, 제목은 질문에 답하는 문장.”</p></div></div>
+<details class="more"><summary>더 읽기 — P4-1 다듬기 · P4-2 히트맵</summary><div class="pair"><div><h4>P4-1 다듬기</h4><p>“방금 만든 차트를 이렇게 고쳐 줘. 1. 제목을 질문에 답하는 문장으로(예: 저녁 6시가 가장 붐빈다) 2. 세로축에 ‘통행량(대)’ 3. 가장 높은 점에 주석. 나머지는 그대로.”</p></div><div><h4>P4-2 히트맵</h4><p>“이번에는 요일과 시간을 함께 보고 싶어. 세로는 요일, 가로는 시간, 셀 색은 평균 통행량인 히트맵으로 바꿔 줘. 값이 클수록 진한 청록, 가장 진한 셀에 주석, 제목은 질문에 답하는 문장.”</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="x1" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x1">X1</span><p>선 → 다듬은 선 → 히트맵 순서로 보여 드릴게요. 바뀐 점 세 가지를 찾아 주세요.</p></div></div><div class="say"><img data-who="robo" data-mood="chart" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>히트맵 셀마다 색이 다 다르니 예쁘네! 근데 어디를 보라는 거야?</p></div></div><div class="say"><img data-who="fly" data-mood="magnify" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>그래서 주석이 한 곳에만 필요한 거야. 가장 진한 셀 하나.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 다듬기 전과 후</p><div class="chips" id="w11a"><button type="button" class="bt" data-k="p3" aria-pressed="true">P3 첫 선 그래프</button><button type="button" class="bt" data-k="p41">P4-1 제목·단위·주석</button><button type="button" class="bt" data-k="p42">P4-2 요일 × 시간 히트맵</button></div>
 <div id="w11av" class="viz"></div><div class="insight" id="w11ao" aria-live="polite"></div></div>
+<div class="colab" id="cb-w11_1"><p class="cb-head">실제 화면으로 보기 — P3 → P4 — 선 그래프에서 요일 × 시간 히트맵으로</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 도시 교통 데이터 분석가야.<br>[데이터] traffic_hourly.csv — 열: date, weekday(Mon~Sun), hour(0~23), segment(측정 구간), volume(통행량, 대). 약 2,000행.<br>[요청] 왼쪽에는 시간대별 평균 통행량 선 그래프, 오른쪽에는 요일 × 시간 평균 통행량 히트맵을 그려 줘. 제목은 질문에 답하는 문장으로, 가장 진한 셀을 출력해 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;traffic_hourly.csv&#x27;)
+order = [&#x27;Mon&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27;, &#x27;Sun&#x27;]
+# 1. 시간대별 평균 통행량 (P3 첫 차트) / 各时段平均通行量 (P3 第一张图)
+hourly = df.groupby(&#x27;hour&#x27;)[&#x27;volume&#x27;].mean()</pre><details class="cb-more"><summary>코드 전체 보기 (19줄 더)</summary><pre class="cb-code" data-i18n-skip># 2. 요일 × 시간 평균 통행량 표 (P4 히트맵) / 星期 × 小时 的平均通行量表 (P4 热力图)
+table = df.pivot_table(index=&#x27;weekday&#x27;, columns=&#x27;hour&#x27;, values=&#x27;volume&#x27;, aggfunc=&#x27;mean&#x27;).reindex(order)
+best = table.stack().idxmax()
+print(&#x27;peak hour (all days) =&#x27;, hourly.idxmax(), &#x27;| darkest cell =&#x27;, best[0], int(best[1]), &#x27;h,&#x27;, round(table.stack().max()), &#x27;vehicles&#x27;)
+fig, ax = plt.subplots(1, 2, figsize=(13, 4), gridspec_kw={&#x27;width_ratios&#x27;: [1, 1.5]})
+ax[0].plot(hourly.index, hourly.values, color=&#x27;#0b7a86&#x27;, marker=&#x27;o&#x27;, markersize=3)
+ax[0].annotate(&#x27;Peak&#x27;, xy=(hourly.idxmax(), hourly.max()), xytext=(hourly.idxmax() - 6, hourly.max()), arrowprops=dict(arrowstyle=&#x27;-&gt;&#x27;, color=&#x27;#b45309&#x27;), color=&#x27;#b45309&#x27;)
+ax[0].set_ylim(0, hourly.max() * 1.15)
+ax[0].set_title(&#x27;Evening &#x27; + str(hourly.idxmax()) + &#x27;h is the busiest hour&#x27;)
+ax[0].set_xlabel(&#x27;Hour&#x27;)
+ax[0].set_ylabel(&#x27;Average volume (vehicles)&#x27;)
+im = ax[1].imshow(table.values, cmap=&#x27;GnBu&#x27;, aspect=&#x27;auto&#x27;)
+fig.colorbar(im, ax=ax[1], label=&#x27;Average volume (vehicles)&#x27;)
+ax[1].set_xticks(range(0, 24, 2))
+ax[1].set_yticks(range(7))
+ax[1].set_yticklabels(order)
+ax[1].set_xlabel(&#x27;Hour&#x27;)
+ax[1].set_title(best[0] + &#x27; &#x27; + str(best[1]) + &#x27;h is the darkest cell&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>traffic_hourly.csv(text/csv) - 64364 bytes, last modified: 2026. 11. 26. - 100% done
+Saving traffic_hourly.csv to traffic_hourly.csv
+peak hour (all days) = 18 | darkest cell = Fri 18 h, 822 vehicles</pre><img src="../assets/img/colab/w11_1_1.webp" width="1185" height="441" alt="실행 결과 차트 — P3 → P4 — 선 그래프에서 요일 × 시간 히트맵으로" loading="lazy"></div><p class="cb-note">선 하나로는 평균에 섞였던 요일 차이가, 히트맵에서는 평일의 아침·저녁 두 줄과 금요일 저녁의 진한 띠로 보입니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p>P5 해석 예시(원자료): ① 평일 저녁 시간대 셀이 가장 진하다(무엇이 보이나) ② 퇴근길이 몰리기 때문일 것이다(<b>추측</b>이라고 밝힘) ③ 이 시간대 신호 주기를 조정해 볼 만하다(무엇을 하면 좋을까). 차트는 “무엇이” 일어났는지를 보여 줄 뿐, “왜”는 추측입니다. 프롬프트에도 “왜 그럴까는 추측이라고 밝혀 줘”를 넣습니다.</p></div>
 <div class="docline"><b>박사의 해석 한 줄</b> “프롬프트를 두 번 더 이었을 뿐인데, 차트가 질문에 답하는 그림이 되었다.” — ① 제목이 답한다 ② 단위가 붙었다 ③ 요일 차이가 보인다.</div>
 <p class="limit"><b>이 단계의 한계 —</b> 실습 A는 “언제”를 봤습니다. 실습 B는 “왜” — 배송이 늦어지는 원인 가운데 무엇부터 손볼지입니다.</p>
@@ -401,12 +454,45 @@ input[type=range]{width:min(100%,280px);accent-color:var(--gfp)}
 <div class="wrap">
 <div class="lvhead"><span class="hex">4</span><div><h2>실습 B 물류 — 지연 원인 막대에서 파레토 차트로</h2><span class="tag m">개념: 파레토 차트</span><span class="tag a">방법: “지연된 건만” → 큰 것부터 → 누적 비율 선</span></div></div>
 <p style="font-size:14px;color:#5b6874;margin-top:8px">지도에서 지금 위치 — ①세 문장 → ②네 요소와 이어 묻기 → ③실습 A 교통량 → <b>④실습 B 배송 지연</b></p>
+
 <div class="docline"><b>박사의 상황 질문</b> 모아가 받은 첫 막대 차트에는 “정시 도착”이 가장 큰 막대로 서 있고, 지연 원인들은 뒤죽박죽입니다. 무엇이 잘못됐고, 어떻게 고쳐야 “어디부터 고칠지”가 보일까요?</div>
 <div class="wm"><div class="why"><h4>왜 이 방법을 쓰나</h4><ol class="pb"><li><b>문제 상황</b> — 배송 기록에는 정시 배송과 지연 배송이 섞여 있고, 원인도 여러 가지입니다.</li><li><b>앞 방법의 한계</b> — “지연된 건만”이라는 조건을 빼면 정시 배송까지 섞여 엉뚱한 막대가 나옵니다. 정렬하지 않으면 가장 큰 원인을 찾기 어렵습니다.</li><li><b>해법</b> — <b>파레토 차트</b> — ① “지연된 건만” 고르고 ② 원인별 건수를 큰 것부터 왼쪽에 ③ 위에 누적 비율 선을 겹쳐 ④ 앞의 몇 개가 전체의 대부분인지 봅니다.</li></ol><div class="easy"><b>쉽게 말하면</b> 방 청소: 가장 큰 짐 두세 개만 치워도 방이 훨씬 넓어집니다. 파레토는 “가장 큰 짐”이 무엇인지 보여 줍니다.</div></div><div class="math"><h4>수학 수식을 어려워하는 조수가 대신 물어봅니다</h4><div class="ask"><img data-who="asst" data-mood="shock" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 누적 비율은 어떻게 계산해요?</p></div><p class="school">학교 수학으로 보면: 초등 백분율, 중학교 수열의 합(앞에서부터 더해 가기)</p><p><b>박사</b> 큰 원인부터 차례로 더해 가면서, 지금까지 더한 몫이 전체의 몇 %인지 적습니다. 마지막은 늘 100%예요.</p><table><thead><tr><th>식 조각</th><th>읽는 법과 뜻</th></tr></thead><tbody><tr><td>큰 것부터 정렬</td><td>원인을 건수가 많은 순서로 세운다</td></tr><tr><td>앞에서부터 더하기</td><td>1번, 1+2번, 1+2+3번 …</td></tr><tr><td>÷ 전체 × 100</td><td>누적 비율(%) — 80% 선을 넘는 지점을 본다</td></tr></tbody></table><div class="try"><b>숫자로 한 번 해 보기</b><br>원인 다섯 개 40 · 25 · 15 · 12 · 8건 (합 100)<br>누적: 40 → 65 → 80 → 92 → 100 → <b>40% · 65% · 80% · 92% · 100%</b><br>앞의 세 원인이 지연의 <b>80%</b></div><div class="ask"><img data-who="asst" data-mood="spark" width="44" height="44" alt="" aria-hidden="true"><p><b>하루</b> 막대만 보면 “첫 번째가 크다”까지인데, 누적선을 겹치니까 “세 개만 고치면 80%”가 보이네요.</p></div></div></div>
-<div class="pair"><div><h4>일상으로 치면</h4><p>시험 오답 노트: 틀린 문제를 단원별로 세어 큰 것부터 줄 세우면, 두세 단원이 오답의 대부분입니다. 그 단원부터 복습합니다.</p></div><div><h4>물류에서는</h4><p>흔한 실수 세 가지(원자료): ① 너무 막연하게 — “차트 그려줘” → 아무 차트나 ② 한꺼번에 많이 — 요청 일곱 개 중 절반만 반영 ③ 조건을 빼먹고 — 정시 배송까지 섞인 막대. 고친 프롬프트: “지연된 건만 골라 원인별 건수를 막대로 그려 줘.”</p></div></div>
+<details class="more"><summary>더 읽기 — 일상으로 치면 · 물류에서는</summary><div class="pair"><div><h4>일상으로 치면</h4><p>시험 오답 노트: 틀린 문제를 단원별로 세어 큰 것부터 줄 세우면, 두세 단원이 오답의 대부분입니다. 그 단원부터 복습합니다.</p></div><div><h4>물류에서는</h4><p>흔한 실수 세 가지(원자료): ① 너무 막연하게 — “차트 그려줘” → 아무 차트나 ② 한꺼번에 많이 — 요청 일곱 개 중 절반만 반영 ③ 조건을 빼먹고 — 정시 배송까지 섞인 막대. 고친 프롬프트: “지연된 건만 골라 원인별 건수를 막대로 그려 줘.”</p></div></div></details>
 <div class="steptalk"><span class="lbl">직접 해 보기 전에 — 연구실 대화</span><div class="say"><img data-who="moa" data-mood="report" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-moa">인턴 모아</span><p>배송 기록 1,000건으로 막대를 다시 그려 볼게요. 먼저 “지연된 건만” 조건을 빼고요.</p></div></div><div class="say"><img data-who="robo" data-mood="happy" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-robo">주판봇</span><p>정시 도착이 제일 크네! 우리 물류 최고야!</p></div></div><div class="say"><img data-who="fly" data-mood="point" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-fly">초파리 연구원</span><p>질문은 “왜 늦어지나”야. 정시 도착은 질문 밖이야. 조건부터 넣어.</p></div></div><div class="say"><img data-who="x2" data-mood="think" width="56" height="56" alt="" aria-hidden="true"><div class="bub"><span class="who w-x2">X2</span><p>정렬하고 누적선을 겹치면, 80% 선을 넘는 지점이 보여요.</p></div></div></div>
 <div class="panel"><p class="ptitle">직접 해 보기 — 막대를 파레토로</p><div class="ctrl"><label><input type="checkbox" id="w11only"> “지연된 건만” 조건</label><label><input type="checkbox" id="w11sort"> 큰 것부터 정렬</label><label><input type="checkbox" id="w11cum"> 누적 비율 선</label></div>
 <div id="w11bv" class="viz"></div><div class="insight" id="w11bo" aria-live="polite"></div></div>
+<div class="colab" id="cb-w11_2"><p class="cb-head">실제 화면으로 보기 — 지연된 건만 — 파레토 차트</p><div class="cb-prompt"><span class="cb-lbl">① Qwen에 보낸 프롬프트</span><p>[역할] 너는 물류 데이터 분석가야.<br>[데이터] delivery_log.csv — 열: order_id, date, region, delivery_min(배송 시간, 분), delayed(지연 1·정시 0), delay_cause(지연 원인). 1,000행.<br>[요청] 지연된 건만 골라 원인별 건수를 큰 것부터 막대로 그리고, 누적 비율 선을 오른쪽 축에 겹쳐 줘. 80% 기준선도 그리고, 누적 비율 표를 출력해 줘.<br>[조건] Colab에서 files.upload()로 파일을 직접 불러오는 구조. 차트 제목·축 제목·범례는 영어, 주석은 한국어와 중국어로 아주 자세하게. 들여쓰기 금지, 함수(def) 금지, for문 금지.</p></div><div class="cb-cell"><span class="cb-lbl">② AI가 낸 파이썬 코드 <small>(예시 답)</small></span><pre class="cb-code" data-i18n-skip>from google.colab import files
+import pandas as pd
+import matplotlib.pyplot as plt
+uploaded = files.upload()
+df = pd.read_csv(&#x27;delivery_log.csv&#x27;)
+# 1. 지연된 건만 고른다 (이 조건이 빠지면 정시 배송까지 섞인다) / 只选延误的订单 (漏掉这个条件就会混进准时配送)
+late = df[df[&#x27;delayed&#x27;] == 1]
+print(&#x27;all orders =&#x27;, len(df), &#x27;| delayed =&#x27;, len(late))</pre><details class="cb-more"><summary>코드 전체 보기 (16줄 더)</summary><pre class="cb-code" data-i18n-skip># 2. 원인별 건수를 큰 것부터 정렬한다 / 按原因统计笔数并从大到小排序
+cnt = late[&#x27;delay_cause&#x27;].value_counts()
+# 3. 누적 비율(%) = 앞에서부터 더한 몫 / 累计占比 (%) = 从前往后累加的份额
+cum = (cnt.cumsum() / cnt.sum() * 100).round(1)
+print(pd.DataFrame({&#x27;count&#x27;: cnt, &#x27;cumulative %&#x27;: cum}))
+fig, ax = plt.subplots(figsize=(9, 4.4))
+ax.bar(cnt.index, cnt.values, color=&#x27;#0b7a86&#x27;)
+ax.set_ylabel(&#x27;Delayed orders&#x27;)
+# 4. 오른쪽 축에 누적 비율 선과 80% 기준선을 겹친다 / 在右侧坐标轴叠加累计占比线和 80% 基准线
+ax2 = ax.twinx()
+ax2.plot(cnt.index, cum.values, color=&#x27;#b45309&#x27;, marker=&#x27;o&#x27;)
+ax2.axhline(80, color=&#x27;gray&#x27;, linestyle=&#x27;--&#x27;)
+ax2.set_ylim(0, 105)
+ax2.set_ylabel(&#x27;Cumulative share (%)&#x27;)
+ax.set_title(&#x27;Top 3 causes make up about 80% of delays&#x27;)
+plt.show()</pre></details></div><div class="cb-out"><span class="cb-lbl">③ Colab에서 실행한 결과</span><pre class="cb-txt" data-i18n-skip>delivery_log.csv(text/csv) - 32585 bytes, last modified: 2026. 11. 26. - 100% done
+Saving delivery_log.csv to delivery_log.csv
+all orders = 1000 | delayed = 290
+                 count  cumulative %
+delay_cause                         
+Traffic jam        109          37.6
+Wrong address       68          61.0
+Volume surge        52          79.0
+Bad weather         34          90.7
+Vehicle failure     27         100.0</pre><img src="../assets/img/colab/w11_2_1.webp" width="910" height="450" alt="실행 결과 차트 — 지연된 건만 — 파레토 차트" loading="lazy"></div><p class="cb-note">“지연된 건만” 조건이 첫 줄에서 지켜졌는지 확인하세요. 앞의 세 원인이 지연의 약 80%를 차지합니다. <span>AI의 답은 매번 조금씩 다릅니다. 위 코드는 프롬프트 규칙(영어 차트 글자, 한·중 주석, 들여쓰기·함수·for문 없음)에 맞춘 예시 답이고, 결과는 이 코드를 수업 데이터로 실제 실행한 것입니다.</span></p></div>
 <div class="explain"><b>풀어서 보면</b><p><b>맛보기 — 버블 지도</b>: “어디에 몰리는가”라는 질문에는 장소마다 원을 놓고 값이 클수록 원을 크게 그린 버블 지도가 맞습니다. 지도는 부품이 많아 Qwen 대신 <b>Google AI Studio</b>로 만듭니다(12주차). 프롬프트: “[역할] 너는 물류 데이터 분석가야. [데이터] 열은 거점, 위도, 경도, 물동량이야. [요청] 거점별 물동량을 원 크기로 보여 주는 버블 지도를 HTML 한 파일로 만들어 줘. [조건] 가장 큰 거점에 주석.” — 4주차에서 배운 대로, 원은 <b>넓이</b>가 값에 비례하게 그렸는지 확인합니다.</p><p><b>과제</b>(원자료): 실습 A 또는 B 데이터에서 새 질문 하나를 골라 P1~P5로 차트를 완성하고, 완성 차트 1장 · 사용한 프롬프트 5개 · 세 문장 해석을 냅니다. 좋은 차트 기준: 제목이 답한다 · 축과 단위 · 색 3가지 이내 · 주석 한 곳 · 출처와 기간.</p></div>
 <p class="calm">누적 비율은 앞에서부터 더해 가기만 하면 됩니다. 계산기를 써도 되고, 막히면 수학 상자의 40 · 65 · 80 예시를 다시 보세요.</p>
 <div class="ai-check"><h4>AI 결과 판단 코너</h4><p>AI가 파레토 차트를 그리고 “상위 두 원인을 해결하면 지연이 60% 줄어듭니다”라고 해석했습니다. <b>어디가 이상할까요?</b> 차트가 보여 주는 것은 “지금 지연 건수의 60%가 두 원인에 속한다”는 관찰입니다. 원인을 “해결”하면 그만큼 줄어든다는 것은 예측이고, 해결 방법과 비용은 차트에 없습니다. 고친 문장: “앞의 두 원인이 지연의 약 60%를 차지한다. 이 두 원인부터 개선을 검토한다.”</p></div>
