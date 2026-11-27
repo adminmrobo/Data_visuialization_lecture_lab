@@ -77,8 +77,8 @@
   {
    "id": "cover_13",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_13.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_13"
   },
   {

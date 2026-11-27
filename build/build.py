@@ -210,7 +210,7 @@ def cover_img(key, alt, pre):
     f = os.path.join(ROOT, 'assets', 'img', key + '.webp')
     if not os.path.exists(f):
         return None
-    return ('<img class="cover-img" src="%sassets/img/%s.webp" width="1920" height="1080" alt="%s" fetchpriority="high" decoding="async" style="image-rendering:pixelated">') % (pre, key, E(alt))
+    return ('<img class="cover-img" src="%sassets/img/%s.webp" width="1920" height="1080" alt="%s" fetchpriority="high" decoding="async">') % (pre, key, E(alt))
 
 
 def cover(num, alt, chip, pre, shelf_keys):
