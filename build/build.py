@@ -504,6 +504,10 @@ def main():
              for k in ['00'] + [P['num'] for P, fn in pages] + ['99']]
     json.dump({'series_ko': SERIES, 'site_url': SITE, 'updated': TODAY, 'style': '16-bit RPG pixel art, white background', 'items': items},
               open(os.path.join(ROOT, 'cover_manifest.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    # 표지: 원래 픽셀 격자 그대로 저장한 그림을 정수배로만 키워 보이게 한다 (자르지 않음)
+    _cf = importlib.util.spec_from_file_location('cover_fit', os.path.join(HERE, 'tools', 'cover_fit.py')); CF = importlib.util.module_from_spec(_cf); _cf.loader.exec_module(CF)
+    for _p in [os.path.join(ROOT, 'weeks', fn) for P, fn in pages] + [os.path.join(ROOT, 'index.html'), os.path.join(ROOT, 'practice', 'index.html')]:
+        CF.patch(_p)
     print('\n'.join(report))
 
 

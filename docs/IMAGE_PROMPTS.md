@@ -29,6 +29,7 @@
 | `cover_10.png` | 10층 진료 기록실 · 헬스케어 | Medical records room with a height-and-weight scale, a histogram on a wall monitor with one amber dashed vertical line near the right tail, five team members each holding one small chart card in a row, Moa presenting hers at a podium, Haru taking notes, gentle teal lighting. |
 | `cover_11.png` | 11층 관제실 · 스마트시티·물류 | City control room: big wall screen with a grid heat-map of teal squares (one square outlined in amber), beside it a sorted bar chart with an amber rising line on top, small trucks and road shapes on a side monitor. Sia types on a keyboard, the abacus robot carries a pile of seven paper slips, the fruit fly hands one slip at a time. |
 | `cover_12.png` | 12층 대시보드 공방 · AI Studio | Workshop with a large dashboard board: three panels (line chart, heat-map, gauge) connected by one cable to a single big switch. X3 builds the board with a wrench, the abacus robot swaps a small tool for a bigger one, the fruit fly flips the switch, the doctor watches with arms crossed and a smile. |
+| `cover_13.png` | 13층 카페 실습실 · Qwen 따라하기 실습 | A small cafe-style practice room: a coffee counter with four cups (four menu items) on the left, an easel with a sorted horizontal bar chart (one amber bar on top) and a second easel with a 7x4 teal heat-map grid where one cell near the bottom-right is outlined in amber. Sia sits at a laptop typing a prompt, a small chain of five glowing speech-bubble icons rising from the laptop; Moa sorts a pile of paper receipts into two stacks (count vs money) next to a small coin pile; the doctor stands beside the easels pointing at the heat-map; the abacus robot holds a paintbrush with seven paint colors looking confused; the fruit fly checks a clipboard. |
 | `cover_99.png` | 옥상 · 실전 연습장 | Rooftop under a light sky (still white background around), four easels in a row: a cafe cup with a bar chart, a coin with a histogram, a heart icon with a dashed line chart, a delivery box with a heat-map. All nine characters gathered, the doctor holding a small flag, the abacus robot excited, the fruit fly checking a clipboard. |
 
 ## 받은 뒤 할 일 (제가 합니다)
@@ -42,3 +43,9 @@
 - 받은 10장(`cover_00·01·02·03·04·08·09·11·12·99`) 모두 원래 격자 480×270의 정확한 4배였습니다(다시 줄였다 키워도 차이 0). 원본 격자는 `assets/img/src/`에, 표지는 1920×1080 무손실 WebP로, 공유 미리보기는 480×252로 자른 뒤 3배 키운 1440×756 PNG로 넣었습니다.
 - **`cover_10.png`(10층 헬스케어)가 빠져 있습니다.** 위 표의 `cover_10` 요청문으로 한 장만 더 받아 주세요. 그 전까지 10층은 코드로 그린 임시 표지를 씁니다.
 - 작은 차이(그대로 둠): 건물 표지의 층 수가 15층보다 적게 그려졌고, 12층 표지의 스위치에 글자처럼 보이는 세로 막대가 있습니다.
+
+## 반영 기록 (2026-11-27) — 표지 화질 개선
+
+- 화면이 흐려 보이던 원인 두 가지를 고쳤습니다. ① 1920×1080으로 키운 그림을 화면 크기에 맞춰 다시 줄이면서 픽셀 경계가 고르지 않게 뭉개졌고, ② 표지 상자가 그림의 위아래를 잘라 건물 지붕과 인물 다리가 보이지 않았습니다.
+- 이제 `assets/img/cover_NN.webp`는 **원래 격자 그대로**(480×270, `cover_10`은 960×540) 무손실로 저장하고, 화면에서는 격자의 정수배(2배·3배…)로만 키웁니다(`build/tools/cover_fit.py`, 빌드 때 자동 적용). 그림 전체가 보이고, 가장자리의 옅은 회색 얼룩은 순백으로 정리했습니다.
+- 더 촘촘한 고화질 표지가 필요하면 **v2 요청문**(격자 960×540, 순백 배경, 가장자리 여백)을 씁니다. 공통 문장의 `native grid 480x270`·`4x4 block`을 `native grid 960x540`·`2x2 block`으로 바꾸고, “keep every head, roof and foot at least 60 px away from the image edges”를 덧붙인 판입니다. `cover_13`(13층)이 새로 필요합니다.

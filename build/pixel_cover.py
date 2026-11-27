@@ -146,7 +146,7 @@ def props(g, kind):
 
 
 KIND = {'00': 'door', '01': 'bar', '02': 'bar', '03': 'clean', '04': 'pie', '08': 'scatter', '09': 'dash', '10': 'hist',
-        '11': 'pareto', '12': 'dash', '99': 'heat'}
+        '11': 'pareto', '12': 'dash', '13': 'heat', '99': 'heat'}
 
 
 def scene(num):

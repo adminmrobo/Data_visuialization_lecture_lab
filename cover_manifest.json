@@ -56,8 +56,8 @@
   {
    "id": "cover_10",
    "role": "cover",
-   "path": null,
-   "status": "pixel-fallback",
+   "path": "assets/img/cover_10.webp",
+   "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_10"
   },
   {
@@ -73,6 +73,13 @@
    "path": "assets/img/cover_12.webp",
    "status": "ok",
    "prompt": "docs/COVER_PROMPTS.md#cover_12"
+  },
+  {
+   "id": "cover_13",
+   "role": "cover",
+   "path": null,
+   "status": "pixel-fallback",
+   "prompt": "docs/COVER_PROMPTS.md#cover_13"
   },
   {
    "id": "cover_99",

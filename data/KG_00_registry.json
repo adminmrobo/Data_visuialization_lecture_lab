@@ -26,7 +26,8 @@
     "dv_w09",
     "dv_w10",
     "dv_w11",
-    "dv_w12"
+    "dv_w12",
+    "dv_w13"
    ]
   },
   "lab:concept/data-visualization-basics": {
@@ -74,7 +75,8 @@
    "en": "prompt",
    "type": "Term",
    "pages": [
-    "dv_w01"
+    "dv_w01",
+    "dv_w13"
    ]
   },
   "lab:term/google-colab": {
@@ -393,7 +395,8 @@
    "type": "Term",
    "pages": [
     "dv_w03",
-    "dv_w11"
+    "dv_w11",
+    "dv_w13"
    ]
   },
   "lab:work/w03_slides": {
@@ -994,7 +997,8 @@
    "type": "Topic",
    "pages": [
     "dv_w11",
-    "dv_w12"
+    "dv_w12",
+    "dv_w13"
    ]
   },
   "lab:concept/when-where-howmuch": {
@@ -1066,7 +1070,8 @@
    "en": "annotation",
    "type": "Term",
    "pages": [
-    "dv_w11"
+    "dv_w11",
+    "dv_w13"
    ]
   },
   "lab:work/w11_slides": {
@@ -1083,7 +1088,8 @@
    "type": "Work",
    "pages": [
     "dv_w11",
-    "dv_w12"
+    "dv_w12",
+    "dv_w13"
    ]
   },
   "lab:method/dv_w11-fly": {
@@ -1107,7 +1113,8 @@
    "en": "Dashboards with Google AI Studio across industries",
    "type": "Topic",
    "pages": [
-    "dv_w12"
+    "dv_w12",
+    "dv_w13"
    ]
   },
   "lab:concept/dashboard-filter": {
@@ -1212,6 +1219,94 @@
    "type": "Method",
    "pages": [
     "dv_w12"
+   ]
+  },
+  "lab:topic/dv-w13": {
+   "ko": "이어 묻는 프롬프트가 좋은 차트를 만든다",
+   "en": "Hands-on with Qwen: prompt chaining from a bar chart to a heatmap",
+   "type": "Topic",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:concept/question-decides-chart": {
+   "ko": "질문으로 차트 고르기",
+   "en": "question decides the chart",
+   "type": "Concept",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:concept/good-chart-five": {
+   "ko": "좋은 차트 다섯 조건",
+   "en": "five marks of a good chart",
+   "type": "Concept",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:concept/prompt-chain-p1-p5": {
+   "ko": "프롬프트 사슬 P1~P5",
+   "en": "prompt chain P1 to P5",
+   "type": "Concept",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:concept/count-vs-revenue": {
+   "ko": "측정 기준과 순위",
+   "en": "count versus revenue ranking",
+   "type": "Concept",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:term/follow-up-prompting": {
+   "ko": "이어 묻기",
+   "en": "follow up prompting",
+   "type": "Term",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:term/reproducibility": {
+   "ko": "재현성",
+   "en": "reproducibility",
+   "type": "Term",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:term/unit-10k-won": {
+   "ko": "만 원",
+   "en": "unit 10k won",
+   "type": "Term",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:work/w13_slides": {
+   "ko": "데이터 시각화 13주차 — 이어 묻는 프롬프트가 좋은 차트를 만든다: Qwen과 함께 차트를 만들고 세 문장으로 해석하는 따라하기 실습 (40쪽)",
+   "en": "데이터 시각화 13주차 — 이어 묻는 프롬프트가 좋은 차트를 만든다: Qwen과 함께 차트를 만들고 세 문장으로 해석하는 따라하기 실습 (40쪽)",
+   "type": "Work",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:method/dv_w13-fly": {
+   "ko": "네 요소와 조건 다섯",
+   "en": "option A (fly team)",
+   "type": "Method",
+   "pages": [
+    "dv_w13"
+   ]
+  },
+  "lab:method/dv_w13-robo": {
+   "ko": "“예쁘게” 한 줄",
+   "en": "option B (jupanbot team)",
+   "type": "Method",
+   "pages": [
+    "dv_w13"
    ]
   }
  }

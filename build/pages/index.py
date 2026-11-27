@@ -29,12 +29,12 @@ IDX['body'] = '''
 <section class="level" id="building"><div class="wrap"><h2>층별 안내 — 디자인 연구실 건물</h2>
 <p>불이 켜진 창은 개관한 층, 회색 창은 아직 준비 중인 층입니다. 초록 층은 리뷰 층입니다. 각 층은 따로 읽어도 되도록 만들었고, 층마다 맨 위의 “30초 복습”이 아래층과 이어 줍니다.</p>
 {{BUILDING}}
-<p style="font-size:14px;color:#5b6874">층 번호는 강의계획서의 주차 번호와 같습니다. 5·6·7·13·14층은 자료가 들어오는 대로 엽니다. 15층은 기말 쇼케이스(평가) 주간입니다.</p>
+<p style="font-size:14px;color:#5b6874">층 번호는 강의계획서의 주차 번호와 같습니다. 5·6·7·14층은 자료가 들어오는 대로 엽니다. 15층은 기말 쇼케이스(평가) 주간입니다.</p>
 </div></section>
 <section class="level" id="teams"><div class="wrap"><h2>두 팀과 심판</h2>
 <p>이 건물에서는 연구실 식구가 두 조로 나뉘어 같은 데이터로 서로 다른 선택을 합니다. 박사는 어느 편도 들지 않고 <b>데이터대로</b> 판정합니다. 숫자는 점수판을 맡은 조수 하루가 두 조 모두 같은 크기로 읽습니다.</p>
 {{TEAMS}}
-<div class="steps"><div><span class="n">1</span><b>조별발표</b>두 조가 같은 질문에 다른 차트로 답하고, 박사가 판정합니다. (2·4·9·11·12층)</div><div><span class="n">2</span><b>개인발표</b>조원 한 명씩 자기 차트를 발표하고, 다른 조원이 진단표로 점검합니다. (3·10층)</div><div><span class="n">3</span><b>상담</b>막힌 사람이 박사에게 묻고, 박사가 원리부터 다시 풀어 줍니다. (1·8층)</div></div>
+<div class="steps"><div><span class="n">1</span><b>조별발표</b>두 조가 같은 질문에 다른 차트로 답하고, 박사가 판정합니다. (2·4·9·11·12층)</div><div><span class="n">2</span><b>개인발표</b>조원 한 명씩 자기 차트를 발표하고, 다른 조원이 진단표로 점검합니다. (3·10·13층)</div><div><span class="n">3</span><b>상담</b>막힌 사람이 박사에게 묻고, 박사가 원리부터 다시 풀어 줍니다. (1·8층)</div></div>
 </div></section>
 <section class="level" id="how"><div class="wrap"><h2>공부하는 법</h2>
 <div class="steps"><div><span class="n">1</span><b>상황부터</b>단계마다 박사의 “상황 질문”이 먼저 나옵니다. 정의보다 장면을 먼저 떠올리세요.</div><div><span class="n">2</span><b>손으로 한 번</b>“숫자로 한 번 해 보기”에서 작은 숫자로 계산을 따라가면, 프로그램이 낸 숫자를 믿을지 판단할 수 있습니다.</div><div><span class="n">3</span><b>AI 결과 의심하기</b>층마다 “AI 결과 판단 코너”에서 그럴듯하지만 틀린 답을 골라냅니다.</div><div><span class="n">4</span><b>퀴즈와 대결</b>단계 끝의 퀴즈로 확인하고, 조별 대결에서 먼저 결과를 맞혀 봅니다.</div><div><span class="n">5</span><b>옥상 연습장</b>배운 것을 카페·결제·건강검진·물류센터 시뮬레이터에서 직접 돌려 봅니다.</div></div>
